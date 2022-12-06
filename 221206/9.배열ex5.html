@@ -1,19 +1,41 @@
 <script>
   // 점수를 배열로 만들고 점수의 최고점수, 최저점수, 평균을 출력
   const score = [98, 30, 50, 90, 57];
-
-  function max() {}
-
-  const min = () => {};
-
-  const avg = (score) => {
-    for (let i = 0; i < score.length; i++) {
-      total += score[i];
+  //최고 점수
+  function max(num) {
+    let maxScore = 0;
+    for (let i = 0; i < num.length; i++) {
+      if (maxScore < num[i]) {
+        maxScore = num[i];
+      }
     }
-    return total;
+    return maxScore;
+  }
+
+  //최저 점수
+  const min = (num) => {
+    let minScore = 100;
+    for (let i = 0; i < num.length; i++) {
+      if (minScore > num[i]) {
+        minScore = num[i]; //재할당
+      }
+    }
+    return minScore;
   };
 
-  console.log(`최고점수 : ${Math.max(score)}점`);
-  console.log(`최저점수 : ${Math.min(score)}점`);
+  //평균 점수
+  const avg = (num) => {
+    for (let i = 0; i < num.length; i++) {
+      let sum = 0;
+      let avgScore = 0;
+      for (let i = 0; i < num.length; i++) {
+        sum += num[i];
+      }
+      return (avgScore = sum / num.length);
+    }
+  };
+
+  console.log(`최고점수 : ${max(score)}점`);
+  console.log(`최저점수 : ${min(score)}점`);
   console.log(`배열의 평균 점수 : ${avg(score)}점`);
 </script>

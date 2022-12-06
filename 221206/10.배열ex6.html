@@ -1,0 +1,44 @@
+<script>
+  // 현재 년 월 일 요일  시간: 분: 초: ampm
+  // 24시간제 x -> 12시간제
+  // 1초에 한번씩 실행
+
+  // setTimeout(function() {}, 시간);
+  // setInterval(callbackFn, 시간);
+
+  // 즉시실행함수 (function(){}) ();
+  (function time() {
+    const now = new Date();
+    let day = [`일`, `월`, `화`, `수`, `목`, `금`, `토`];
+    day = day[now.getDay()];
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1;
+    const date = now.getDate();
+    let hour = now.getHours();
+    let min = now.getMinutes();
+    let sec = now.getSeconds();
+    /*
+    if (hour >= 12) {
+      'PM'
+    } else {
+      'AM'
+    }
+    */
+    const ampm = hour >= 12 ? "PM" : "AM";
+    hour %= 12;
+    hour = hour || 12; // hour의 값이 0인 경우 false로 인식하기 때문에 뒤의 내용이 출력... 뒤에는 숫자라서 0이 아니라서 그냥 출력 시킴.
+
+    //10 미만인 경우 2자리로 변경
+    min = min < 10 ? "0" + min : min;
+    sec = sec < 10 ? "0" + sec : sec;
+    hour = hour < 10 ? "0" + hour : hour;
+
+    const output = `${year}년 ${month}월 ${date}일 ${day}요일 ${hour}:${min}:${sec} ${ampm}`;
+
+    console.log(output);
+    //  time();
+    // setTimeout(time, 1000); 즉시실행함수일 경우 셋트 인터벌이 먹지 않음 고로 이 즉시 실행 함수 안에 셋트타임아웃 함수를 넣기
+  })();
+
+  // setInterval(time, 1000);
+</script>
