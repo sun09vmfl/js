@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>switch 선택문 EX2</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      //1~4 사이의 숫자를 입력하면 해당 번호의 이미지 출력
+
+      /*
+      let img = prompt(`이미지 번호를 입력하시오.`);
+      switch (img) {
+        case "1":
+          document.body.innerHTML =
+            '<img src="https://unsplash.it/400/400?image=1" alt="img1">';
+          break;
+
+        case "2":
+          document.body.innerHTML =
+            '<img src="https://unsplash.it/400/400?image=15" alt="img2">';
+          break;
+
+        case "3":
+          document.body.innerHTML =
+            '<img src="https://unsplash.it/400/400?image=15" alt="img3">';
+          break;
+
+        case "4":
+          document.body.innerHTML =
+            '<img src="https://unsplash.it/400/400?image=154" alt="img4">';
+          break;
+
+        default:
+          document.body.innerHTML = "<h2>1~4의 숫자만 입력하시오.</h2>";
+      }
+      */
+
+      let num = prompt(`1~4 번의 숫자를 입력하시오`);
+      // num = +num; // 문자열 -> 숫자
+      let url = "";
+
+      switch (num) {
+        case null:
+          url = `<h2>취소했습니다.</h2>`;
+          break;
+          
+        case "1":
+          url = `<img src="https://unsplash.it/400/400?image=1" alt="img1">`;
+          break;
+
+        case "2":
+          url = `<img src="https://unsplash.it/400/400?image=15" alt="img2">`;
+          break;
+
+        case "3":
+          url = `<img src="https://unsplash.it/400/400?image=15" alt="img3">`;
+          break;
+
+        case "4":
+          url = `<img src="https://unsplash.it/400/400?image=154" alt="img4">`;
+          break;
+
+        default:
+          url = "<h2>해당 번호만 입력하시오.</h2>";
+      }
+
+      document.body.innerHTML = url;
+    </script>
+  </body>
+</html>

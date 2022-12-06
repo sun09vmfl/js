@@ -1,0 +1,39 @@
+<script>
+  /* 
+    화살표 함수
+    ES6+ 이상 사용
+    함수 표현식(익명함수)에서만 사용 가능
+    this, arguments, new 키워드 사용 어려움
+    본문이 여러 줄인 경우 {} 사용 권장
+    {} 사용시 반드시 return 키워드를 통해 반환
+  
+    변수명 = () => 실행문. 매개변수가 없는 경우 반드시 () 작성
+    변수명 = para1, para2 => { 매개변수가 있는 경우 () 생략 가능
+      실행문;
+      return 반환값;
+    }
+  */
+
+  // const noName = function () {
+  //   console.log(`함수 표현식으로 작성된 익명 함수`)
+  // };
+
+  const noName = () => console.log(`화살표 함수`);
+  noName();
+
+  // const sum = function(n) {
+  //   return n * 2;
+  // }
+
+  const sum = (n) => n * 2;
+  console.log(sum(5));
+
+  // 매개변수로 3개의 값을 받아 연산 후 콘솔에 출력하는 함수
+  const total1 = (a, b, c = 5) => console.log(a + b + c);
+  total1(10, 5);
+
+  const total2 = (a, b, c) => {
+    return a + b + c;
+  };
+  console.log(total2(10, 5, 3));
+</script>

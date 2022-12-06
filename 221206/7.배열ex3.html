@@ -1,0 +1,12 @@
+<script>
+  // 배열을 매개변수로 받아 합을 구하시오.
+  function sum(num) {
+    let total = 0;
+    //for문은 length로 한정을 시키는 게 8할
+    for (let i = 0; i < num.length; i++) {
+      total += num[i];
+    }
+    return total;
+  }
+  console.log(sum([11, 2, 3, 5, 10]));
+</script>

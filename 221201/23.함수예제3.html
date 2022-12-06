@@ -1,0 +1,26 @@
+<script>
+  //매개변수 없이 함수 호출시 내용이 순차적으로 출력
+
+  let num = 0; //변수 초기화 선언
+  const hello = () => {
+    num++; //실제값1 //호출을 할때마다 1씩 늘어남
+
+    switch (num) {
+      case 1:
+        console.log(`안녕하세요`);
+        break;
+      case 2:
+        console.log(`헬로우`);
+        break;
+      case 3:
+        console.log(`니하오`);
+        break;
+      default:
+        console.log(`더이상없슴`);
+    }
+  };
+
+  hello(); //안녕하세요
+  // hello(); // 헬로우
+  // hello(); // 니하오
+</script>

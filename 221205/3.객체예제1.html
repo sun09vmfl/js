@@ -1,0 +1,22 @@
+<script>
+  /*
+    객체 연습
+    1. 빈 객체 생성 후 객체 리터럴 방식으로 작성
+    2. 객체 속성 : 학원 이름, 주소, 이메일, 메서드(console.log(나는 xxx에 있는 xx에서 공부합니다.))
+    3. 콘솔애 메서드 출력.
+  */
+
+  const obj = {};
+  console.log(typeof obj, obj);
+
+  obj["학원 이름"] = "이젠"; // 객체 프로퍼티 추가
+  obj.address = "경기도 수원시 팔달구";
+  obj.tel = "031-1234-0234";
+  obj.output = function () {
+    console.log(
+      `나는 ${this.address}에 있는 ${this["학원 이름"]}에서 공부합니다.`
+    );
+  };
+  console.log(obj);
+  obj.output();
+</script>

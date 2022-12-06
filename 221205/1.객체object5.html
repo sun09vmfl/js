@@ -1,0 +1,18 @@
+<script>
+  //변수의 성격은 객체를 따른다
+  const noName = {
+    // 일반 함수
+    // this 키워드. 객체 자체를 지칭하는 경우가 많음.
+    func: function () {
+      console.log(this); // 객체 내부의 메소드에서 객체 자신(noName)을 가리키는 키워드
+    },
+
+    // 화살표 함수
+    arrow: () => {
+      console.log(this); // 참조 대상은 window 객체. 혹은 상황에 따라 다른 객체를 참조하기도 함.
+    },
+  };
+
+  noName.func();
+  noName.arrow();
+</script>

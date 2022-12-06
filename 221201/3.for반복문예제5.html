@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>for 반복문 예제 5</title>
+  </head>
+  <body>
+    <script>
+      let getNum = prompt(`2~9 사이의 숫자만 작성하세요.`);
+
+      if (getNum >= 2 && getNum <= 9) {
+        document.write(`<h3>-----${getNum}단-----</h3>`);
+        for (let i = 1; i <= 9; i++) {
+          let sum = getNum * i;
+          document.write(`${getNum} * ${i} = ${sum}<br>`);
+        }
+      } else {
+        //입력 받은 숫자가 2~9가 아니면
+        alert(`2~9 사이의 숫자만 작성하세요.`);
+      }
+    </script>
+  </body>
+</html>

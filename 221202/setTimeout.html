@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>setTimeout()</title>
+</head>
+<body>
+<script>
+  setTimeout(() => {
+    console.log(`6초 후에 실행`)
+  }, 6 * 1000);
+
+  const once = setTimeout( () => {
+    console.log(`2초 후에 실행`)
+  }, 2000);
+
+  // clearTimeout(); setTimeout() 중단
+  clearTimeout(once);// once함수는 실행되지 않음
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>함수 function5</title>
+    <style>
+      .btn {
+        border: 3px solid #000;
+        width: 100px;
+        padding: 10px;
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background-color: #000;
+        color: #fff;
+      }
+    </style>
+    <script>
+      const btn = document.getElementById("btn");
+      btn.onclick = function () {};
+    </script>
+  </head>
+
+  <body>
+    <div class="btn" id="btn" onclick="getAlert2()">함수 호출</div>
+    <div class="btn" id="btn">함수 호출</div>
+
+    <script>
+      function getAlert1() {
+        alert(`선언 함수로 호출`);
+        alert(`두번째 알림입니다`);
+      }
+
+      const getAlert2 = function () {
+        alert(`함수 표현식으로 호출`);
+        alert(`두번째 알림입니다`);
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<script>
+// 구구단 출력
+const timeTable = (x, count=9) => {
+  console.log(`---- ${x}단 ----`);
+
+  for(let i=1; i<=count; i++) {
+    console.log(`${x} * ${i} = ${x * i}`);
+  }
+
+}
+
+timeTable(8, 4);// 8단을 4개만 출력. 8*1=8, 8*2=16 .. 8*4=32
+timeTable(9);// 9단 전부 출력
+timeTable(3,7);
+</script>

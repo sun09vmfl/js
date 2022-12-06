@@ -1,0 +1,17 @@
+<script>
+  // 3~5월 (`봄엔 딸기`), 6~8월 (`여름엔 수박`), 9~11월(`가을엔 홍시`), 12~2월(`겨울엔 귤? 고구마?`)
+
+  let month = prompt(`좋아하는 달(month)를 입력하세요.`);
+
+  if (month >= 3 && 5 >= month) {
+    alert(`봄엔 딸기`);
+  } else if (month >= 6 && 8 >= month) {
+    alert(`여름엔 수박`);
+  } else if (month >= 9 && 11 >= month) {
+    alert(`가을엔 홍시`);
+  } else if (month == "12" || 2 >= month) {
+    alert(`겨울엔 귤? 고구마?`);
+  } else {
+    alert(`1~12까지의 숫자만 넣어 주세요.`);
+  }
+</script>

@@ -1,0 +1,36 @@
+<script>
+  // 객체 생성. 커피, 가격, 사이즈, 출력 메서드
+  // 주문한 커피는 xx이고 가격은 xxx원이고 사이즈는 xxx입니다. 출력
+
+  /*
+  const menu = {
+    coffee: '아메리카노',
+    price: 5000,
+    order: function() {}
+  }
+  */
+
+  let coffee = "카페라떼",
+    price = 5000,
+    size = "tall";
+  /*
+  const menu = {
+    coffee : coffee,
+    price: price,
+    order: function() {}
+  }
+  */
+  const menu = {
+    id: 1,
+    coffee,
+    price,
+    size,
+    order: function () {
+      console.log(
+        `주문한 커피는 ${menu.coffee}이고 가격은 ${this.price}원이고 사이즈는 ${this.size}입니다.`
+      );
+    },
+  };
+
+  menu.order();
+</script>

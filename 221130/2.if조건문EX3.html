@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>if조건문ex3</title>
+    <style></style>
+    <script>
+      window.onload = function () {};
+    </script>
+  </head>
+  <body>
+    <script>
+      /*
+        document.body.innerHTML = "html 구조를 만들고자 할 때";
+        '<img src>'
+        document.body.textContent = "해당 번호만 입력해 주세요";
+        */
+
+      // 1~4 사이의 숫자를 입력하면 해당 번호의 이미지를 출력
+
+      let num = prompt(`1~4번까지의 숫자를 입력하세요.`);
+      console.log(typeof num); // string으로 인식됨
+      //숫자형 변환
+      // num = Number(num)
+      // num = +num
+      num = num * 1;
+      console.log(typeof num);
+      // prompt로 받는 값은 문자열
+      // ===엄격한 비교를 하기 때문에 숫자형 문자열 1과 숫자 1은 같지 않음.
+
+      if (num == 1) {
+        document.body.innerHTML =
+          '<img src="https://unsplash.it/400/200?image=1" alt="img1">';
+      } else if (num == "2") {
+        document.body.innerHTML =
+          '<img src="https://unsplash.it/400/200?image=10" alt="img2">';
+      } else if (num == "3") {
+        document.body.innerHTML =
+          '<img src="https://unsplash.it/400/200?image=15" alt="img3">';
+      } else if (num == "4") {
+        document.body.innerHTML =
+          '<video src="../221128/images/sampleV.mp4" muted loop autoplay alt="img4">';
+      } else {
+        document.body.textContent = "해당 번호만 입력해 주세요.";
+      }
+    </script>
+  </body>
+</html>

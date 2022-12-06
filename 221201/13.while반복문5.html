@@ -1,0 +1,15 @@
+<script>
+  // 1부터 몇까지 더해야 3000을 넘길 수 있는지
+
+  let i = 1;
+  let sum = 0;
+  while (true) {
+    // sum = sum + i;
+    sum += i;
+    if (sum > 3000) {
+      break;
+    }
+    i++;
+  }
+  console.log(`1부터 ${i}까지 더하면 ${sum}으로 3000을 넘긴다.`);
+</script>

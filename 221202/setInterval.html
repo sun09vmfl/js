@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>setInterval()</title>
+</head>
+<body>
+<script>
+/* 
+  setInteval(콜백함수, 시간); 지정된 시간마다 함수 반복 실행
+*/
+let count = 1;
+setInterval(() => {
+  console.log(`2초마다 ${count++}번째 실행`)
+}, 3000);
+
+const time = setInterval( () => {
+  document.body.innerHTML += `<p>setInterval() 호출</p>`
+}, 2000)
+
+const write = () => document.body.innerHTML += `<p>콜백함수</p>`;
+const isCheck = setInterval(write, 2000);
+
+// clearInterval(); setInterval() 함수 중단. 함수가 호출되지 않게 제거
+clearInterval(time);
+</script>  
+</body>
+</html>

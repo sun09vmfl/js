@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>switch 선택문 EX2</title>
+  </head>
+  <body>
+    <script>
+      // 입력 받은 값이 짝수인 경우 n은/는 짝수입니다 출력
+      // 입력 받은 값이 홀수인 경우 n은/는 홀수입니다 출력
+
+      let num = prompt(`숫자를 입력하세요.`);
+      let output = num % 2; // 숫자형 문자열이기 때문에 %연산으로 숫자형으로 변환
+
+      switch (output) {
+        case 0:
+          document.body.innerHTML = `<h2> ${num}은/는 짝수입니다</h2>`;
+          break;
+
+        case 1:
+          document.body.innerHTML = `<h2> ${num}은/는 홀수입니다</h2>`;
+          break;
+
+        default:
+          document.body.innerHTML = `<h2> 숫자만 입력해 주세요</h2>`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<script>
+  //익명 함수 표현식
+  // 매개변수
+  const sum1 = function (wt) {
+    console.log(`가로 : ${wt}`);
+  };
+  sum1(100);
+
+  // 매개변수2
+  const sum2 = function (wt, ht) {
+    console.log(`가로 : ${wt}, 세로 : ${ht}`);
+    console.log(wt * ht);
+  };
+
+  sum2(10, 20);
+  sum2(50, 3);
+
+  console.log(`------------`);
+  //ES6+ 매개변수에 기본값 부여
+  const sum3 = function (wt, ht, dt = 5) {
+    console.log(`박스 부피는? ${wt * ht * dt}`);
+  };
+  sum3(5, 2, 34); // wt:5, ht:2, dt:34; ->340
+  // sum3(10, 12); // wt:10, ht:12, dt:umdefined로 인식됨.. -> NaN
+  sum3(10, 12); // wt:10, ht:12, dt:5; -> 600
+
+  console.log(`------------`);
+  const sum4 = function num(a, b) {
+    console.log(a * b);
+  };
+  //  num(2, 7); 변수에 할당된 경우 함수명으로 호출시 에러. 외부에서 내부의 함수명에 접근 불가능.
+  sum4(2, 7); // 변수명에 작성된 걸로 해야 됨... 하 씹
+</script>

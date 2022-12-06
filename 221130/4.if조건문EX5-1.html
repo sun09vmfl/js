@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>if조건문Ex5</title>
+  </head>
+  <body>
+    <script>
+      // 입력한 점수에 따라 상(100~81), 중(80~61), 하(60~41), 탈락(40~0) 출력
+
+      let score = prompt("점수를 입력하세요");
+
+      /*
+  if(score <= 100 && score >= 81) {
+    document.body.innerHTML = `<h2>${score}점은 "상"입니다.</h2>`;
+  } else if(score <= 80 && score >= 61) {
+    document.body.innerHTML = `<h2>${score}점은 "중"입니다.</h2>`;
+  } else if(score <= 60 && score >= 41) {
+    document.body.innerHTML = `<h2>${score}점은 "하"입니다.</h2>`;
+  } else if(score <= 40 && score >= 0) {
+    document.body.innerHTML = `<h2>${score}점은 "탈락"입니다.</h2>`;
+  } else {
+    document.body.textContent = '점수만 입력해주세요';
+  }
+  */
+
+      let grade = ""; // 문자열로 초기화
+
+      if (score === null) {
+        // 취소 버튼
+        document.body.textContent = "입력이 취소되었습니다.";
+      } else if (score <= 100 && score >= 81) {
+        grade = "상";
+      } else if (score <= 80 && score >= 61) {
+        grade = "중";
+      } else if (score <= 60 && score >= 41) {
+        grade = "하";
+      } else if (score <= 40 && score >= 0) {
+        grade = "재평가";
+      } else {
+        document.body.textContent = "점수만 입력해주세요";
+      }
+
+      if (score >= 0 && score <= 100 && score !== null) {
+        document.body.innerHTML = `<h2>${score}점은 ${grade}입니다.</h2>`;
+      }
+
+      // 삼항연산자
+      score === ""
+        ? (document.body.textContent = "내용을 입력해주세요")
+        : false;
+      /*
+  if(score === "") {
+    document.body.textContent = '내용을 입력해주세요'
+  }
+  */
+    </script>
+  </body>
+</html>

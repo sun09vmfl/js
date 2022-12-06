@@ -1,0 +1,46 @@
+<script>
+/* 
+  지역 변수: {} 영역 안에서만 적용
+  전역 변수: 문서 전체에 적용
+*/
+
+// 전역변수
+let aLet = 10;// block scope -> {}
+var bVar = 20;// function scope -> function() {}
+
+// const noName1 = function() {
+//   console.log(`noName1 함수 내부에 적용: ${bVar}`)
+// };
+const noName1 = () => console.log(`noName1 함수 내부에 적용: ${bVar}`);
+noName1();// 전역 변수의 경우 함수 내부에도 적용
+
+console.log(`전역 변수로 문서 전체에 적용됨: ${bVar}`);
+
+const noName2 = () => console.log(`noName2 함수 내부에 적용: ${aLet}`);
+noName2();
+
+console.log(`전역 변수로 문서 전체에 적용됨: ${aLet}`);
+
+function noName3 () {
+  let aLet = 30;// 블록문 내
+  var bVar = 40;// 함수내
+  console.log(`내부에서만 적용되는 aLet: ${aLet}, bVar: ${bVar}`)
+}
+noName3();
+console.log(`지역변수는 해당 범위를 벗어날 수 없다 aLet: ${aLet}, bVar: ${bVar}`);// aLet: 10, bVar: 20
+
+// let aLet = 200; let 키워드를 사용하여 같은 이름으로 재선언 x
+var bVar = 100;// 재선언 가능. var 키워드를 사용하여 같은 이름으로 작성 가능
+console.log(`var변수는 재선언이 가능: ${bVar}, let변수는 재선언 불가능`);
+
+aLet = 200;
+console.log(`let변수의 재할당은 가능함: ${aLet}`);
+
+function noName4 () {
+  // 변수 키워드 없이 작성하면 전역 변수
+  aLet = 1000;
+  bVar = 2000;
+}
+noName4();
+console.log(`함수 내부에 변수 키워드없이 작성하면 전역변수: ${aLet}, ${bVar}`);
+</script>

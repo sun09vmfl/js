@@ -1,0 +1,19 @@
+<script>
+/* 
+  setTimeout(콜백함수, 시간);
+   일정 시간 후 한 번만 실행하는 자바스크립트 내장함수
+*/
+const working = () => {
+  let study = '자바스크립트';
+
+  /*
+  setTimeout(function() {// 2초 뒤에 한번만 함수 실행
+    console.log(`재미있는 ${study}`);
+  }, 2000);// css: 1초 == 1s, js: 1초 == 1000
+  */
+  setTimeout(()=> {
+    console.log(`재미있는 ${study}`);
+  }, 2000);
+}
+working();
+</script>

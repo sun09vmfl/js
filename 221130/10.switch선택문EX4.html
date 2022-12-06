@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>switch 선택문EX4</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // 입력 받은 커피와 가격 출력
+      // 아메리카노: 15,000원 카페라떼 20,000원 카페모카 20,000원 바닐라라테: 25,000원
+
+      /*  let order = prompt(`주문을 입력하시오.`);
+
+      switch (order) {
+        case "아메리카노":
+          alert(`주문한 커피는 아메리카노이고, 가격은 15,000원 입니다.`);
+          break;
+
+        case "카페라떼":
+          alert(`주문한 커피는 카페라떼이고, 가격은 20,000원 입니다.`);
+          break;
+
+        case "카페모카":
+          alert(`주문한 커피는 카메모카이고, 가격은 20,000원 입니다.`);
+          break;
+
+        case "바닐라라떼":
+          alert(`주문한 커피는 바닐라라떼이고, 가격은 25,000원 입니다.`);
+          break;
+
+        default:
+          alert(`주문명을 정확히 입력해 주십시오.`);
+          break;
+      }
+      */
+
+      const coffee = prompt(
+        `아메리카노, 카페라떼, 카페모카, 바닐라라떼 중 선택하세요.`
+      );
+      let price = 0; // 숫자로 변수 초기화
+
+      switch (coffee) {
+        case "아메리카노":
+          price = 10000;
+          break;
+        case "카페라떼":
+          price = 20000;
+          break;
+        case "카페모카":
+          price = 15000;
+          break;
+        case "바닐라라떼":
+          price = 25000;
+          break;
+
+        default:
+          document.body.innerHTML = `<h2>메뉴에 있는 커피만 주문 가능합니다.</h2>`;
+          break;
+      }
+
+      if (price)
+        //price 있는 값만 나온다는 것임..
+        document.body.innerHTML = `<h2>주문한 커피는 ${coffee}이고, 가격은 ${price}원 입니다.</h2>`;
+    </script>
+  </body>
+</html>

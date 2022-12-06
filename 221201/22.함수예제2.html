@@ -1,0 +1,25 @@
+<script>
+  // 입력한 언어에 따른 인사말 출력
+
+  const 인사말 = (lang) => {
+    인사말(`한국어`); // 안녕하세요
+    인사말(`영어`); // 헬로우
+    인사말(`중국어`); // 니하오
+    인사말(`일본어`); // 오하요
+    let lang = prompt(`입력하세요`);
+    let msg = "안녕하세요";
+    if (lang === "영어") {
+      //console.log(`헬로우`);
+      msg = `헬로우`;
+    } else if (lang === `중국어`) {
+      msg = `니하오`;
+    } else if (lang === `일본어`) {
+      msg = `오하요`;
+    } else if (lang === `한국어`) {
+      msg = `안녕하세요`;
+    } else {
+      msg = `정해진 값만 넣어주세요`;
+    }
+    console.log(msg); // 값을 바깥으로 보낸 경우에는 return 필요 얘는 안에 있어서 ㄱㅊ
+  };
+</script>

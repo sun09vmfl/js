@@ -1,0 +1,54 @@
+<script>
+  /* 
+    구조분해 할당 == 비구조 할당 == 구조분해
+    
+    배열이나 객체의 속성을 해체해서 그 값을 개별 변수에 담을 수 있게 한 표현식
+  */
+
+  const menu = {
+    coffee: `카페라떼`,
+    price: 4000,
+    size: `tall`,
+    option: `디카페인`,
+  };
+
+  // menu.coffee, menu.price, menu.size, menu.option
+
+  //변수를 객체 형식으로 그리고 선언했던 const를... 저기 메뉴에
+  //구조분해 할당
+  const { coffee, price, size, option } = menu;
+  //객체(menu) 생략 가능
+  console.log(coffee, price, size, option);
+  console.log(menu.coffee);
+
+  const data = {
+    a: 10,
+    b: 20,
+    c: 30,
+  };
+
+  const { a, b, c } = data;
+  console.log(a);
+
+  const { a: aa } = data; // 객체의 키 변경 가능 a -> aa로 변경
+  console.log(aa);
+  console.log(data); //원래 객체가 가지고 있는 값은 변경되지 않음
+
+  /***************************************/
+
+  const obj = {
+    x: 10,
+    y: 20,
+  };
+
+  function sum1(num) {
+    return num.x + num.y;
+  }
+  console.log(sum1(obj));
+
+  function sum2({ x, y }) {
+    // 객체의 키 값을 넣으면 구조분해할당
+    return x * y;
+  }
+  console.log(sum2(obj));
+</script>

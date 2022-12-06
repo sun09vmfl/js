@@ -1,0 +1,26 @@
+<script>
+  /* 생성자 함수로 이름과 특징을 가진 객체를 만들고 출력
+  우리 집 반려 동물, 식물, ... 소개
+  객체 속성: 이름, 성격, 특징, 메서드(console.log(우리집 ${이름}는 ${성격}이고, ${}를 잘합니다....))
+   */
+
+  //값으로 대입하는 것임 이름은 key고
+  function Companion(name, personality, character) {
+    this.이름 = name;
+    this.성격 = personality;
+    this.특징 = character;
+    this.소개 = function () {
+      console.log(
+        `우리집 ${this.이름}는 ${this.성격}이고, ${this.특징}를 잘합니다....`
+      );
+    };
+  }
+  new Companion("해리", "완전 지랑뱅이", "엄청 귀엽기").소개();
+
+  // new Companion().소개();
+  // new Date().getHours();
+
+  let 동백 = new Companion("동백", "느린 성격", "꽃 피우는 걸");
+  동백.소개();
+  console.log(동백.성격);
+</script>

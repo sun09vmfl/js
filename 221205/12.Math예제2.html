@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>math객체 예제2</title>
+    <style>
+      /* 
+        hsl(색, 채도, 명도);
+        색 0 ~ 360 사이의 숫자
+        채도, 명도, 0~100%
+        hsla(색, 채도, 명도, 투명도)
+      
+      */
+      body {
+        /* 지역 변수 선언 */
+        --bg1: hsl(39, 100%, 50%);
+        --bg2: hsl(180, 100%, 25%);
+
+        font-weight: bold;
+        font-size: 1.4em;
+        text-align: center;
+        transition: 0.4s;
+        background-image: linear-gradient(75deg, var(--bg1), var(--bg2));
+      }
+
+      .btn_style {
+        border: 3px solid #000;
+        color: #fff;
+        width: 200px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      .btn_style:hover {
+        background-color: hotpink;
+      }
+    </style>
+    <script defer src="Math객체Ex2.js"></script>
+  </head>
+  <body>
+    <div id="btn" class="btn_style">button</div>
+  </body>
+</html>

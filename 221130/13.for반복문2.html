@@ -1,0 +1,26 @@
+<script>
+  // 1~10까지의 합 계산
+  // 1+2+3+4+5+6+7+8+9+10 = ??
+
+  /* 변수 초기화가 필요 -> 숫자
+  let sum;
+  let k = 1;
+  sum = sum + k;
+  console.log(); //NaN
+  */
+
+  let sum = 0; //변수 선언. 숫자로 초기화 시켜줌.
+  for (let num = 1; num <= 1000; num++) {
+    // sum = sum + num;
+    /* num(1) : sum(0) + num(1) -> sum(1)
+       num(2) : sum(1) + num(2) -> sum(3)
+       num(3) : sum(3) + num(3) -> sum(6)
+       .
+       .
+       num(10) : sum(45) + num(10) -> sum(55)
+       num(11): num <= 10 조건을 만족시키지 못하기 때문에 식은 실행되지 않는다. 
+    */
+    sum += num;
+  }
+  console.log(sum);
+</script>

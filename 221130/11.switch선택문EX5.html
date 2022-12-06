@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>switch예제5</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      //아이디를 입력 받아 참인 경우 비밀번호 입력을 받고
+      //비밀번호도 참인 경우 '로그인 되었습니다'
+      //아이디가 거짓인 경우 '아이디가 틀렸습니다' 출력
+
+      const defaultId = "web";
+      const defaultPw = 1234;
+
+      let userId = prompt(`아이디를 입력하세요.`);
+
+      switch (userId === defaultId) {
+        case true: // 아이디가 참인 경우
+          alert(`아이디가 일치합니다.`);
+
+          let userPw = prompt(`비밀번호를 입력하세요.`);
+          userPw = Number(userPw);
+
+          switch (userPw) {
+            case defaultPw:
+              alert(`로그인 되었습니다.`);
+              break;
+
+            default:
+              alert(`비밀번호가 일치하지 않습니다.`);
+          }
+          break;
+
+        default: // 아이디가 거짓인 경우
+          alert(`아이디가 일치하지 않습니다.`);
+      }
+    </script>
+  </body>
+</html>

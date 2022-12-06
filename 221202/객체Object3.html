@@ -1,0 +1,31 @@
+<script>
+let name = '순이', age = 3, hobby = '냥냥펀치';
+
+var cat = {
+  // 전역 변수에서 값을 가져와 객체에 적용
+  name: name,
+  age: age,
+  hobby: hobby,
+  특징: function () {
+    console.log(`${cat.name}는 미치괭이입니다.`)
+  }
+}
+console.log(cat);
+cat.특징();// 객체 안의 함수(매서드) 호출
+
+let dog = {
+  // 단축 프로퍼티
+  name,
+  age,
+  hobby: '미사일펀치',
+  // 객체 메서드(함수): 객체에 저장된 정보에 접근할 수 있어야 하며 객체 프로퍼티의 값을 활용
+  특징 (food = '사료') {// function 키워드 생략 가능
+    console.log(`${food}를 먹는 ${this.name}는 강아지`)
+    // this 키워드. function 작성시 객체 내부 대상 지칭
+  }
+}
+console.log(dog);
+console.log(dog.hobby);
+dog.특징('고구마');
+dog.특징('군고구마');
+</script>

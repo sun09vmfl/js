@@ -1,0 +1,77 @@
+<script>
+  // 배열 요소 추가
+  console.log(`--------인덱스 번호로 추가`);
+  let arr1 = [
+    { id: 1, coffee: `아메리카노` },
+    { id: 2, coffee: `카페라떼` },
+    { id: 3, coffee: `바닐라라떼` },
+  ];
+  console.log(arr1);
+  console.log(arr1[1]); // {id: 2, coffee: '카페라떼'}
+  console.log(arr1[2].coffee); //바닐라라떼
+  arr1[5] = `string`;
+  console.log(arr1); // 인덱스 번호 3,4는 비워두고 5번에 'string' 추가 그래서 empty라고 뜸
+  console.log(arr1.length); //6
+
+  console.log(`---- .push() 배열의 제일 마지막에 추가`);
+  arr1.push({ id: 6, coffee: `에스프레소` });
+  console.log(arr1);
+  console.log(arr1.length); // 7
+
+  console.log(`---- .unshift() 배열의 제일 처음에 추가`);
+  arr1.unshift({ id: 0, coffee: `오늘의 커피` });
+  console.log(arr1);
+
+  console.log(`---- .contact() 둘 이상의 배열에 연결`);
+  /* 
+    기존 배열의 요소를 사용해 새로운 배열을 만들거나 기존 배열에 요소를 추가하고자 할 때 사용.
+    새로운 Array 객체로 반환.
+    원본을 건드리지 않고 사본을 만들기 때문에 원본 유지
+  */
+
+  let arr2 = [1, 2, 3, 4];
+  let arr2_1 = arr2.concat();
+  let arr2_2 = arr2.concat(40, 50, 60);
+  let arr2_3 = arr2.concat(`강아지`, `고양이`);
+  console.log(arr2); // (4) [1, 2, 3, 4]
+  console.log(arr2_1); // (4) [1, 2, 3, 4] 새로운 배열로 반환.
+  console.log(arr2_2); // (7) [1, 2, 3, 4, 40, 50, 60]\
+  console.log(arr2_3); // (6) [1, 2, 3, 4, '강아지', '고양이'] arr2_2가 아닌 arr2에다가 붙여서 ㅜ이렇게 나옴
+  console.log(arr2.concat(arr2_3)); // arr2 + arr2_3 -> 새로운 배열로 반환
+  console.log(arr2); // 기존 배열 값은 변화 x
+
+  console.log(`---- .join() 배열 안의 요소를 매개변수로 연결`);
+  console.log(arr2.join(`/`)); // 1/2/3/4
+
+  console.log(`---- .pop() 배열의 제일 마지막 요소를 추출`);
+  console.log(arr2_3.pop()); // 고양이
+  console.log(arr2_3); //(5) [1, 2, 3, 4, '강아지'] 고양이가 빠짐..원본이 훼손되넹...
+
+  console.log(`---- .shift() 배열의 제일 처음 요소를 추출`);
+  console.log(arr2_3.shift()); // 1
+  console.log(arr2_3); // (4) [2, 3, 4, '강아지']
+
+  console.log(
+    `---- .splice(시작인덱스, [요소의 수, 대체요소]) 특정 항목 삭제 및 대체` //[]안은 생략 가능
+  );
+  let arr3 = [10, 20, 30, 40, 50];
+  console.log(arr3.splice(3)); // [40, 50] 인덱스 3번부터 추출
+  console.log(arr3); // (3) [10, 20, 30]
+  arr4 = [10, 20, 30, 40, 50];
+  console.log(arr4.splice(1, 2)); // 인덱스 1번부터 2개 요소 추출 [20, 30]
+  console.log(arr4); // (3) [10, 40, 50]
+
+  console.log(
+    `---- .slice(시작인덱스, 마지막인덱스) 시작 인덱스부터 마지막 인덱스 전까지 추출`
+  );
+  // 추출한 요소를 포함한 새로운 배열로 반환되기 때문에 원본 배열 값의 변화 x
+
+  let arr5 = [10, 20, 30, 40, 50];
+  console.log(arr5.slice(0, 3)); // (3) [10, 20, 30] 0~3인데 3은 포함 안 되어서 0,1,2까지
+  console.log(arr5); // (5) [10, 20, 30, 40, 50] 원본이 그대로 살아 있음.
+
+  console.log(`---- delete 키워드 : 요소의 값만 제거`);
+  console.log(delete arr5[2]);
+  console.log(arr5); // (5) [10, 20, empty, 40, 50] 인덱스 2번의 30이 삭제됨 empty 자리까지 삭제된 게 아니라
+  console.log(arr5.length); //5
+</script>

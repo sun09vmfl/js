@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>break 키워드 (예약어)</title>
+  </head>
+  <body>
+    <script>
+      /* 3의 배수로 0~100까지 출력
+
+      for (let k = 0; k <= 100; k += 3) {
+        document.writeln(k); // 한칸 띄어서 문서에 작성
+      } */
+      for (let k = 0; k <= 100; k += 3) {
+        if (k >= 40) {
+          //이 값이 참인 경우 실행문 실행
+          break; //제어문을 벗어날 때 사용. 40이 넘으면 브레이크 걸라는 의미
+        }
+        document.writeln(k);
+      }
+    </script>
+  </body>
+</html>

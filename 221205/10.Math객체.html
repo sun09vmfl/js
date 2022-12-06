@@ -1,0 +1,92 @@
+<script>
+  //Math 객체 수학과 함수를 위한 프로퍼티와 메서드를 제공하는 내장객체
+  //https://ko.javascript.info/number
+
+  console.log(Math.PI); //3.141592653589793
+
+  console.log();
+  // abs(); 절대값으로 반환. 0 혹은 양수.
+  let abs = Math.abs(4); //4
+  abs = Math.abs(3.141592653589793);
+  abs = Math.abs(-3.141592653589793);
+  abs = Math.abs("-1"); //숫자형 문자열도 양수로 반환
+  abs = Math.abs(""); // 0
+  abs = Math.abs(null); //0
+  abs = Math.abs(undefined); //NaN
+  abs = Math.abs(`string`); //NaN
+
+  console.log(`abs: ${abs}`);
+
+  // .round (); 소수점 이하 반올림하여 정수로 반환
+  let round = Math.round(31.145); // 31
+  round = Math.round(31.545); // 32 올림
+  round = Math.round(-31.545); // -32
+  round = Math.round(-31.145); // -31
+
+  console.log(`round: ${round}`);
+
+  //.ceil (); 소수점 이하 올림하여 정수로 반환
+  let ceil = Math.ceil(1.2); // 2
+  ceil = Math.ceil(-1.2); //-1
+
+  console.log(`ceil : ${ceil}`);
+
+  // .floor (); 소수점 이하 내림하여 정수로 반환
+  let floor = Math.floor(1.8); //1
+  floor = Math.floor(-1.8); // -2
+  floor = Math.floor(-9.1); //-10
+
+  console.log(`floor : ${floor}`);
+
+  // .trunc (); 절삭. 그냥 무조건 소수점이하 삭제하고 정수로 반환
+  let trunc = Math.trunc(1.9); //1
+  trunc = Math.trunc(-1.8); // -1
+  trunc = Math.trunc(-9.1); // -9
+
+  console.log(`trunc : ${trunc}`);
+  // .sqrt(); 제곱근
+  console.log(Math.sqrt(9)); //3
+
+  // .random(); 0~1 사이의 랜덤 실수 반환. 0은 포함되나 1은 포함되지 않음
+  console.log(`random : ${Math.random()}`); // ㄹㅇ 존나 랜덤임
+  // 10까지의 정수 *10
+  // 1000까지의 정수 *1000.
+  // 50까지의 정수 * 50
+  // 1~100까지의 랜덤 정수 반환
+  // let ran = Math.random() * 100; 0.xxxxxx ~ 99.xxxxxx  1은 포함되지 않기 때문에 100이 나오지 않음/
+  let ran = Math.random() * 100 + 1;
+  ran = Math.trunc(ran);
+  console.log(ran);
+
+  // .min (); 제일 작은 값 반환
+  console.log(Math.min(0.5, 5, 10, 20)); // 0.5
+
+  // max(); 제일 큰 값 반환
+  console.log(Math.max(0.5, 5, 10, 20)); // 20
+
+  // .toFixed (); 소수점 이하 몇자리까지만 출력
+  let random = Math.random();
+  random = random * 10 + 1;
+
+  console.log(random.toFixed(3)); //소수점 세 글자까지만 뽑겠단 의미 9.454
+
+  // isNaN(); NaN이면 true, NaN이 아니면 false
+  let str = `13`; //숫자형 문자열dms isNaN에서 숫자로 인식
+  console.log(typeof str); // string
+  console.log(isNaN(str)); // false
+  str = `문자`;
+  console.log(isNaN(str)); // true
+  console.log(NaN === NaN); // false
+
+  const output = prompt(`숫자를 입력하세요.`);
+  if (isNaN(output)) {
+    //true 숫자 이외의 값 NaN 가맞다. 즉, 숫자가 아니다.
+    console.log(`너 글자. 숫자를 쓰세요 ㄱ-`);
+  } else {
+    //false 숫자, 숫자형 문자열
+    console.log(`${output} 너 숫자`);
+  }
+  //isNaN(output) ? console.log(`너 글자. 숫자를 쓰세요`) : console.log(`${output} 너 숫자`)
+
+  console.log(isNaN(output) ? `너 글자. 숫자를 쓰세요` : `${output} 너 숫자`);
+</script>

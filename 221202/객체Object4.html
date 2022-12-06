@@ -1,0 +1,31 @@
+<script>
+/* 
+  객체 프로퍼티 확인
+  'key' in 객체명; true, false로 반환
+*/
+
+const obj = {
+  id: 1,
+  name: '객체',
+  done: false,
+  apple () { console.log(`객체 메서드`)}
+}
+console.log(obj);
+console.log(obj.id);
+console.log(obj.name);
+
+console.log('name' in obj);// 객체 obj안에 name 키 확인. true
+console.log('age' in obj);// false
+console.log('done' in obj);// true
+console.log(obj.done === true);// false
+
+/* 
+  순회를 통해 객체의 키 확인. 배열로 반환
+  for (key in 객체) {}
+*/
+for(let i in obj) {
+  //console.log(`i: ${i}`); id name done apple
+  //console.log(`obj.i: ${obj.i}`); undefined
+  console.log(`obj[i]: ${obj[i]}`);// 1, 객체, false, apple () { console.log(`객체 메서드`)}
+}
+</script>
