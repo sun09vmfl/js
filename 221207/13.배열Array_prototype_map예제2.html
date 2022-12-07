@@ -1,0 +1,18 @@
+<script>
+  // 좋아하는 음식 4개를 배열로 만들고 순차적으로 출력
+  const food = [`소금빵`, `아메리카노`, `당큰케이크`, `타르트`];
+
+  console.log(`for------`);
+  for (let i = 0; i < food.length; i++) {
+    console.log(food[i]);
+  }
+  console.log(`for of------`);
+  for (let item of food) {
+    console.log(item);
+  }
+  console.log(`forEach------`);
+  food.forEach((item) => console.log(item));
+
+  console.log(`map------`);
+  food.map((item) => console.log(item));
+</script>

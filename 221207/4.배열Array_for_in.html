@@ -1,0 +1,31 @@
+<script>
+  /*
+
+    변수 in 객체
+
+    for (변수 in 객체) {}
+    객체 프로퍼티(속성)를 순회할 때 주로 사용
+    배열에서도 사용 가능하나 배열 또한 객체이기 때문에 불필요한 프로퍼티따지 출력되고 요소의 순서가 보장되지 않음.
+
+  */
+
+  const arr1 = [10, 20, 30, 40];
+  for (let idx in arr1) {
+    // 배열이 가지고 있는 수만큼 반복 arr1이 가지고 있는 요소의 값만큼 반복ㅇㅇ!
+    console.log(`인덱스 번호: ${idx}, 요소의 값 : ${arr1[idx]}`);
+  }
+
+  const arr2 = {
+    coffee: `바닐라라떼`,
+    price: 4000,
+    size: `tall`,
+    id: 1,
+  };
+  for (let i in arr2) {
+    console.log(i, arr2[i]);
+  }
+
+  console.log(Object.keys(arr2)); // ['coffee', 'price', 'size', 'id']
+  console.log(Object.values(arr2)); // 배열의 형태로 값 반환 ['바닐라라떼', 4000, 'tall', 1]
+  console.log(Object.entries(arr2)); // 배열의 형태로 객체 반환 [Array(2), Array(2), Array(2), Array(2)]
+</script>

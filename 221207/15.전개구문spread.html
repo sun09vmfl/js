@@ -1,0 +1,38 @@
+<script>
+  /*
+      https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+
+      배열, 문자열, 객체 등을 복사해 키-값의 쌍으로 객체로 반환.
+      뒤에 프로퍼티를 추가하면 갱신되는 성격이 있음.
+
+      함수 호출 : myFunction(...iterableObj);
+      배열 리터럴과 문자열 : [...iterableObj, '4', 'five', 6]
+      객체 리터럴(ECMAScript 2018에서 추가) : let objClone = {...obj};
+    */
+
+  const arr1 = [`아메리카노`, `라떼`, `바닐라라떼`, `에스프레소`];
+  const arr2 = arr1.concat(); // 배열이나 객체를 복사해 새로운 배열로 반환하는 값 concat
+  const arr3 = [...arr1];
+
+  console.log(arr2);
+  console.log(arr3); // ['아메리카노', '라떼', '바닐라라떼', '에스프레소']
+
+  console.log(`------------`);
+  // 복사 추가
+  const arr4 = arr1.concat(`생강차`, `유자차`);
+  const arr5 = [...arr1, `생강차`, `유자차`];
+  console.log(arr4);
+  console.log(arr5); //['아메리카노', '라떼', '바닐라라떼', '에스프레소', '생강차', '유자차']
+
+  console.log(`-----------`);
+  const dog = {
+    name: "마루",
+    age: 4,
+  };
+
+  const animal1 = { ...dog }; //{name: '마루', age: 4} 그대로 위에 있는 dog를 복사해서 반환
+  const animal2 = { ...dog, hobby: "산책", age: 10 };
+  console.log(animal1);
+  console.log(animal2); // {name: '마루', age: 10, hobby: '산책'} 없는 값은 추가. 있는 값은 변경.
+  // 프로퍼티를 작성하면 갱신, 추가.
+</script>

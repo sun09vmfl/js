@@ -1,0 +1,14 @@
+<script>
+  // 생성자 정의
+  function Coffee(name) {
+    this.name = name;
+  }
+
+  Coffee.prototype.order = function () {
+    return `주문한 음료는 ${this.name}입니다.`;
+  };
+
+  const coffee = new Coffee(`아메리카노`);
+  console.log(coffee.order());
+  console.log(coffee instanceof Coffee); // true
+</script>

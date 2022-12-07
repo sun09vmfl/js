@@ -1,0 +1,60 @@
+<script>
+  /*
+     Array.prototype.forEach()
+     배열 객체에서만 사용
+     배열의 각 요소들이 반복될 때마다 함수 호출
+
+     배열.forEach(callback(처리할 현재 요소[, 인덱스[,배열]]))
+       callback : 현재 요소, 현재 요소의 인덱스, 호출한 배열.
+       반환 값 : undefined
+   */
+
+  const arr = [10, 20, 30, 40, 50];
+  arr.forEach(function (elem, idx) {
+    console.log(`현재 요소: ${elem}, 인덱스 번호: ${idx}`);
+  });
+
+  const coffee = [
+    `아메리카노`,
+    `카페라떼`,
+    `바닐라라떼`,
+    `카페모카`,
+    `에스프레소`,
+  ];
+
+  console.log(coffee[0]);
+  console.log(coffee[1]);
+  console.log(coffee[2]);
+  console.log(coffee[3]);
+  console.log(coffee[4]);
+
+  console.log(`for -------`);
+  for (let i = 0; i < coffee.length; i++) {
+    console.log(coffee[i]);
+  }
+
+  console.log(`forEach -------`);
+  // 배열.forEach(function(){});
+  coffee.forEach(function (item) {
+    console.log(item);
+  });
+
+  console.log(`forEach2-------`);
+  coffee.forEach((item) => console.log(item));
+
+  console.log(`forEach3------`);
+  const menu = (item) => console.log(item); // 얘는 밑에 있을 시 안 됨... 익명 함수일 경우 위치가 중요함. 먼저 선언되어야 함.
+  //익명함수로 작성된 경우 호출은 꼭 나중에 작성이 되어야 한다.
+  coffee.forEach(menu); //menu는 함수명
+
+  /* 선언함수 선언. 함수가 이름이 있으면 위치는 상관없음.
+  function menu(item) {
+    console.log(item);
+  }
+  */
+
+  /* 
+    함수 호이스팅 : 함수가 실행되기 전에 함수를 참조하는 것
+
+ */
+</script>

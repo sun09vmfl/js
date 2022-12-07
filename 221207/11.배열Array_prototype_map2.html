@@ -1,0 +1,47 @@
+<script>
+  const data = [
+    { id: 1, coffee: `아메리카노` },
+    { id: 2, coffee: `카페라떼` },
+    { id: 3, coffee: `바닐라라떼` },
+    { id: 4, coffee: `카페모카` },
+    { id: 5, coffee: `아이스 카페모카` },
+    { id: 6, coffee: `에스프레소` },
+  ];
+
+  data.map((item, idx) => {
+    console.log(`배열 요소: ${item}, 인덱스 번호${idx}`); //객체 자체를 반환. 요소를 반환하는 게 아님. forEach는 요소를 반환.
+  });
+
+  data.map((item, idx) => {
+    console.log(`번호:${item.id}, 이름: ${item.coffee}`);
+  });
+
+  /*
+    번호:1, 이름: 아메리카노
+    번호:2, 이름: 카페라떼
+    번호:3, 이름: 바닐라라떼
+    */
+
+  console.log(`-------------`);
+  const arr = [`문자열`, 23, function () {}, "", data];
+  // forEach, map으로 하나씩.
+  // n번째 배열 요소는 xx입니다.
+
+  arr.map((item, idx) => {
+    console.log(`${idx}번째 배열 요소는 ${item}입니다.`);
+  });
+
+  console.log(`-------`);
+
+  arr.forEach(function (item, idx) {
+    console.log(`${idx}번째 배열 요소는 ${item}입니다.`);
+  });
+
+  arr.forEach((item, idx) => {
+    console.log(`${idx + 1}번째 배열 요소는 ${item} 입니다`);
+  });
+
+  arr.map((item, idx) => {
+    console.log(`${idx + 1}번째 배열 요소는 ${item} 입니다.`);
+  });
+</script>

@@ -1,0 +1,19 @@
+<script>
+  // new 키워드와 함께하는 생성자함수();
+
+  // 생성자 정의
+  function Coffee(name) {
+    this.name = name; // this 키워드를 사용해서 새로 만들어질 객체의 속성을 지정
+  }
+
+  // 생성자를 통한 객체 생성
+  const coffee1 = new Coffee("아메리카노"); // coffee1은 Coffee의 인스턴스(생성자를 통해 생성된 객체)
+  console.log(coffee1);
+
+  // instanceof 연산자. 인스턴스 확인
+  console.log(coffee1 instanceof Coffee); // true
+
+  const obj = {};
+  // 객체 리터럴을 통해 생성된 객체는 Object의 인스턴스
+  console.log(obj instanceof Object); // true
+</script>

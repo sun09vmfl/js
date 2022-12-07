@@ -1,0 +1,27 @@
+<script>
+  // 프로토타입 체인
+
+  function Food(menu, price) {
+    this.menu = menu;
+    this.price = price;
+    // this.order = function() {}
+  }
+
+  Food.prototype.order = function () {
+    console.log(`order: ${this.menu}, ${this.price}`);
+  };
+
+  const lunch = new Food(`짬뽕`, 5000);
+  lunch.order(); // order: 짬뽕, 5000 부모인 Food 값을 상속 받아 출력됨.
+
+  console.log(Food.prototype); //Object {order: ƒ, constructor: ƒ}
+  console.log(Food.prototype, toString); //
+  console.log(Food.prototype.constructor); // ƒ Food(menu, price) {} 함수 자체를 의미
+  console.log(Food.order); // undefined. 객체 생성이 되어야지만 오더 함수를 사용할 수 있음.
+  console.log(Food.prototype.order); // ƒ () {} 프로토타입 설정이 되어 있기 때문에 함수 출력
+
+  console.log(`-------------------`);
+  console.log(Object.prototype);
+  console.log(Object.prototype.toString);
+  console.log(Object.prototype.constructor);
+</script>

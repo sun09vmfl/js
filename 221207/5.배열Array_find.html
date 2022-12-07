@@ -1,0 +1,37 @@
+<script>
+  /*
+    배열 Array_find
+    Array.prototype.find()
+    주어진 판별 함수를 만족하는 첫 번째 요소의 값 반환
+    그 요소가 없다면 undefined를 반환
+
+    배열.find(callback[, thisArg]);
+      callback : 콜백함수에서 처리할 현재 요소[, 현재 요소의 인덱스, find 함수를 호출한 배열],
+  */
+
+  const arr = [10, 20, 30, 40, 50];
+  const data = [
+    { id: 1, coffee: `아메리카노` },
+    { id: 2, coffee: `카페라떼` },
+    { id: 3, coffee: `바닐라라떼` },
+    { id: 4, coffee: `카페모카` },
+    { id: 5, coffee: `에스프레소` },
+  ];
+
+  const output1 = arr.find(function (num) {
+    return num === 20;
+  });
+  console.log(output1); // 20 배열에 20을 찾고, 첫번째로 찾은 20을 반환해줌
+  const output2 = arr.find((num) => num === 5); // 배열에 없는 값임
+  console.log(output2); // 5가 없기 때문에 undefined 반환
+
+  const output3 = data.find((num) => num.id === 3);
+  console.log(output3);
+
+  const output4 = data.find((num) => num.id === 4);
+  console.log(output4); //{id: 4, coffee: '카페모카'} 첫번째로 찾은 값만 반환
+
+  const output5 = data.find((num) => num.id !== 4);
+  console.log(output5); // {id: 1, coffee: '아메리카노'}
+  // 처음 나오는 하나의 값만 반환하기 때문에.
+</script>

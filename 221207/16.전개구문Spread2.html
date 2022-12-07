@@ -1,0 +1,34 @@
+<script>
+  const data = [
+    { id: 1, coffee: `아메리카노`, size: `tall` },
+    { id: 2, coffee: `카페라떼`, size: `tall` },
+    { id: 3, coffee: `바닐라라떼`, size: `tall` },
+    { id: 4, coffee: `카페모카`, size: `tall` },
+    { id: 5, coffee: `에스프레소`, size: `tall` },
+  ];
+
+  const data1 = data.concat({ id: 6, coffee: "아인슈패너" });
+  const data2 = [...data, { id: 7, coffee: "헤이즐럿라떼" }]; //원본이 늘어나진 않음..
+  console.log(data1);
+  console.log(data2);
+
+  const data3 = data.map((item) => {
+    if (item.id === 1) {
+      return {
+        ...item,
+        coffee: "아이스 아메리카노", //1일때 1값을 아이스 아메리카노로 변경 반환
+      };
+    } else {
+      return item;
+    }
+  });
+
+  console.log(`data3`, data3);
+
+  console.log(`--------`);
+  // 조건 ? 참 : 거짓;
+  const data4 = data.map((item) =>
+    item.id === 2 ? { ...item, coffee: "아이스 카페라떼" } : item
+  );
+  console.log(`data4`, data4);
+</script>

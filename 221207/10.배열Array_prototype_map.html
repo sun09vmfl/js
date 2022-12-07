@@ -1,0 +1,25 @@
+<script>
+  /*
+      Array.prototype.map()
+      배열 안의 요소를 콜백함수로 실행한 결과로 새로운 배열을 반환.
+      기존 배열은 수정하지 않음.
+
+      배열.map(callback(현재요소));
+        callback : 현재요소, 인덱스, 호출한 배열
+        반환값 : callback의 결과를 모은 새로운 배열
+  */
+
+  const arr1 = [10, 20, 30, 40, 50];
+  arr1.map(function (item, idx) {
+    console.log(`인덱스 번호는 ${idx}이고 요소는 ${item}입니다.`);
+  });
+
+  const arr2 = [1, 4, 9];
+  arr2.map((item, idx, arr) => {
+    console.log(item);
+    console.log(idx);
+    console.log(arr);
+    console.log(item * item);
+    console.log(`------`);
+  });
+</script>
