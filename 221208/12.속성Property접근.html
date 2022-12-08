@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>속성 Property 접근</title>
+<body>
+  <!--
+      속성 접근
+      ul.id = 'gnb'
+      a.href = '';
+      body.style = '';
+      input.type = '';
+      input.value = '';
+      img.src = '';
+
+      html 표준 모델에서
+      data-사용자정의이름
+      data-color, data-name, data-sizw . . . .
+
+      js에서는
+      .dataset; 사용자 정의 속성에 접근 가능.
+      .dataset.color, .dataset.name;
+  -->
+  <ul>
+    <li><a href ="#" data-color="orange" data-bg="#ddd">텍스트1</a></li>
+    <li><a href ="#" data-color="teal" data-size="1.2rem">텍스트2</a></li>
+    <li><a href ="#" data-color="lightskyblue" data-bg="rgba(120,10,130,.7)">텍스트3</a></li>
+    <li><a href ="#" data-color="tomato" data-bg="#f92">텍스트4</a></li>
+    <li><a href ="#" data-color="salmon" data-size="1.2rem">텍스트5</a></li>
+  </ul>
+<script>
+const ul = document.querySelector(`ul`)
+const all = document.querySelectorAll(`li > a`);
+
+ul.id = 'gnb' // ul에다가 id gnb를 준 거임
+console.log(ul.gnb) //gnb 값을 갖고 오겟단 의미
+
+all.forEach(item => {
+  item.style.textDecoration = 'none';
+  item.style.color = item.dataset.color // 위의 정의한 색깔처럼 다..깔별로만듦
+  console.log(item.dataset.color);
+
+  const bg = item.dataset.bg;
+  item.style.backgroundColor = bg;
+
+  const size = item.dataset.size;
+  item.style.fontSize = size;
+})
+
+
+
+</script>
+</body>
+</html>

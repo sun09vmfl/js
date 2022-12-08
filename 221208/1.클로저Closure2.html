@@ -1,0 +1,24 @@
+<script>
+  //Closure 2
+  function Counter(count) {
+    let getCount = count; // 지역변수. 외부에서는 이 변수에 직접 접근할 수 없기 때문에 스코프 안에 정의한 두 클로저를 이용.
+
+    return {
+      // 객체 반환
+      num1: function () {
+        //클로저. 내부로 들어가는 함수.
+        return getCount++;
+        // 5 앞에 return 없으면 undefined가 뜸. 바깥으로 내보낼 수 없어서.
+        // 증가연산자를 써줬는데 왜 6이 아니라 5일까나...? => 후의연산자여서 보인 값은 5지만, 실제값은 6임.
+        // return getCount;  6 여기서 다시 리턴 하면 6이 뜸
+      },
+      num2: function () {
+        // 클로저
+        return getCount;
+      },
+    };
+  }
+  const fn = Counter(5);
+  console.log(fn.num1());
+  console.log(fn.num2());
+</script>

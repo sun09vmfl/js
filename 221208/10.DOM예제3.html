@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM 객체 예제3</title>
+<body>
+  <h2>내일의 날씨는,</h2>
+<script>
+  // 3초 후 `온화 할 예정입니다.` 변경
+  /*
+  setTimeout(() => {
+    document.querySelector(`h2`).innerHTML = '<em>온화할</em> 예정입니다.'
+  }, 3000);
+
+*/
+
+  const weather = () => document.querySelector(`h2`).innerHTML = '<em>온화할</em> 예정입니다.';
+  setTimeout(weather, 2000)
+</script>
+</body>
+</html>

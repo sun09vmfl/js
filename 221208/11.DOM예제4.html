@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM 예제4</title>
+<body>
+  <h2>DOM연습</h2>
+  <ul class="container">
+    <li>리스트1</li>
+    <li>리스트2</li>
+  </ul>
+
+<script>
+  // 2초 후 container 뒤로 h2 이동
+    const h2 = document.querySelector(`h2`) //탐색부터 해라
+    const container = document.querySelector (`.container`); //컨테이너도 찾아라
+    setTimeout(move, 2000);
+      function move() {
+       // container.appendChild(h2)
+       container.insertAdjacentElement("afterend", h2)
+      }
+</script>
+</body>
+</html>

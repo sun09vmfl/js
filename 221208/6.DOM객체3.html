@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM 객체3 - 속성</title>
+  </head>
+
+  <body>
+    <ul id="wrapper" class="container">
+      <li id="txt1" class="txt">.setAttribute('속성','값'); 속성값 설정</li>
+      <li id="txt2" class="txt">.getAttribute('속성'); 속성값 얻음</li>
+      <li id="txt3" class="txt">.hasAttribute('속성'); 속성 존재 확인</li>
+      <li id="txt4" class="txt">.removeAttribute('속성'); 속성값 제거</li>
+    </ul>
+
+    <script>
+      const container = document.querySelector(".container");
+      const lis = document.querySelectorAll(".txt");
+
+      // 속성 값 얻음
+      console.log(container.getAttribute("id")); // id 속성을 가져옴 wrapper
+
+      // 속성과 값 설정
+      container.setAttribute("data-style", "teal");
+
+      // 속성 존재 확인 true, false
+      console.log(container.hasAttribute("data-style")); // true
+      console.log(container.hasAttribute("style")); // false
+
+      // 속성값 제거
+      lis[2].removeAttribute("class");
+      lis.forEach((item) => item.removeAttribute("id"));
+    </script>
+  </body>
+</html>

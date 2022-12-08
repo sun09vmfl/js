@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM 객체Ex1</title>
+  </head>
+
+  <body>
+    <h1>DOM 객체 Ex1</h1>
+    <ul id="gnb">
+      <li class="list"><a href="#"></a></li>
+      <li class="list"><a href="#"></a></li>
+      <li class="list"><a href="#"></a></li>
+      <li class="list"><a href="#"></a></li>
+      <li class="list"><a href="#"></a></li>
+    </ul>
+
+    <script>
+      // ul : 리스트 스타일 x
+      // li : line-height: 1.6
+      // a : 밑줄 x, 글자색, 리스트1...리스트5 출력
+      const gnb = document.querySelector("#gnb");
+      const lists = document.querySelectorAll(".list");
+      const gnbA = document.querySelectorAll("#gnb a");
+
+      gnb.style.listStyle = "none";
+      lists.forEach((li) => (li.style.lineHeight = 1.6));
+      gnbA.forEach((a, idx) => {
+        a.textContent = `리스트${idx + 1}`;
+        a.style.textDecoration = "none";
+        a.style.color = "#000";
+        a.style.fontWeight = "bold";
+      });
+    </script>
+  </body>
+</html>

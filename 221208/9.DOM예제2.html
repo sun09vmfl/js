@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM 객체Ex2</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <img alt="pic1" class="pic" />
+      <img alt="pic2" class="pic" />
+      <img alt="pic3" class="pic" />
+      <img alt="pic4" class="pic" />
+    </div>
+
+    <script>
+      // 속성 추가
+      const pics = document.querySelectorAll(".pic");
+
+      pics.forEach((pic, idx) => {
+        let ran = Math.trunc(Math.random() * 10);
+        console.log(ran);
+        const url = `https://via.placeholder.com/200/f${ran}9/000?text=img${
+          idx + 1
+        }`;
+        // pic.setAttribute('src', url);
+        pic.src = url; // html 표준 정의 속성. 프로퍼티(속성) 동기화
+      });
+    </script>
+  </body>
+</html>

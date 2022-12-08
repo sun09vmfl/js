@@ -1,0 +1,48 @@
+<script>
+  function count1() {
+    for (var i = 1; i <= 5; i++) {
+      console.log(i);
+    }
+  }
+  count1();
+
+  console.log(`비동기 함수 사용시 클로저 문제`);
+  function count2() {
+    for (var i = 1; i <= 5; i++) {
+      setTimeout(function () {
+        //얘가 클로저
+        console.log(i); // 6 * 5
+      }, 1000); //대기 뒤에 변수값을 받기 때문에 6이 다섯 번 출력
+    }
+  }
+  /*
+    1일 때, setTimeout() 함수가 실행되나 1초 기다렸다가 콘솔이 실행됨.
+    그 1초를 기다리는 동안, 1은 참이었기 때문에 바로 변수값 2가 실행 -> setTimeout() 실행
+  */
+
+  count2();
+
+  console.log(`즉시 실행함수를 이용해 해결할 수 있음.`);
+  function count3() {
+    for (var i = 1; i <= 5; i++) {
+      (function (count) {
+        setTimeout(function () {
+          //얘가 클로저
+          console.log(count);
+        }, 1000);
+      })(i); // 반복 단계마다 인자의 값을 바로 넘ㄱ 변수값을 가진 상태로 대기
+    }
+  }
+  count3();
+
+  function count4() {
+    console.log(`let을 이용한 해결`);
+    // 블록 레벨스코프이기 때문에 반복문의 각 단계가 같은 변수 i를 공유하지 않음.
+    for (let i = 1; i <= 5; i++) {
+      setTimeout(function () {
+        console.log(i); //1 2 3 4 5
+      }, 1000);
+    }
+  }
+  count4();
+</script>
