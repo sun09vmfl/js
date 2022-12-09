@@ -1,0 +1,33 @@
+<script>
+  /* 
+    https://developer.mozilla.org/ko/docs/Learn/JavaScript/Building_blocks/Events
+    이벤트란?
+    무언가 일어났다는 신호
+    시스템에서 일어나는 사건(action) 혹은 발생(occurrence)
+
+    https://developer.mozilla.org/ko/docs/Web/API/EventTarget/addEventListener
+    표준 이벤트 모델
+    eventTarget.addEventListener();
+    대상: Element, Document, Window, XMLHttpRequest . . 
+    .addEventListener(`이벤트이름`, `콜백함수event handler`)
+
+    고전 이벤트 모델
+    .onclick(function(){}), .onblur(), .onmousseenter ..
+    .on 접두어
+    .con(`click`, function(){})
+
+      인라인 이벤트 모델 
+      <a href="#" onclick="fx()">
+  */
+
+  /*
+  window.addEventListener(`click`, function () {
+    window.alert(`클릭했습니다.`);
+  });
+  */
+
+  // 대성을 지정하지 않으면 전역객체 window 바인딩
+  addEventListener(`click`, function () {
+    alert(`클릭했습니다.`);
+  });
+</script>

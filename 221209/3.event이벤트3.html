@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>이벤트2 전달</title>
+    <style>
+      body * {
+        border: 3px solid #000;
+        margin: 30px;
+        color: #fff;
+      }
+      .box1 {
+        background-color: #460c68;
+      }
+      .box2 {
+        background-color: #7f167f;
+      }
+      .box3 {
+        background-color: #cb1cd8;
+      }
+      .box4 {
+        background-color: #f56eb3;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 
+      이벤트 버블링 bubbling : 자식->부모 순으로 이벤트 전달
+      이벤트 캡처링 capturing: 부모->자식 순으로 이벤트 전달 (IE 지원 X)
+    -->
+    <div class="box3" onclick="alert(`box3`)">
+      <div class="box2" onclick="alert(`box2`)">
+        <div class="box1" onclick="alert(`box1`)">
+          <h1 onclick="alert(`클릭`)">클릭</h1>
+        </div>
+      </div>
+    </div>
+    <script></script>
+  </body>
+</html>
