@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>event7 - 이벤트 모델/ 폼</title>
+  </head>
+  <body>
+    <h1>event7 - 이벤트 모델</h1>
+    <p>
+      <label>name: <input type="text" name="txt" id="txt" placeholder="이곳에 작성하세용" /></label>
+    </p>
+    <ol>
+      <li>focus: 입력 폼에 커서가 생겼을 때</li>
+      <li>blur: 입력 폼에 커서가 사라졌을 때</li>
+      <li>keyup: 키가 떨어졌을 때</li>
+      <li>keypress: 키가 입력되었을 때. 웹브라우저에 따라 아시아 문자를 제대로 처리하지 못해 잘 사용 x</li>
+      <li>keydown: 키를 눌렀을 때.</li>
+    </ol>
+    <script>
+      const label = document.querySelector(`label`);
+      const txtBox = document.querySelector(`input[type=text`);
+
+      // txtBox.addEventListener(`focus`, () => alert(`텍스트 필드에 포커스 됨`));
+      txtBox.addEventListener(`blur`, () => alert(`텍스트 필드에서 벗어남`));
+
+      txtBox.addEventListener(`keyup`, () => (label.style.color = `tomato`));
+    </script>
+  </body>
+</html>

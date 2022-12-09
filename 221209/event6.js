@@ -23,12 +23,14 @@ event3.addEventListener(`mousemove`, () =>
 );
 event4.addEventListener(`mousedown`, () => alert(`눌렀습니다`));
 event5.addEventListener(`mouseup`, () => alert(`뗐습니다.`));
+//
 
 event6.addEventListener(
   `mouseover`,
   () => (event6.style.background = `orange`)
 );
 event7.addEventListener(`mouseout`, () => (event7.style.background = `coral`));
+//
 
 event8.addEventListener(
   `mouseenter`,
