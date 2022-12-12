@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+#simpleSlide {
+  width: 100%;
+  height: 100vh;
+  background-color: #ddd;
+  position: relative;
+}
+#simpleSlide #slideWrapper {
+}
+#simpleSlide #slideWrapper .slideItem {
+  text-indent: -9999px;
+  width: 100%;
+  height: 100%;
+  background: no-repeat 50% / cover;
+  transition: 0.4s;
+  position: absolute; /*겹쳐져 있게 해야 해서 */
+  opacity: 0;
+}
+#simpleSlide #slideWrapper .slideItem #img1 {
+  background-image: url(https://via.placeholder.com/1200x600/5800FF/fff?text=img1);
+}
+#simpleSlide #slideWrapper .slideItem #img2 {
+  background-image: url(https://via.placeholder.com/1200x600/5800FF/fff?text=img1);
+}
+
+#simpleSlide #slideWrapper .slideItem #img3 {
+  background-image: url(https://via.placeholder.com/1200x600/5800FF/fff?text=img1);
+}
+
+#simpleSlide #slideWrapper .slideItem #img4 {
+  background-image: url(https://via.placeholder.com/1200x600/5800FF/fff?text=img1);
+}
+
+#simpleSlide #slideWrapper .slideItem.active {
+  opacity: 1;
+}
+
+#simpleSlide #slideBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#simpleSlide #slideBtn li {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1;
+}
