@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>eventEx6</title>
+    <link rel="stylesheet" href="../common/minireset.min.css" />
+    <style>
+      main {
+        height: 300vh;
+        background-color: #ddd;
+        font-weight: bold;
+        font-size: 3em;
+        text-align: right;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 240px;
+        height: 100%;
+        /* background-color: orange; */
+        transition: 0.4s;
+        transform: translateX(-200px);
+      }
+
+      nav #gnb {
+        background-color: #5f9df7;
+        width: 200px;
+        height: 100%;
+        text-align: center;
+        font-size: 1.4em;
+        line-height: 1.6;
+        padding-top: 100px;
+      }
+
+      nav .menu_btn {
+        width: 40px;
+        height: 160px;
+        background-color: #5f9df7;
+        position: absolute;
+        top: 0;
+        left: 200px;
+      }
+
+      nav .menu_btn span {
+        display: block;
+        transform: rotate(90deg);
+        transform-origin: 80% left;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>contents</main>
+
+    <nav>
+      <ul id="gnb">
+        <li><a href="#">menu1</a></li>
+        <li><a href="#">menu2</a></li>
+        <li><a href="#">menu3</a></li>
+        <li><a href="#">menu4</a></li>
+      </ul>
+      <a href="#" id="close" class="menu_btn"><span>close</span></a>
+      <a href="#" id="open" class="menu_btn"><span>open</span></a>
+    </nav>
+
+    <script>
+      const nav = document.querySelector('nav');
+      const openBtn = document.querySelector('#open');
+      const closeBtn = document.querySelector('#close');
+
+      openBtn.addEventListener('click', event => {
+        event.preventDefault();
+        nav.style.transform = 'translateX(0)';
+        openBtn.style.display = 'none';
+      });
+      closeBtn.addEventListener('click', e => {
+        e.preventDefault();
+        nav.style.transform = 'translateX(-200px)';
+        openBtn.style.display = 'block';
+      });
+    </script>
+  </body>
+</html>

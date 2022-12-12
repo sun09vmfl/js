@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+main {
+  height: 300vh;
+  background-color: #ddd;
+  font-weight: bold;
+  font-size: 3em;
+}
+
+nav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 56px;
+  height: 100%;
+  background-color: #fed049;
+  transition: 0.4s;
+}
+
+/* 메뉴 아이콘 */
+nav #toggle_btn {
+  position: absolute; /*따라다녀서..*/
+  top: 20px;
+  left: 10px;
+  width: 36px;
+  height: 28px;
+  /* background-color: tomato; */
+}
+nav #toggle_btn span {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-color: #fff;
+  left: 0;
+  transition: 0.2s;
+  text-indent: -9999px;
+}
+nav #toggle_btn .bar1 {
+  top: 0;
+  transform-origin: top left;
+}
+nav #toggle_btn .bar2 {
+  top: 50%;
+  transform: translateY(-50%);
+}
+nav #toggle_btn .bar3 {
+  bottom: 0;
+  transform-origin: bottom left;
+}
+
+/* 마우스를 올렸을 때 */
+nav #toggle_btn:hover .bar1 {
+  top: -1px;
+}
+nav #toggle_btn:hover .bar3 {
+  bottom: -1px;
+}
+
+/* 마우스를 클릭했을 때 */
+nav.on {
+  width: 260px;
+}
+nav.on #toggle_btn .bar1 {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+nav.on #toggle_btn .bar2 {
+  display: none;
+}
+nav.on #toggle_btn .bar3 {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+nav #gnb {
+  margin: 100px 0 0 60px;
+}
+
+nav #gnb > li {
+  margin-bottom: 40px;
+}
