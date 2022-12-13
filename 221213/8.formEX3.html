@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>formEX3</title>
+    <style>
+      body {
+        height: 100vh;
+        color: #fff;
+        background-image: linear-gradient(45deg, rgba(2, 0, 36, 1) 0%, #1c315e 59%, #472183 100%);
+      }
+      #shopping {
+        border-bottom: 1px solid #fff;
+
+        padding-bottom: 20px;
+      }
+
+      #saveList li {
+        margin: 20px 0;
+      }
+
+      #saveList li span {
+        background-color: #fff;
+        font-weight: bold;
+        color: #1c315e;
+        padding: 5px 10px;
+        margin-left: 50px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>쇼핑리스트</h1>
+      <form id="shopping">
+        <label> 제품명 : <input type="text" name="productName" id="productName" /> </label>
+        <button type="submit">저장</button>
+        <button type="reset">취소</button>
+      </form>
+      <ol id="saveList"></ol>
+    </div>
+    <script src="https://app.embed.im/snow.js"></script>
+    <script>
+      const productName = document.querySelector(`#productName`);
+      const save = document.querySelector(`[type=submit]`);
+      const lists = document.querySelector(`#saveList`);
+
+      save.addEventListener(`click`, event => {
+        // 새로고침 제거
+        event.preventDefault();
+        // 리스트 추가
+        if (productName.value) {
+          lists.innerHTML += `<li><strong>${productName.value}</strong><span>삭제</span></li>`;
+        } else {
+          alert(`내용을 입력하세요`);
+        }
+
+        // 텍스트 필드에 빈 문자열로 대입 (글씨 쓰고 보낸 후에 없애는 거)
+        productName.value = '';
+
+        // 리스트 제거 (span이 존나게 많으니까 all 임)
+        const delBtn = document.querySelectorAll(`#saveList li span`);
+        delBtn.forEach(del => {
+          del.addEventListener(`click`, removeItme);
+        });
+      });
+
+      function removeItme(e) {
+        //console.log(`del`);
+        const item = e.target.parentNode; // 내가 클릭한 요소의 상위 노드를 탐색
+        item.remove();
+      }
+    </script>
+  </body>
+</html>

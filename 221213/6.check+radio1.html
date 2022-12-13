@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>formEx2</title>
+  </head>
+
+  <body>
+    <h3>주문할 커피를 선택해 주세요</h3>
+    <form>
+      <input type="radio" name="coffee" value="아메리카노" /><span>아메리카노</span> <input type="radio" name="coffee" value="카페라떼" /><span>카페라떼</span>
+      <input type="radio" name="coffee" value="카페모카" /><span>카페모카</span> <input type="radio" name="coffee" value="바닐라라떼" /><span>바닐라라떼</span>
+      <input type="radio" name="coffee" value="에스프레소" /><span>에스프레소</span>
+      <h2 class="radioTxt"></h2>
+
+      <select>
+        <option>--선택--</option>
+        <option value="라떼">라떼</option>
+        <option value="바닐라라떼">바닐라라떼</option>
+        <option value="모카">모카</option>
+        <option value="아메리카노">아메리카노</option>
+      </select>
+      <h2 class="selectTxt"></h2>
+    </form>
+
+    <script>
+      const radioTxt = document.querySelector('.radioTxt');
+      const selectTxt = document.querySelector('.selectTxt');
+      const radios = document.querySelectorAll('[name=coffee]');
+      const select = document.querySelector('select');
+
+      radios.forEach(radio => {
+        radio.addEventListener('change', e => {
+          const target = e.target;
+          target.checked ? (radioTxt.textContent = `주문한 커피는 ${target.value}입니다`) : false;
+        });
+      });
+
+      /* 
+      .options.selectedIndex; select option의 인덱스 번호
+      .options; option 속성. 유사배열로 반환
+    */
+      select.addEventListener('change', e => {
+        const opt = e.target.options;
+        const idx = e.target.options.selectedIndex;
+
+        selectTxt.textContent = opt[idx].value;
+      });
+    </script>
+  </body>
+</html>

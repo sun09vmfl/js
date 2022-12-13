@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>form의 submit</title>
+    <style>
+      form {
+        padding: 20px;
+        width: 260px;
+        border: 3px solid #000;
+      }
+
+      h2 {
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>id: abc / pw: 1234</h3>
+    <form id="login">
+      <p>아이디: <input type="text" name="userId" id="userId" /></p>
+      <p>비밀번호: <input type="password" name="userPw" id="userPw" /></p>
+      <button type="submit">로그인</button>
+      <button type="submit">취소</button>
+    </form>
+    <h2></h2>
+    <script>
+      const forms = document.querySelector(`#login`);
+      const h2 = document.querySelector(`h2`);
+
+      // forms.style.border = `3px solid #000`;
+
+      /* 
+      폼 전용 전송 메서드. 정보를 검증 후 서버로 전송.
+      //버튼에 적용하는 게 아니라 form 요소에 적용.
+      .submit(); / click();
+      .onsubmit; / onclick = fn(){}
+      (`submit`) / addEventListener(`click`)
+      */
+
+      forms.addEventListener(`submit`, e => {
+        e.preventDefault();
+
+        const userId = forms.userId.value;
+        const userPw = forms.userPw.value;
+        console.log(userId, userPw);
+
+        if (userId === `abc` && userPw === `1234`) {
+          h2.textContent = `로그인 되었습니다`;
+        } else {
+          h2.textContent = `아이디나 비밀번호가 틀렸습니다.`;
+        }
+
+        // 기존 아이디와 비밀번호의 흔적이 남지 않게 처리.
+        forms.userId.value = ``;
+        forms.userPw.value = ``;
+      });
+    </script>
+  </body>
+</html>

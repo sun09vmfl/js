@@ -2,11 +2,11 @@
 
 #simpleSlide {
   width: 100%;
-  height: 100vh;
-  background-color: #ddd;
+  height: 60vh;
   position: relative;
 }
 #simpleSlide #slideWrapper {
+  height: 100%;
 }
 #simpleSlide #slideWrapper .slideItem {
   text-indent: -9999px;
@@ -14,22 +14,20 @@
   height: 100%;
   background: no-repeat 50% / cover;
   transition: 0.4s;
-  position: absolute; /*겹쳐져 있게 해야 해서 */
+  position: absolute;
   opacity: 0;
 }
-#simpleSlide #slideWrapper .slideItem #img1 {
-  background-image: url(https://via.placeholder.com/1200x600/5800FF/fff?text=img1);
+#simpleSlide #slideWrapper #img1 {
+  background-image: url(https://via.placeholder.com/1200x600/277BC0/fff?text=img1);
 }
-#simpleSlide #slideWrapper .slideItem #img2 {
-  background-image: url(https://via.placeholder.com/1200x600/5800FF/fff?text=img1);
+#simpleSlide #slideWrapper #img2 {
+  background-image: url(https://via.placeholder.com/1200x600/A10035/fff?text=img2);
 }
-
-#simpleSlide #slideWrapper .slideItem #img3 {
-  background-image: url(https://via.placeholder.com/1200x600/5800FF/fff?text=img1);
+#simpleSlide #slideWrapper #img3 {
+  background-image: url(https://via.placeholder.com/1200x600/3AB0FF/fff?text=img3);
 }
-
-#simpleSlide #slideWrapper .slideItem #img4 {
-  background-image: url(https://via.placeholder.com/1200x600/5800FF/fff?text=img1);
+#simpleSlide #slideWrapper #img4 {
+  background-image: url(https://via.placeholder.com/1200x600/5800FF/fff?text=img4);
 }
 
 #simpleSlide #slideWrapper .slideItem.active {
@@ -44,13 +42,15 @@
   justify-content: space-between;
   width: 100%;
 }
-
 #simpleSlide #slideBtn li {
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
-  padding: 10px 20px;
-  font-size: 2em;
+  padding: 5px 10px 10px;
+  font-size: 1.5em;
   font-weight: bold;
   line-height: 1;
+}
+#simpleSlide #slideBtn li:hover {
+  background-color: rgba(0, 0, 0, 1);
 }

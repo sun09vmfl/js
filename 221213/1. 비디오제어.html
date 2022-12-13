@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>js 로 비디오 제어</title>
+    <style>
+      .wrapper {
+        display: flex;
+      }
+      .wrapper article {
+        width: 30vw;
+        height: 30vw;
+        margin: 0 5px;
+        overflow: hidden;
+      }
+
+      .wrapper article .video_wrapper {
+        filter: sepia(100%);
+        transition: 0.4s;
+      }
+      .wrapper article .video_wrapper:hover {
+        filter: none;
+        transform: scale(1.2);
+      }
+      .wrapper article video {
+        width: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <article>
+        <div class="video_wrapper">
+          <video src="./images/vid.mp4" loop muted preload></video>
+        </div>
+      </article>
+      <article>
+        <div class="video_wrapper">
+          <video src="./images/vid.mp4" loop muted preload></video>
+        </div>
+      </article>
+      <article>
+        <div class="video_wrapper">
+          <video src="./images/vid.mp4" loop muted preload></video>
+        </div>
+      </article>
+    </div>
+    <script>
+      document.addEventListener(`DOMContentLoaded`, () => {
+        const articles = document.querySelectorAll(`article`);
+
+        const videoPause = e => {
+          const target = e.currentTarget.querySelector(`video`);
+          target.pause(); //일시 멈춤
+        };
+
+        articles.forEach(article => {
+          article.addEventListener(`mouseenter`, e => {
+            console.log(e.target); // article
+
+            e.target.querySelector(`video`).play();
+            //마우스를 위에 올렸을 때
+            // e.target.play();
+          });
+          article.addEventListener(`mouseleave`, videoPause);
+          //마우스가 벗어났을 때
+        });
+      });
+    </script>
+  </body>
+</html>

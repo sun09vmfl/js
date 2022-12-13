@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>마우스좌표EX1</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .container {
+        width: 100%;
+        height: 70vh;
+        background-color: rgb(158, 224, 221);
+        overflow: hidden;
+      }
+      .circle {
+        font-size: 6em;
+        position: absolute;
+        cursor: pointer;
+        top: 10px;
+        left: 10px;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="circle">🏀</div>
+    </div>
+    <script>
+      // 마우스를 누르면(mousedown) 움직이고(mousemove)
+      // 마우스를 눌렀던 것을 뗐을 때 (mouseup) 멈춤, 리스너 제거
+      //mousdown <-> mouseup
+      const basket = document.querySelector(`.circle`);
+      const onMove = e => {
+        // basket.style.left = `${e.clientX - 60}px`;
+        // basket.style.top = `${e.clientY - 55}px`;
+        // 잘되고 있는지 아닌지 확인하려면 console.log(e.clientX) / console.log(e.clientY)
+        basket.style.transform = `translate(${e.clientX - 60}px, ${e.clientY - 55}px`;
+      };
+      addEventListener(`mousedown`, () => {
+        addEventListener(`mousemove`, onMove);
+        addEventListener(`mouseup`, () => {
+          removeEventListener(`mousemove`, onMove);
+        });
+      });
+    </script>
+  </body>
+</html>

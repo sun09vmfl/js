@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>버튼 성격</title>
+  </head>
+  <body>
+    <form name="container">
+      <input type="text" />
+      <button type="submit">전송</button>
+      <p></p>
+    </form>
+    <script>
+      // const form = document.forms[0];
+      const form = document.forms.container;
+      const p = document.querySelector(`p`);
+      const input = document.querySelector(`input[type=text]`);
+      const button = document.querySelector(`button`);
+
+      button.addEventListener(`click`, e => {
+        e.preventDefault(); //요소가 가지고 있는 기본 성격 제거. (새로고침 되는 것 제거했음)
+        // p.textContent = input.value;
+        p.textContent = text.value; // 텍스트 필드에 입력된 값을 가져와 p에 대입
+      });
+    </script>
+  </body>
+</html>
