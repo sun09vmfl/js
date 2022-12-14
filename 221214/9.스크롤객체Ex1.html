@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>window객체 예제1</title>
+    <style>
+      .box {
+        height: 300vh;
+      }
+      .btn {
+        position: fixed;
+        right: 30px;
+        bottom: 30px;
+        font-size: 3em;
+        transition: 0.4s;
+        animation: eagle infinite 4s;
+        text-decoration: none;
+        opacity: 0;
+      }
+
+      @keyframes eagle {
+        0% {
+          transform: translateY(0) rotate(-10deg);
+        }
+        50% {
+          transform: translateY(-15px) rotate(10deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h1>top</h1>
+    </div>
+    <a href="#" id="go_to" class="btn">🦅</a>
+    <script>
+      const goTo = document.querySelector(`#go_to`);
+
+      goTo.addEventListener(`click`, e => {
+        e.preventDefault();
+        scrollTo({
+          top: 0,
+          behavior: `smooth`,
+        });
+      });
+
+      addEventListener(`scroll`, () => {
+        let ht = document.documentElement.scrollTop;
+        // ht > 300 ? (goTo.style.opacity = 1) : (goTo.style.opacity = 0);
+        scrollY > 300 ? (goTo.style.opacity = 1) : (goTo.style.opacity = 0);
+      });
+    </script>
+  </body>
+</html>

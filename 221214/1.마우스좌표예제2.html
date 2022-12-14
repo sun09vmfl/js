@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>마우스좌표예제2</title>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .container {
+        height: 100vh;
+        overflow: hidden;
+        background: url(./images/bg2.png) no-repeat 50% / 45%, linear-gradient(#00394f, #00455f);
+        position: relative;
+      }
+
+      img {
+        position: absolute;
+      }
+
+      .img1 {
+        top: 10px;
+        left: 10px;
+      }
+
+      .img2 {
+        top: 10px;
+        right: 10px;
+      }
+
+      .img3 {
+        bottom: 10px;
+        right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="./images/quinoa (1).png" alt="img1" class="img1" />
+      <img src="./images/speculoos-left (1).png" alt="img2" class="img2" />
+      <img src="./images/speculoos-right (1).png" alt="img3" class="img3" />
+    </div>
+
+    <script>
+      const img1 = document.querySelector(`.img1`);
+      const img2 = document.querySelector(`.img2`);
+      const img3 = document.querySelector(`.img3`);
+
+      addEventListener(`mousemove`, e => {
+        let x = e.clientX;
+        let y = e.clientY;
+        console.log(x, y);
+        img1.style.transform = `translate(${x / 60}px, ${y / 50}px)`;
+        img2.style.transform = `translate(${x / -50}px, ${y / 60}px)`;
+        img3.style.transform = `translate(${x / 50}px, ${y / -55}px)`;
+      });
+    </script>
+  </body>
+</html>

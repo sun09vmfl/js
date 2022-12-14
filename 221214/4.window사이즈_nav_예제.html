@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>window 사이즈 - nav</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-size: bold;
+      }
+
+      nav {
+        background-color: maroon;
+        height: 80px;
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: end;
+      }
+      nav ul li {
+        line-height: 80px;
+        padding: 10px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#">home</a></li>
+        <li><a href="#">about</a></li>
+        <li><a href="#">product</a></li>
+        <li><a href="#">service</a></li>
+        <li><a href="#">contact</a></li>
+      </ul>
+      <div class="logo">로고</div>
+      <a href="#" id="toggle_btn">
+        <span class="bar1">bar1</span>
+        <span class="bar2">bar2</span>
+        <span class="bar3">bar3</span>
+      </a>
+    </nav>
+    <div class="main">main</div>
+  </body>
+</html>
