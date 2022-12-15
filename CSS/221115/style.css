@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* 기본(모바일) */
+html {
+  font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue","Apple SD Gothic Neo",Arial,sans-serif;
+  font-size: 24px; font-weight:bold;
+  color:#fff;
+  text-transform: uppercase;
+  background: fixed url(./images/mt2.jpg) no-repeat 50% / cover;
+}
+nav .gnb {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  /* display: none; */
+}
+nav a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  /* padding-left:10px; */
+  text-indent: 10px;
+  border-bottom:1px solid #fff;
+  height: 50px;
+
+  display: flex; align-items: center;
+}
+nav .mobile_btn {
+  background-color: rgba(49, 198, 212,.7);
+  position: relative;
+}
+nav .mobile_btn::after {
+  content: "";
+  background: url(./images/ellipsis.svg) no-repeat 50% / contain;
+  position: absolute;
+  right: 10px; top:50%;
+  transform: translateY(-50%);
+  width:30px; height:30px;
+}

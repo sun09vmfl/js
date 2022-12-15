@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>transition 축약</title>
+    <style>
+       .btn {
+        text-decoration: none; color:inherit; border:3px solid #000; text-align: center;
+        font-weight: bold; font-size: 1.2em; padding: 6px 20px; display: block; width: 100px;}
+
+        .btn:hover {
+            background-color: #000; color:#fff;}
+
+        .item {
+            background-color: salmon; margin: 10px 0; width: 50px; height: 100px;
+            /*
+            transition-property: all;
+            transition-duration: 1s;
+            transition-delay: 0.1s;
+            transition-timing-function: linear; */
+        
+            /* 축약형 : 값의 순서에 상관없이 작성 가능. 첫번째 숫자는 시간, 두번째 숫자는 대기시간. */
+            transition: all 1s 1s linear;
+            transition: 1s linear;} /* 숫자가 하나만 있는 경우 진행 시간 */
+
+                /* .btn:hover ~ .bar */
+        .btn:hover + .item { /* 인접 형제 선택자 (가까운 애 하나만) */
+            width: 70vw;
+            background-color: #497174;
+            color:#fff;
+            }
+
+
+
+   
+
+</style>
+</head>
+<body>
+    <h1>transition 축약</h1>
+    <p>버튼 위에 마우스를 올리면 첫 번째 박스의 크기, 색상이 변경</p>
+    <a href="#" class="btn">이벤트</a>
+    <div class="item bar">움직인다</div>
+    <div class="item box">고정 박스</div>
+</body>
+</html>

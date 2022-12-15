@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>table style</title>
+    <style>
+
+    table { /*각각 테이블을 한 묶음으로 여백 주기*/
+        margin: 50px;
+        font-weight: bold;
+        font-size: 30px;
+        text-align: center;
+    }
+        table > tbody> tr > td { /*자식선택자는 딱 거기에 있는 것만 오로지 한개만 할 때만!*/
+            border: 3px solid #000;
+            width: 100px; height: 100px;
+        }
+
+        table.box1 { /*종속선택자 띄어쓰기x*/
+            /*컨텐츠가 없는 경우 셀 처리 방법*/
+            empty-cells: show; /*기본 값. 셀 남김*/
+        }
+
+        table.box2 {
+            empty-cells: hide; /*셀을 아싸리 숨김*/
+        }
+
+        /* table.box2 + table td 인접형제 선택자로 
+        .box 뒤에 나오는 단 하나의 형제 관계의 table의 하위 td에 적용*/
+
+        table.box2 ~ table td { 
+            /* 일반 형제: .box2 뒤에 나오는 모든 형제 관계의 table의 td를 다 맥여
+            테이블 박스 2번 이후에 나오는 테이블의 td는 모두 다 컬러를 먹여라*/
+            border-color : #00abb3;
+        }
+
+        table.box3 {
+            border-spacing: 50px; /* table 요소에만 사용하는 특성으로 셀과 셀 사이의 간격 조절*/
+            border-spacing: 20px 10px /* x축 y축*/;
+        }
+
+        table.box4 {
+            border-spacing: 0; /*아주 딱 붙게*/
+            border-collapse: separate; /*기본 값. 겹치는 셀 테두리 값 그대로 둠*/
+        }
+
+        table.box5 {
+            border-collapse: collapse; /*겹치는 셀 테두리 값 제어*/
+        }
+    </style>
+</head>
+<body>
+    <h1>table style</h1>
+    <table class="box1">
+        <tbody>       
+            <tr>
+            <td>1</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </tbody>
+ 
+    </table>
+    <table class="box2">
+        <tbody>       
+            <tr>
+            <td>1</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </tbody>
+    </table>
+    <table class="box3">
+        <tbody>       
+            <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </tbody>
+    </table>
+    <table class="box4">
+        <tbody>       
+            <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </tbody>
+    </table>
+    <table class="box5">
+        <tbody>       
+            <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </tbody>
+    </table>
+</body>
+</html>

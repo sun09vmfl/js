@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>애니메이션 예제</title>
+    <style>
+        body {
+            background-color: #000;
+            color:#fff;
+            text-align: center;
+            font-size: 15em;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .txt_wrapper span:hover {
+            animation: neon infinite 0.2s;
+        }
+
+        @keyframes neon {
+            0% { text-shadow: 5px 5px rgb(248, 78, 225), -5px -5px rgb(213, 245, 70);}
+            25% {text-shadow: -5px -5px rgb(213, 245, 70), 5px 6px rgb(248, 78, 225);}
+            50% {text-shadow: -6px 4px rgb(213, 245, 70),5px -6px rgb(248, 78, 225) ; }
+            75% {text-shadow: 5px -5px rgb(39, 17, 240), -5px -5px rgb(15, 231, 62);}
+            100% {text-shadow: -5p 4px rgb(248, 78, 225), -5px 6px rgb(213, 245, 70)}
+        }
+    </style>
+</head>
+<body>
+    <div class="txt_wrapper">
+        <span>C</span>
+        <span>S</span>
+        <span>S</span>
+        <span>3</span>
+    </div>
+</body>
+</html>

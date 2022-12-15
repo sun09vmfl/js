@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>responsive image</title>
+    <style>
+        P { border:10px solid orangered; width: 90% ; background-color: skyblue; }
+        img { vertical-align: bottom;}
+        .img1 { width: 100%;
+                }
+        .img2 { max-width: 100%; /*원본 크기 이상으로 커지지 않음. 최대 크기가 이미지의 원래 크기*/ }
+        .img3 {
+            min-width: 100%; /*원본 크기 이하로 작아지지 않음. 최소 크기가 이미지의 원래 크기*/
+        }
+    </style>
+</head>
+<body>
+    <h1>가변 이미지</h1>
+    <h2>원본 크기</h2>
+    <p><img src="./images/img1.JPG" alt="img1"></p>
+    <h2>width:100%</h2>
+    <p><img src="./images/img1.JPG" alt="img1" class="img1"></p>
+    <h2>max-width:100%</h2>
+    <p><img src="./images/img1.JPG" alt="img2" class="img2"></p>
+    <h2>min-width:100%</h2>
+    <p><img src="./images/img1.JPG" alt="img2" class="img3"></p>
+</body>
+</html>

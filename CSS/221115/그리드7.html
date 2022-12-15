@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>그리드7</title>
+    <style>
+        .box { /* grid-container */
+        width: 90%; margin: 50px auto; border:6px solid #542e71; height: 60vh;
+        display: grid; gap: .5vw;
+        grid-template-columns: 100px minmax(50px, 150px) 10vw 15% ; 
+        grid-auto-rows: 60px;}
+
+        .box .item { background-color: olivedrab; font-weight: bold; font-size: 1.3em;}
+
+        .box1 {
+            /* row 기준 정렬 */
+            justify-content: start; /* 기본 값. 그리드라인 시작 */
+            justify-content: end; 
+            justify-content: center;
+            justify-content: space-around; /* 여백 포함 동일한 간격으로 정렬 */
+            justify-content: space-between; /* 양끝에 붙어서 정렬 */
+            justify-content: space-evenly; /* 모든 여백이 동일하게 */
+        }
+
+        .box2 {
+            /* col 기준 정렬 */
+            align-content: start; /* 기본 값 */
+            align-content: end;
+            align-content: center;
+            align-content: space-around;
+            align-content: space-between;
+            align-content: space-evenly;
+        }
+
+        .box3 {
+            /* justify-content: center; align-content: center; */
+            place-content: center center; /* align-content, justify-content */
+            place-content: center space-between;
+        }
+        .box3 .item {
+            display: grid;
+            place-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>그리드 기본 7</h1>
+    <h2>그리드 아이템 정렬 : justify-content, align-content </h2>
+    <div class="box box1">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item5</div>
+        <div class="item">item6</div>
+        <div class="item">item7</div>
+        <div class="item">item8</div>
+        <div class="item">item9</div>
+        <div class="item">item10</div>
+        <div class="item">item11</div>
+        <div class="item">item12</div>
+        <div class="item">item13</div>
+        <div class="item">item14</div>
+        <div class="item">item15</div>
+        <div class="item">item16</div>
+        <div class="item">item17</div>
+        <div class="item">item18</div>
+    </div>
+    <div class="box box2">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item5</div>
+        <div class="item">item6</div>
+        <div class="item">item7</div>
+        <div class="item">item8</div>
+        <div class="item">item9</div>
+        <div class="item">item10</div>
+        <div class="item">item11</div>
+        <div class="item">item12</div>
+        <div class="item">item13</div>
+        <div class="item">item14</div>
+        <div class="item">item15</div>
+        <div class="item">item16</div>
+        <div class="item">item17</div>
+        <div class="item">item18</div>
+    </div>
+    <div class="box box3">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item5</div>
+        <div class="item">item6</div>
+        <div class="item">item7</div>
+        <div class="item">item8</div>
+        <div class="item">item9</div>
+        <div class="item">item10</div>
+        <div class="item">item11</div>
+        <div class="item">item12</div>
+        <div class="item">item13</div>
+        <div class="item">item14</div>
+        <div class="item">item15</div>
+        <div class="item">item16</div>
+        <div class="item">item17</div>
+        <div class="item">item18</div>
+    </div>
+</body>
+</html>

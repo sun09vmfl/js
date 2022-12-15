@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <title>trasnform:rotate() 회전</title>
+  <style>
+    .box {
+      border:6px solid #000;
+      margin:100px auto;
+      width:252px; height: 252px;
+    }
+    img { 
+      width:250px; border:1px solid red; 
+      transition: .7s;
+    }
+    .box1:hover img { transform: rotateX(45deg); }/* x,y축의 정확한 값을 눈으로 확인하기 위해서는 원근감 특성과 함께 작성 */
+    .box2:hover img { transform: rotateY(-45deg); }/* y축을 기준으로 회전 */
+    .box3:hover img { transform: rotate(45deg); }
+    .box4:hover img { transform: rotate(-720deg); }/* 반시계 방향 */
+  </style>
+</head>
+<body>
+  <h1>trasnform:rotate() 회전</h1>
+  <div class="box box1"><img src="./images/wednesday.png" alt="img1"></div>
+  <div class="box box2"><img src="./images/code.png" alt="img2"></div>
+  <div class="box box3"><img src="./images/ps_250.jpg" alt="img3"></div>
+  <div class="box box4"><img src="./images/wednesday.png" alt="img4"></div>
+</body>
+</html>

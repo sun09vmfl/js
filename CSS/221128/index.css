@@ -1,0 +1,406 @@
+@charset "utf-8";
+
+:root {
+  --border:1px solid #000;
+  --font: "Pretendard", -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
+}
+
+/* 스크롤바 */
+::-webkit-scrollbar { width:5px; }
+::-webkit-scrollbar-track { background-color: #0002A1; }
+::-webkit-scrollbar-thumb { background-color: #F49D1A; border-radius: 10px;}
+
+html {
+  font-family: var(--font);
+  line-height: 1.5;
+  font-size: 17px;
+  scroll-behavior: smooth;
+  text-transform: capitalize;
+}
+
+a {
+  display: block;
+  color:inherit;
+  text-decoration: none;
+}
+img {
+  vertical-align: top;
+}
+
+/******* goUp *******/
+.goUp {
+  width:48px; height:48px;
+  background-color: rgba(0,0,0,.8);
+  position: fixed;
+  right:30px; bottom:40px;
+  transition: .3s;
+}
+.goUp svg path {
+  fill: #fff; 
+}
+.goUp:hover {
+  background-color: rgba(0,0,0,1);
+  bottom:42px;
+}
+.goUp:hover svg path {
+  stroke: orange;
+  stroke-width: 1;
+}
+
+/******* navigation *******/
+nav {/* flex-container */
+  text-transform: uppercase;
+  /* background-color: orange; */
+  border-bottom: var(--border);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  position: fixed;
+  width:100%;
+}
+nav h1 {/* flex-item */
+  margin-right: auto;/* 플렉스 아이템 개별 정렬 */
+  margin-left: 30px;
+  width: 100px;
+}
+
+nav #gnb {/* flex-item / flex-container*/
+  display: flex;
+}
+nav #gnb > li {
+  position: relative;/* 소메뉴 포지션 기준 */
+  z-index: 999;
+}
+/* 각 각의 대메뉴 제목 */
+nav #gnb > li > a {
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 0 20px;
+  height: 60px;
+  line-height: 60px;
+  transition: .3s;
+}
+nav #gnb > li > a:hover {
+  background-color: #000;
+  color: #fff;
+}
+/* 소메뉴 */
+nav #gnb .sub_menu {
+  /* display: none; */
+  background-color: rgba(112, 104, 99, 0.6);
+  box-shadow:
+    0px 1.9px 2.2px rgba(0, 0, 0, 0.02),
+    0px 4.5px 5.3px rgba(0, 0, 0, 0.028),
+    0px 8.4px 10px rgba(0, 0, 0, 0.035),
+    0px 15px 17.9px rgba(0, 0, 0, 0.042),
+    0px 28px 33.4px rgba(0, 0, 0, 0.05),
+    0px 67px 80px rgba(0, 0, 0, 0.07);
+  transition: .3s;
+
+  width:160px;
+  position: absolute;
+  left:0; top:60px;
+  z-index: 99;
+
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;/* 마우스 이벤트 대상 없음. 마우스 커서의 기능 x */
+}
+nav #gnb > li:hover .sub_menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all; /* 마우스 포인트 이벤트 전부  */
+}
+
+nav #gnb .sub_menu a {
+  font-weight: 600;
+  padding: 10px 20px;
+  transition: .3s;
+}
+nav #gnb .sub_menu a:hover {
+  padding: 10px 0 10px 28px;
+  background-color: #000;
+  color:#fff;
+}
+
+nav #registry {/* flex-item / flex-container */
+  display: flex;
+  margin-right: 20px;
+}
+nav #registry a {
+  margin: 0 10px;
+  font-size: .85rem;
+}
+
+nav #registry a:hover {
+  color: orange;}
+
+/******* header : carousel *******/
+header {
+  background: url(./images/img-bg.jpg) no-repeat 50% / cover;
+  height: 100vh;
+  text-indent: -99999px;
+}
+
+/******* main *******/
+main .title {
+  text-align: center;
+  font-size: 3.1rem;
+  font-weight: 700;
+  margin-top: 100px;
+}
+main .title::after {
+  content:"";
+  width: 70px; height: 2px;
+  background-color: #000;
+  display: block;
+  margin: 50px auto;
+}
+
+
+/******* main_intro *******/
+#main_intro {
+  width: 90vw;
+  margin: 100px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 22.5vw;
+}
+
+#main_intro .main_intro_inner {
+  padding: 2.083vw;
+}
+#main_intro .border_right {
+  border-right: var(--border);
+}
+#main_intro .border_bottom {
+  border-bottom: var(--border);
+}
+
+#main_intro h2 {
+  font-size:2rem;
+  font-weight: 700;
+  margin: 1.563vw 0;
+
+}
+/******* main_grid *******/
+#main_grid {
+  display: grid;
+  /* grid-template-columns: repeat(4, 1fr);  4열*/
+  grid-template-columns: 2fr 1fr 1fr; /* 3열 */
+  grid-auto-rows: 23vw;
+}
+#main_grid .main_grid_bg {
+background: no-repeat 50% / cover;
+overflow:hidden;
+}
+
+#main_grid .bg1 {
+  background-image:url(./images/1.jpg) ;
+  /* grid-column: 1 / 3; */
+  grid-row: 1/3; /*밑으로*/
+}
+
+#main_grid .bg2 {
+  background-image:url(./images/2.jpg) ;
+}
+#main_grid .bg3 {
+  background-image:url(./images/3.jpg) ;
+}
+#main_grid .bg4 {
+  background-image:url(./images/4.jpg) ;
+  grid-column: 2 / 4;
+}
+#main_grid .bg5 {
+  background-image:url(./images/5.jpg) ;
+}
+#main_grid .bg6 {
+  background-image:url(./images/6.jpg) ;
+}
+#main_grid .bg7 {
+  background-image:url(./images/7.jpg) ;
+}
+
+#main_grid h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center; /* 가운데에다 두려고 디스플레스 플레이스 아이템 센터 그리고 밑에 높이값 너비값 주기 */
+
+  width: 100%; height: 100%;
+
+  transition: .4s;
+  transform: translateY(-30px);
+  opacity: 0;
+}
+
+#main_grid .main_grid_bg:hover h3 {
+  opacity: 1;
+  transform: translateY(0);
+  /* background-color: rgba(255,255,255,.3); */
+  /* filter:blur(5px) 해당 요소에 필터 적용 */
+  backdrop-filter: grayscale(70%) blur(5px);
+}
+/******* main_business *******/
+#main_business p {
+  width: 60%;
+  margin: 50px auto;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+#main_business .business_inner {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90vw;
+  margin: 0 auto;
+}
+#main_business .business_inner figure {
+  width: 48%;
+  margin: 1%;
+  text-align: center;
+}
+#main_business .business_inner figure strong {
+  display: block;
+  margin: 20px 0 0 0 ;
+  font-size: 1.4rem; 
+}
+
+#main_business .business_inner figure span {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  display: block;
+}
+
+/******* main_youtube *******/
+#main_youtube {
+  background-color: #eee;
+  display: grid;
+  grid-template:11vw 21vw / 35vw 55vw;
+  place-content: center;
+  padding: 50px 0;
+}
+#main_youtube h2 {/* grid-item */
+  align-self: center;
+  font-size: 3.1rem;
+  font-weight: 800;
+}
+#main_youtube p {/* grid-item */
+  align-self: center;
+}
+#main_youtube .service_video {
+  width:90vw; height:21vw;
+  margin:0 auto;
+  overflow: hidden;
+}
+#main_youtube .service_video video {
+  grid-column: 1 / 3;
+  object-fit: cover;
+}
+
+/******* main_service *******/
+#main_service ul {
+  display: flex;
+  justify-content: center;
+  margin: 70px 0 150px;
+}
+#main_service ul li {
+  margin: 1%;
+  width: 340px; height:450px ;
+  box-shadow:
+  0px 1.9px 2.2px rgba(0, 0, 0, 0.02),
+  0px 4.5px 5.3px rgba(0, 0, 0, 0.028),
+  0px 8.4px 10px rgba(0, 0, 0, 0.035),
+  0px 15px 17.9px rgba(0, 0, 0, 0.042),
+  0px 28px 33.4px rgba(0, 0, 0, 0.05),
+  0px 67px 80px rgba(0, 0, 0, 0.07);
+}
+
+#main_service ul li.active {
+  transform: scale(1.1);
+}
+#main_service ul li h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 20px 20px 0
+
+}
+#main_service ul li p {
+  padding:0 20px 20px;
+}
+
+/******* main_location *******/
+#main_location {
+  width: 80vw;
+  margin: 50px auto;
+}
+#main_location .location_map {
+  position: relative;
+}
+#main_location .location_map .kakao_map{
+  width:100%; height:400px;
+  border: var(--border);
+  
+}
+#main_location .location_map .location_box {
+  position: absolute;
+  top:10px; left:10px;
+  width:300px ; height:100px ;
+  padding: 18px;
+  background-color: rgba(0,2, 161, .8);
+  color:#fff;
+  z-index:999;
+}
+
+#main_location .location_info {
+  width: 100%;
+  margin: 50px 0 150px;
+  font-size: 1.1rem;
+}
+#main_location .location_info tr {
+  border-bottom: var(--border);
+}
+#main_location .location_info tr:last-child {
+  border-bottom-width: 3px ;
+}
+#main_location .location_info tr th {
+  padding:20px;
+}
+/******* main_talk *******/
+#main_talk {
+  background: url(./images/img-bg.jpg) no-repeat fixed 50% / cover;
+  height: 500px;
+}
+
+#main_talk .layer {
+  background-color: rgba(0,2,161,.3);
+  width: 100%; height: 100%;
+  color:#fff;
+
+  display: flex;
+  flex-direction: column;
+  /* 교차축 로우의 방향으로 센터에 두고 시퍼 */
+  align-items: center;
+}
+
+#main_talk .ghost_btn {
+  border:2px solid #fff;
+  padding: 10px 30px;
+  font-weight: 500;
+  margin: 40px;
+}
+#main_talk .ghost_btn:hover {
+  background-color: #fff;
+  color:#000;
+}
+/******* footer *******/
+footer {
+  padding: 50px;
+  text-align: center;
+}
+
+footer span {
+  display: block;
+  margin: 20px auto;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>transformEX6</title>
+    <style>
+        .product {
+            text-align: center; font-size: 1.3em;
+            list-style: none;
+            padding: 0; margin: 0; /* ul의 값 제거 */
+
+            /* border:3px solid #000;  */
+
+            display: flex;
+            justify-content: center;
+        }
+
+        .product li {
+            width: 400px;
+            width: 20.833vw; height: 20.833vw;
+            margin: 10px;
+            margin: 0.521vw;
+
+            overflow: hidden; /* 지정된 영역을 벗어나면 보이지 않게 됨 */
+        }
+
+        .product li img {
+            width: 100%;
+            vertical-align: bottom;
+        }
+
+
+        .product li:hover .txt { /*이미지에다가는 호버를 주지 않음*/
+            transform: translateY(-20.833vw);
+        }
+
+        .product li .txt {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 1.563vw 0.521vw;
+            height: 20.833vw;
+            box-sizing: border-box ;
+
+            transition: 1s;
+        }
+
+        .product li .txt h3 {
+            margin: 0;
+            /* font-size: clamp(14px, ,16px); */
+        }
+
+    </style>
+</head>
+<body>
+    <h1>trans 연습6</h1>
+    <ul class="product">
+        <li>
+            <img src="../221109/images/code.png" alt="img1">
+            <div class="txt">
+                <h3>핸드폰케이스1</h3>
+                <p>설명설명설명</p>
+                <p>가격:2억 5000만원</p>
+            </div>
+        </li>
+        <li>
+            <img src="../221109/images/wednesday.png" alt="img1">
+            <div class="txt">
+                <h3>핸드폰케이스2</h3>
+                <p>설명설명설명</p>
+                <p>가격:12억 5000만원</p>
+            </div>
+        </li>
+        <li>
+            <img src="../221109/images/ps_250.jpg" alt="img1">
+            <div class="txt">
+                <h3>운동화</h3>
+                <p>설명설명설명</p>
+                <p>가격:5억 5000만원</p>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>transform EX5</title>
+    <style>
+    /* 
+
+    input:focus{텍스트 필드에 포커스가 잡히면}
+    input:checked{체크박스에 체크가 되었을 때}
+    input:disabled{ 비활성 }
+
+    */
+    .slideUp {
+        width: 40vw; height: 40vw;
+        background-color: salmon;
+        transition: 1s;   /*움직이는 대상에다 트랜지션 */
+
+       overflow: hidden;
+    }
+
+    .block {
+        width: 70vw; height: 100px;
+        background-color: lightskyblue;
+    }
+
+    input[type=checkbox]:checked ~ .slideUp {
+         /*인풋 타입 중에서 체크 박스가 체크가 되면, 이라는 뜻. +는 인접형제선택자 [name=check] 인 애를 찾아라 */
+
+        /* 
+        visibility: hidden; 투명도 조절 x 레이아웃에 영향 x 
+        opacity: 0; 투명도 조절 o 레이아웃에 영향 x
+        display: none; 브라우저 영역에서 사라지며 코드창에서만 확인. 레이아웃에 영향을 줌.
+        */
+        height: 0;
+    }
+
+   
+
+    </style>
+</head>
+<body>
+    <h1>trans 연습 4</h1>
+    <input type="checkbox" name="check" id="userCheck">
+    <label for="userCheck">체크 박스가 체크되면 박스가 위로 올라와 사라집니다.</label> <!-- 레이블과 인풋을 동기화 -->
+    <div class="slideUp">
+        <h1>:checked</h1>
+        <p>노년에게서 끝에 무엇을 지혜는 청춘이 약동하다. 희망의 황금시대를 우리는 밥을 쓸쓸한 이것이다. 가치를 든 앞이 곧 그러므로 것은 꽃이 그리하였는가?</p>
+    </div>
+    <div class="block">block</div>
+</body>
+</html>

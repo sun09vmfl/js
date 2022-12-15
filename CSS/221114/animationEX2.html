@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>애니메이션 예제2</title>
+    <style>
+        /* css 변수 선언 */
+        :root {
+            --center:center;
+            --zero:0;
+            --bg:#f9d0a0;
+        }
+
+        body {
+            margin: var(--zero); text-align: var(--center);
+        }
+        
+        .container {height: 100vh; display: flex; align-items: center; overflow: hidden;}
+        .bicycle_wrapper {
+            animation: move1 infinite linear;
+            width: 506px;
+            position: relative; /* wheel의 기준 */
+
+            /* border: 1px solid red;; */
+        }
+
+        .bicycle_wrapper .wheel {
+            position: absolute;
+            left: 0; bottom:0;
+            bottom: -89px;
+            left: -93px;
+
+            animation: spin 2s infinite linear;
+        }
+        .bicycle_wrapper .wheel:last-child {
+           right: -94px;
+           left: auto; /* 기존의 left 값 무력화 */
+        }
+
+        @keyframes spin {
+            100% {transform: rotate(360deg);}
+        }
+
+        @keyframes move1 {
+            0% { opacity: 0; left:0;}
+            10% { opacity: 1;}
+            80% {opacity: 1;}
+            100% {opacity: 0; left: 90%;}
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="bicycle_wrapper">
+            <img src="./images/bicycle.png" alt="자전거" class="bicycle">
+            <img src="./images/wheel.png" alt="바퀴" class="wheel">
+            <img src="./images/wheel.png" alt="바퀴" class="wheel">
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>em2</title>
+    <style>
+        body {
+
+        }
+        .box {
+            background-color: orange;
+            width:50em; /* 800px */ 
+            height:30em; /* 480px */
+            margin: 2em auto; /* 32px auto */
+        }
+
+        .txt {
+            background-color: lightskyblue;
+            width: 30em; /* 480px */
+            height: 15em; /* 240px */ 
+            /* margin: 0.625em auto */
+        }
+
+        /*중요한 건 가장 위에 있는  "폰트 사이즈" 임 정해주지 않으면 그대로 내려감 */
+    </style>
+</head>
+<body>
+    <h1>em 단위 2</h1>
+    <p>나를 감싸고 있는 <strong>부모 요소의 font-size</strong>를 기준으로 계산</p>
+    <p>현재 .box의 font-size가 설정되어 있지 않기 때문에 body의 font-size 값을 .box가 상속 받음.</p>
+    <div class="box"> box
+        <div class="txt">txt</div>
+    </div>
+</body>
+</html>

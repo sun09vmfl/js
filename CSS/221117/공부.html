@@ -1,0 +1,161 @@
+gridWeb.html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gridWeb</title>
+  
+  <!-- icon -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,200,0,0" />
+
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../common/fonts.css">
+
+  <link rel="stylesheet" href="../common/minireset.min.css">
+  
+  <!-- css변수 -->
+  <link rel="stylesheet" href="./cssVariable.css">
+
+  <!-- animation -->
+  <link rel="stylesheet" href="./animation.css">
+  <link rel="stylesheet" href="./style.css">
+
+  
+  <link rel="stylesheet" media="(min-width:768px)" href="./tablet.css">
+  <link rel="stylesheet" media="(min-width:1280px)" href="./pc.css">
+</head>
+<body>
+  <div class="container">
+    <!-- header -->
+    <header>
+      <!-- logo -->
+      <h1 id="logo"><a href="#">매거진 B</a></h1>
+
+      <!-- menu -->
+      <ul id="gnb">
+          <li><a href="#"><span class="material-symbols-rounded">home</span>
+            home</a></li>
+          <li><a href="#"><span class="material-symbols-rounded">breaking_news_alt_1</span> news</a></li>
+          <li><a href="#"><span class="material-symbols-rounded">smart_display</span> bcast</a></li>
+          <li><a href="#"><span class="material-symbols-rounded">storefront</span> shop</a></li>
+      </ul>
+        <!-- 모바일 메뉴버튼 -->
+      <a href="#" id="toggle_btn">menu_btn</a>
+      
+      <!-- sns -->
+      <ul id="info">
+        <li><a href="#">about</a></li>
+        <li><a href="#">contact</a></li>
+      </ul>
+      <ul id="sns">
+        <li><a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+          instagram</a>
+        </li>
+        <li><a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"/></svg>facebook</a></li>
+        <li><a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path d="M186.8 202.1l95.2 54.1-95.2 54.1V202.1zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-42 176.3s0-59.6-7.6-88.2c-4.2-15.8-16.5-28.2-32.2-32.4C337.9 128 224 128 224 128s-113.9 0-142.2 7.7c-15.7 4.2-28 16.6-32.2 32.4-7.6 28.5-7.6 88.2-7.6 88.2s0 59.6 7.6 88.2c4.2 15.8 16.5 27.7 32.2 31.9C110.1 384 224 384 224 384s113.9 0 142.2-7.7c15.7-4.2 28-16.1 32.2-31.9 7.6-28.5 7.6-88.1 7.6-88.1z"/></svg>
+          youtube</a>
+        </li>
+      </ul>
+    </header>
+
+    <!-- register -->
+    <ul id="register">
+      <li><a href="#">edit</a></li>
+      <li><a href="#">ENGLISH</a></li>
+      <li><a href="#">LOGIN</a></li>
+      <li><a href="#">signup</a></li>
+    </ul>
+
+    <!-- contents -->
+    <main>
+      <!-- .box1 -->
+      <section class="box1">
+        <h2>b magazine</h2>
+      </section>
+      <!-- .box2 .txt -->
+      <section class="box2 txt">
+        <div class="iconGroup">
+          <span class="material-symbols-rounded">keyboard_double_arrow_left</span>
+          <span class="material-symbols-rounded">keyboard_double_arrow_left</span>
+          <span class="material-symbols-rounded">keyboard_double_arrow_left</span>
+        </div>
+        <h3>2.A Whole New World</h3>
+        <p>가득 무덤 나는 아침이 계십니다. 너무나 위에 별 하나 별에도 이런 봄이 위에도 쉬이 봅니다.</p>
+      </section>
+      <!-- .box3 .txt -->
+      <section class="box3 txt">
+        <span class="material-symbols-rounded">autorenew</span>
+        <h3>3.masion kitsune</h3>
+      </section>
+      <!-- .box4 bg -->
+      <section class="box4 bg">
+        <h3>4.jump</h3>
+      </section>
+      <!-- .box5 bg -->
+      <section class="box5 bg">
+        <h3>5.BANGKOK</h3>
+      </section>
+      <!-- .box6 .txt -->
+      <section class="box6 txt">
+        <span class="material-symbols-rounded">keyboard_double_arrow_left</span>
+        <h3>6.Instagram</h3>
+        <p>무엇인지 이제 릴케 이웃 계집애들의 사람들의 내일 까닭입니다. 언덕 하나 나는 써 새워 까닭</p>
+      </section>
+      <!-- .box7 bg -->
+      <section class="box7 bg">
+        <h3>7.NOTE</h3>
+      </section>
+      <!-- .box8 .txt -->
+      <section class="box8 txt">
+        <span class="material-symbols-rounded">keyboard_double_arrow_left</span>
+        <h3>8.Le Labo</h3>
+        <p>이름과, 오면 당신은 나는 있습니다. 별 까닭이요, 아스라히 봅니다. 이 이런 마리아 어머니, 계집애들의 별 이름을 버리었습니다</p>
+      </section>
+      <!-- .box7 bg -->
+      <section class="box9 bg">
+        <h3>9.SEOUL</h3>
+      </section>
+      <!-- .box10 bg -->
+      <section class="box10 bg">
+        <h3>10.CASE</h3>
+      </section>
+      <!-- .box11 .txt -->
+      <section class="box11 txt">
+        <span class="material-symbols-rounded">keyboard_double_arrow_left</span>
+        <h3>11.Acne Studio</h3>
+        <p>된 라이너 하나에 추억과 사람들의 시인의 동경과 별이 있습니다. 하늘에는 멀듯이, 보고, 봄이 별 밤을 가을로 까닭입니다.</p>
+      </section>
+      <!-- .box12 bg -->
+      <section class="box12 bg">
+        <h3>12.apple</h3>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer>
+      &copy;Copyright gridWeb Co. All Right Xxxxxx Xxxx
+    </footer>
+  </div>
+
+<script>
+  const gnb = document.querySelector('#gnb');
+  const toggleBtn = document.querySelector('#toggle_btn');
+  
+  toggleBtn.addEventListener('click', () => {
+    gnb.classList.toggle('active');
+  })
+</script>  
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드3</title>
+    <style>        
+        .box {width: 90%; margin: 50px auto; border:6px solid #dd6c28; 
+            display: grid;
+            grid-template: 100px 100px / 1fr 1fr;} /* 첫번째 자릿수: row / 두번째 자릿수: column */
+        .box .item { background-color: olivedrab; color:#fff; font-weight: bold; font-size: 1.3em;}
+
+        .wrapper1 .item {margin: 10px;}
+
+        .wrapper2 { /* grid-container, flex-container */
+            gap:10px;
+            gap:10px 20px; /* row col */ }
+
+        .wrapper3 {
+            row-gap: 2vw; /* 행과 행 사이의 간격 */
+        }
+
+        .wrapper4 {
+            column-gap: 2vw ; /* 열과 열 사이의 간격 */
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <h1>grid 기본3</h1>
+    <h2>gap: 열과 행의 간격(gutters)</h2>
+    <div class="box wrapper1">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+    </div>
+    <div class="box wrapper2">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+    </div>
+    <div class="box wrapper3">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+    </div>
+    <div class="box wrapper4">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+    </div>
+
+</body>
+</html>

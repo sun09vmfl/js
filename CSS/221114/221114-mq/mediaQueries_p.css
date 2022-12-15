@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* PC */
+@media (min-width:1280px) {
+  h1 { padding: 30px;}
+  h2 { display: none;}
+  .container { width: 70%; margin-top:130px; display: flex; }
+  /* .container .box { flex-grow: 1; } */
+  .container .box { width:33.33333%; }
+}

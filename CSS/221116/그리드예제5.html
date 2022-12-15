@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>그리드예제5</title>
+    <style>
+        .box {
+            width: 50vw; height: 50vw; margin: 50px auto;
+           background-color: #000; 
+           display: grid; place-items: center;
+        }
+        .box .item {
+            background-color: orange; width: 35%; height: 35%; border-radius: 50%;
+            font-weight: bold; font-size: 10vw; transform: rotate(90deg); 
+            /* display: flex; justify-content: center; align-items: center; */
+
+            /* display: grid; place-items: center; */
+            line-height: 1.45; 
+            text-align: center;
+
+            box-shadow: 10px 0 #ddd;
+        }
+    
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="item">:)</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ex3</title>
+    <style>
+        .container {
+            border:2px solid  #000; width: 60vw; margin: 50 auto;
+            overflow: hidden; font-weight: bold; font-size: 20px; text-align: center;
+        }
+
+        .container .box {overflow: hidden;}
+        .container .box_col {height: 25vh;}
+
+        /* 1행 */
+        .container .box1 .box_col {background-color: rgb(76, 76, 245);}
+        /* 2행 */
+        .container .box2 .box_col {background-color: rgb(79, 166, 201); float: left;
+        margin: 0.5%; width: 32.333333%;}
+        /* 3행 */
+        .container .box3 .box_col {background-color: rgb(206, 231, 240); float: left; margin: 0.5vw; width: calc(16.666666% - 1vw);}
+
+        /* calc();
+        css 함수
+        다른 단위값들끼리 연산이 가능(=,-,/,*)
+        연산자 사이에는 반드시 띄어쓰기 필요 */
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1">
+            <div class="box_col">1행</div>
+        </div>
+        <div class="box box2">
+            <div class="box_col">2행 1열</div>
+            <div class="box_col">2행 2열</div>
+            <div class="box_col">2행 3열</div>
+        </div>
+        <div class="box box3">
+            <div class="box_col">3행 1열</div>
+            <div class="box_col">3행 2열</div>
+            <div class="box_col">3행 3열</div>
+            <div class="box_col">3행 4열</div>
+            <div class="box_col">3행 5열</div>
+            <div class="box_col">3행 6열</div>
+        </div>
+    </div>
+</body>
+</html>

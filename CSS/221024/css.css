@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+html, body {
+  height: 100%;/* 브라우저의 높이값 인식 방법 */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+  font-family: 'Lobster','Times New Roman', Times, cursive;
+  text-align: center;
+  text-transform: capitalize;
+}
+/*스크롤바 가로 크기*/
+body::-webkit-scrollbar {width: 10px;
+    /*border-right:1px solid #fff;
+    border-left:1px solid #fff;*/; } 
+
+/*스크롤바 배경*/
+body::-webkit-scrollbar-track { background-color: #000;;}
+
+/*스크롤바 핸들*/
+body::-webkit-scrollbar-thumb { background-color: orange;
+   border:  2px solid #333c83; }
+
+
+
+/* vendor prefix
+확정되지 않은 기능을 개발자가 미리 사용할 수 있게 만들어 놓은 약속어
+브라우저에 내장된 기능을 이 벤더(접두어)를 통해 사용하게 만듦
+-ms- 인터넷익스플로어
+-webkit- 크롬, 엣지, 웨일
+-o- 오페라
+-moz- 파이어폭스 */
+
+
+/* 내비게이션 */
+#gnb {
+  background-color: #fff;
+
+  position: fixed;
+  width:60%; height:40px;
+  top:0;
+  /* margin: 0 auto; absolute, fixed의 경우 적용 x */
+  left:0; right:0;
+  margin:auto;
+
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 10px rgb(10, 10, 10,.6);
+}
+
+#gnb li {
+  /* display: inline-block; */
+}
+#gnb li a {
+  text-decoration: none;
+  font-size: 20px;
+  width:20%; height: 40px;
+  line-height: 40px;
+
+  position: absolute;/* 포지션이 적용된 가까운 부모 이상의 요소를 기준으로 위치 지정 */
+  top:0;
+}
+.bg-4700D8 {
+  background-color: #4700D8;
+  color:#fff;
+  left:10%;
+}
+.bg-9900F0 {
+  background-color: #9900F0;
+  color:#fff;
+  left:30%;
+}
+.bg-F900BF {
+  background-color: #F900BF;
+  color:inherit;
+  left:50%;
+}
+.bg-FF85B3 {
+  background-color: #FF85B3;
+  color:inherit;
+  left:70%;
+}
+
+/* article */
+article {
+  height: 100%;
+  font-weight: bold;
+  font-size: 5em;
+  padding-top:100px;
+}

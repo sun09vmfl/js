@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>css 변수</title>
+    <style>
+        /* 전역 설정 */
+        :root {
+            /* 설정시 사용자 정의 이름 (임의로 내 맘대로) */
+            --main-bg-color: #2192ff;
+            --font-color:#d800a6;
+            --bg:url(./images/b50902889430dda8e0899a47b974b22b.jpg) no-repeat 50% /cover;
+            --weight:bold;
+            --noMargin:0;
+            --color:red;
+        }
+
+        /* 적용 */
+        body {
+            background-color: var(--main-bg-color);
+            margin: var(--noMargin);
+        }
+
+        h1 {
+            color:var(--font-color);
+        }
+
+        /* 지역 선언 */
+        ul {
+            --color:#fff;
+            --font-size-20: 20px;
+
+            color:var(--color); /* 전역과 지역이 중복되는 경우 지역이 우선 */
+        }
+
+        li {
+            font-size: var(--font-size-20);
+        }
+        dt {
+            /*  --font-size-20 은 ul 안에서만 사용할 수 있기 때문에 두번쨰 fallback 방식으로 작성된 25px 적용
+            
+            앞의 값이 적용되지 않았을 때 두번째 값 적용 */
+            font-size:var(--font-size-20, 25px);
+        }
+
+        .img {
+            width: 400px; height: 400px;
+            background: var(--bg);
+        }
+    </style>
+</head>
+<body>
+    <h1>css 변수</h1>
+    <ul>
+        <li>사용자 지정 속성</li>
+        <li>사용자가 정의하는 속성과 값으로 재사용 할 수 있는 임의 값</li>
+        <li>공통으로 사용되는 값에 css 변수를 설정하여 코드의 반복 사용 줄임</li>
+    </ul>
+
+    <dl>
+        <dt>전역 설정 방법</dt>
+        <dd>:root { --variable-name: value; }</dd>
+        <dd>:root { --variable: value; }</dd>
+
+        <dt>지역 설정 방법</dt>
+        <dd>dt {--variable-name: value; }</dd>
+        <dd>지정된 요소와 하위 요소에서만 적용</dd>
+
+        <dt>적용</dt>
+        <dd>property: var(--variable-name);</dd>
+        <dd>property: var(--variable-name, fallback);</dd>
+    </dl>
+    <div class="img"></div>
+</body>
+</html>

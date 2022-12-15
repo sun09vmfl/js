@@ -1,0 +1,6 @@
+@charset "utf-8";
+/* html link 속성으로 media 연결시 css의 @media() 필요없음 */
+h1 { padding: 30px;}
+h2 { display: none;}
+.container { width: 70%; margin-top:130px; display: flex; }
+.container .box { width:33.33333%; }

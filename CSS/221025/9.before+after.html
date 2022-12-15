@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>::before, ::after</title>
+    <style>
+        p {
+            border: 2px solid #000;
+        }
+
+        p::before {
+            content : "설명 : "; /*생략 불가능 반드시 작성*/
+            background-color: #ddd;
+        }
+
+        p::after {
+            content: ""; /* 생략은 할 수 없으나 "" 안에 아무것도 작성하지 않는 건 가능 */
+            background-color: lightblue;
+            width: 200px;
+        }
+
+        ol .box1::before {
+            content: 'https://google.com : '; 
+        }
+
+        ol .box2::before {
+            content: 'https://naver.com : ';
+            color: maroon;
+            margin-right: 50px;
+        }
+
+        ol .box3::before {
+            content: 'http://daum.net : ';
+            color:tomato;
+        }
+
+        ul .box1::after {
+            content: ''
+        }
+
+        ul .box2::after {
+            content : "👽"
+        }
+
+        ul .box3::after {
+            content: "&lt;"; /* 값으로 작성되는 부분""은 텍스트 컨텐츠의 영역으로 코드 값이 아니다. 저대로 출력됨.*/
+        }
+    </style>
+</head>
+<body>
+    <h2>:before, ::before</h2>
+    <p>기준 요소 안의 컨텐츠 영역 앞쪽에 적용. 의사 요소</p> 
+    <ol>
+        <li class="box1">구글</li>
+        <li class="box2">네이버</li>
+        <li class="box3">카카오</li>
+    </ol>
+    <h2>:after, ::after</h2>
+    <p>기준 요소 안의 컨텐츠 영역 뒤쪽에 적용</p>
+    <ul>
+        <li class="box1">구글</li>
+        <li class="box2">네이버</li>
+        <li class="box3">카카오</li>
+    </ul>
+</body>
+</html>

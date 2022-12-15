@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>em1</title>
+    <style>
+        body {
+            font-weight: bold;
+            font-size: 22px;
+        }
+        .wrapper * { border:3px solid #000; margin: 20px; padding: 20px; display: block /*span이 인라인이라서*/;}
+        .wrapper { 
+            border:3px solid #000;
+            font-size: 1em; 
+            /* 22px */
+            /* 
+            
+            브라우저 기본 폰트 사이즈 : 16px 
+
+            */
+        }
+
+        .wrapper > h2 {
+            font-size: 1em; 
+            /* 22px */
+            font-size: 1.5em; /*1em : 16px = 1.5em : 24px (1.5x16)=24 */
+            /* 33px */
+        }
+
+        .wrapper > h2 > span {
+            font-size: 1em; /*h2가 가지고 있는 font-size: 1.5em의 값이 span의 1em이 됨*/ 
+            /* em은 바로 위의 부모 요소가 가진 font-size의 값을 1em으로 설정해서 계산
+            부모가 24px이니까 1em이면 24px인 것임
+            1.5em이면 36px 이겠지.*/
+            /* 33px */
+            font-size: 0.9em; 
+            /* 1em : 24px = 0.9em : 21px */
+            /* 1em : 33px = 0.9em : 29px */
+            /* 29px */
+        }
+
+        .wrapper > p {
+            font-size: 1em;
+            /* 22px */
+        }
+        
+        .wrapper > .box {
+            font-size:0.8em;
+            /* 1em : 16px = 0.8em : 12.8px (소수점 떼고 12px) */
+            /* 1em : 22px = 0.8em : 17px */
+            /* 17px */
+        }
+        .wrapper > .box > p {
+            font-size: 1.1em;
+            /* 1em : 12px = 1.1em : 14.08 (소수점 떼고 14px) */
+            /* 1em : 17px = 1.1em : 18px */
+            /* 18px */
+        }
+        
+        .wrapper > .box > p> span {
+            font-size: 2em;
+            /* 1em : 14px = 2em : 28px*/
+            /* 1em : 18px = 2em : 36px */
+            /* 36px */
+        }
+    </style>
+</head>
+<body>
+    <h1>em 단위 1</h1>
+    <ul>
+        <li>알파벳 M을 기준으로 만들어진 단위</li>
+        <li>부모의 폰트 사이즈를 기준으로 값 설정</li>
+        <li>브라우저의 기본 폰트 사이즈 : 16px</li>
+    </ul>
+    <div class="wrapper"> .wrapper : 1em == 16px / 22px <!--부모인 바디에 아무것도 주지 않아서 기본 크기-->
+        <h2>
+            h2 : 1em == 16px / 22px <!--wrapper에게 받아옴-->
+            <span> span: 1em == 24px /  </span>
+        </h2>
+
+        <p>
+            p : 1em == 16px
+        </p>
+
+        <div class="box"> .box : 1em == 12px 
+            <p> p : 1em == 12px
+                <span> span : 1em ==  </span>
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>

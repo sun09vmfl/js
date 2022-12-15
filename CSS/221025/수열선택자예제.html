@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>수열 선택자 ex</title>
+    <style>
+        #gnb {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            font-size: 20px;
+            margin: 50px auto;
+            width: 900px;
+        }
+
+        #gnb li {
+            float: left;
+        }
+
+        #gnb li a {
+            text-decoration: none;
+            color: inherit;
+            background-color: #ddd;
+            display: block;
+             /*a에다 블럭 주기*/
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+        }
+        #gnb li:first-child a {
+            border-radius: 30px 0 0 30px;
+        }
+
+        #gnb li:last-child a {
+            border-radius: 0 30px 30px 0;
+        }
+
+        #gnb li:nth-child(2n) a { /* (even) = (2n+2) */
+            background-color: #5463ff;
+            color:#fff;
+        }
+
+        #gnb li:nth-child(4n+3) a { /* 4개로 나눈 것 중에서 세 번째 */
+            background-color: orange;
+        }
+
+        #gnb li:nth-child(4n+1) a {
+            background-color: tomato;
+        }
+
+        #gnb li:nth-child(4n+1):hover a {
+            background-color: black;
+        }
+    
+
+    </style>
+</head>
+<body>
+    <!--마우스 이벤트 1,5,9-->
+    <ul id="gnb">
+        <li  class="left"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">7</a></li>
+        <li><a href="#">8</a></li>
+        <li id="last" class="right"><a href="#">9</a></li>
+    </ul>
+
+</body>
+</html>

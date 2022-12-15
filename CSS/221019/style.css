@@ -1,0 +1,32 @@
+@charset "utf-8";
+body {
+    font-family: 'Noto Sans KR',-apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
+    margin: 0 auto;
+    width: 1920px;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+h1 {
+    position: absolute;
+    top: %;
+    left: 3px;
+    margin-top: -32px;
+
+}
+
+.container #main {
+
+}
+
+.container #main li {
+display: inline-block;
+}
+
+.container #main li a {
+
+}
+
+.container .num #menu

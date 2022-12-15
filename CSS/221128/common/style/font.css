@@ -1,0 +1,10 @@
+@charset "urf-8";
+
+/* pretendardVariable */
+@font-face {
+    font-family : 'Prentendard';
+    src: url(../fonts/PretendardVariable.woff2) format('woff2');
+    font-weight: 45 920;
+    font-style: normal;
+    font-display: swap;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>flexEX7</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            background-color: paleturquoise;
+            margin: 0 auto;
+            width: 740px; height: 580px;
+
+            display: flex;
+            flex-flow: wrap column;
+            justify-content: center;
+            justify-content: space-around;
+            align-items: center; /* 개별적으로 정렬 */
+            /* align-content: center;  하나의 덩어리로 보는 것임 */
+        }
+
+        .container figure {
+            margin: 0;
+            /* border: 1px solid #000; */
+        }
+
+        .container figure figcaption {
+            height: 30px;
+            background-color: #000; 
+            color:#fff;
+            font-weight: bold;
+            /* text-align: center;
+            line-height: 30px; 요거 아니면 밑에 값으로 주기*/
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        
+        .container figure img {
+            /* font-size: 0; */
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <h1>상하 정렬 갤러리</h1>
+    <div class="container"> <!--flex container-->
+        <figure> <!--flex item-->
+            <img src="https://placekitten.com/300/200"><figcaption>Title1</figcaption>
+        </figure>
+        <figure> <!--flex item-->
+            <img src="https://placekitten.com/301/201"><figcaption>Title2</figcaption>
+        </figure>
+        <figure> <!--flex item-->
+            <img src="https://placekitten.com/302/202"><figcaption>Title3</figcaption>
+        </figure>
+        <figure> <!--flex item-->
+            <img src="https://placekitten.com/301/202"><figcaption>Title4</figcaption>
+        </figure>
+    </div>
+</body>
+</html>

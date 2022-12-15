@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>flexEX6</title>
+    <style>
+        body {
+            margin: 0;
+            font-size: 22px;
+            text-transform: capitalize;
+        }
+        
+        .gnb {
+            margin: 0;
+            display: flex;
+            background-color: orange;
+            
+            justify-content: space-around;    
+        }
+
+        .gnb li {
+            list-style: none;
+            height: 7vh;
+            line-height: 7vh;
+        }
+
+        .gnb li a {
+            text-decoration: none;
+            color:black;
+            font-weight: bold;
+        }
+
+        span {
+            text-decoration: underline hotpink 5px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="gnb">
+        <li><a href="#">home</a></li>
+        <li><a href="#">company</a></li>
+        <li><a href="#">service</a></li>
+        <li><a href="#"><span>product</span></a></li>
+        <li><a href="#">board</a></li>
+    </ul>
+</body>
+</html>

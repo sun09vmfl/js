@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>transEX5</title>
+    <style>
+        body { margin: 0; text-align: center;}
+        .box {background-image: linear-gradient(#ffb4b4, #b2a4ff);
+            width: 80vw; height: 300vw;}
+
+        nav {
+        background-color: #3ab4f2;
+        width: 200px; height: 100%;
+        position: fixed; /* 픽스드 적용하면 높이값 적용됨 */
+        /* top:0; left: -150px;  */
+        top:0;
+        transform: translateX(-150px);
+        transition: .5s;}
+
+        nav:hover {
+            /* left: 0; */
+            transform: translateX(0);
+        }
+        nav:hover .menuIcon svg { /* 네브에 마우스를 올렸을 때 메뉴아이콘svg 가~ 라는 의미 */
+            transform: rotate(180deg);
+        }
+
+        nav:hover .menuIcon svg path {
+            fill: #ffb4b4;
+        }
+
+        /* icon */
+        nav .menuIcon {
+            position: absolute; /* 부모 요소에 fixed가 기준이 됨 */
+            right: 10px; top: 10px;
+        }
+
+        nav .menuIcon svg {
+            width: 30px;
+            cursor: pointer;
+        }
+
+        nav .lnb {
+            list-style: none;
+            padding: 10px;
+            margin-top: 80px;
+        }
+
+     nav li a {
+        font-size: 1.3em; font-weight: bold;
+        color:inherit; text-decoration: none;
+        padding: 15px; display: block;
+     }
+        
+     nav li a:hover {
+        color:#f0dd42;
+     }
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <!--icon-->
+        <div class="menuIcon">
+            <!-- <img src="./images/angle-right-solid.svg" alt=""> -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path fill="#f0ff42" d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+        </div>
+        <!--local navigation bar -->
+        <ul class="lnb">
+            <li><a href="#">menu1</a></li>           
+            <li><a href="#">menu2</a></li>
+            <li><a href="#">menu3</a></li>
+            <li><a href="#">menu4</a></li>
+        </ul>
+    </nav>
+    <div class="box"></div>
+</body>
+</html>

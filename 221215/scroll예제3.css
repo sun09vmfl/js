@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+body {
+  height: 100vh;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: url(./images/bg.jpg) no-repeat 50% 0 / cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+.wrapper::after {
+  content: '';
+  position: absolute; /* wrapper를 따라다니게 하려고 여기 앱솔 주고 랩퍼에는 렐러티브 줌 */
+
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  background-image: linear-gradient(transparent, #fff);
+}
+
+.wrapper h1 {
+  font-size: 9em;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 30px #f6f7c1, 0 0 10px #fff9a78e;
+  position: relative;
+  transform: translateY(-50%);
+}
+
+.wrapper .man {
+  position: absolute;
+  /* 얜 움직이지 않음 */
+  bottom: 0; /* 언제나 밑에 있길 바래서 */
+}
+
+.wrapper .mountain {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.wrapper .mountain_left {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.wrapper .mountain_right {
+  position: absolute;
+  top: 0;
+  object-fit: cover;
+}
+
+section {
+  width: 70vw;
+  margin: 100px auto;
+  padding: 20px;
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+section h2 {
+  background-color: #10a19d;
+  color: #fff;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+section p {
+  margin: 20px 0;
+}
+
+section p:last-child {
+  padding-bottom: 20vh;
+}

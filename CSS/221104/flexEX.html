@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>flexEX4</title>
+    <style>
+        /* 
+        .container {
+            display: flex;
+            justify-content:center;
+
+        } */
+
+        .wrapper { /* flex-container의 역할 */
+            list-style: none;
+            padding-left: 0; 
+            /* margin: 0; */
+            font-weight: bold; font-size: 1.5em;
+            border:6px solid #000;
+            width: 70vw; height: 950px;
+            margin: 50px auto; /* flex 사용 불가 */
+
+            display: flex;
+            /* 주축 기준으로 한 설명 */
+            /* flex-direction: row; 
+            flex-wrap: wrap;
+            justify-content: center; 주축 기준 설명
+            align-items : center; 개별 아이템의 교차축 정렬
+            align-content: center; 여러 아이템을 하나의 그룹으로 두고 교차축 정렬 */
+
+            /* 교차축 기준으로 한 설명 */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; /* 얼라인 컨텐츠라고 생각되었지만 아이템을 쓴 이유는 엄밀히 따지면 여러개가 아니라 한 개니까..ㅇㅇ */
+
+        }
+
+        .wrapper .box { /* .wrapper의 flex-item 이자 글자들의 flex-container */
+            width: 50%; height: 150px; 
+            /* line-height 값으로 정렬하는 건 한 줄일 때만 가능하다 */
+            margin: 0 1%;
+            color:#fff;
+
+            display: flex; /* 주축은 기본 row */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrapper .box1 {background-color: saddlebrown;}
+        .wrapper .box2 {background-color: salmon;}
+        .wrapper .box3 {background-color: sandybrown;}
+        .wrapper .box4 {background-color: seagreen;}
+        .wrapper .box5 {background-color: slateblue;}
+
+    </style>
+</head>
+<body>
+    <!-- <div class="container"> -->
+    <ul class="wrapper">
+        <li class="box box1">box1<br>box</li>
+        <li class="box box2">box2<br>box</li>
+        <li class="box box3">box3<br> box</li>
+        <li class="box box4">box4<br>box</li>
+        <li class="box box5">box5<br>box</li>
+    </ul>
+    <!-- </div> -->
+</body>
+</html>

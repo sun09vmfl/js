@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>다양한 폼 관련 태그들</title>
+</head>
+<body>
+  <h1>다양한 폼 관련 태그들</h1>
+  <h2>input 태그</h2>
+  <strong>인라인 요소로 폼 안의 기본적인 필드 값을 만들 때 사용. 빈요소</strong>
+
+  <form action="">
+    <!-- 
+      input 요소의 type 속성 값에 따라 역할이 달라짐.
+      name="데이터 이름"
+      maxlength="value 최대길이(문자수)"
+      minlength="value 최소길이(문자수)"
+      placeholder="컨트롤 박스 안의 힌트"
+      required="필수 항목 지정. form 태그가 반드시 작성되어 있어야 실행"
+      value="입력값 혹은 출력값. 전송되는 값"
+      autofocus="자동 포커스"
+      checked="체크 박스의 자동 선택"
+      disabled="비활성화"
+     -->
+
+     <section>
+      <h3>type="text" / type="password"</h3>
+      사용자명: 
+      <input type="text" name="user_name" id="userName" maxlength="8" placeholder="이곳에 이름을 작성하세요" minlength="2" required="required" autofocus><br>
+      비밀번호:
+      <input type="password" name="user_pw" id="userPw" minlength="5" placeholder="이곳에 비밀번호를 입력하세요" required><br>
+      <input type="submit" name="submit" value="확인">
+      <input type="reset" value="취소">
+      <input type="button" value="버튼">
+     </section>
+
+     <section>
+      <h3>여러 줄의 텍스트 박스</h3>
+      <textarea name="txtBox" id="txtBox" cols="30" rows="5">인라인. 이 안에 글 작성시 박스 안에 출력</textarea>
+     </section>
+
+     <section>
+      <h3>라디오 버튼</h3>
+      <p>하나의 값만 선택 가능. <strong>name 속성은 반드시 같아야 함.</strong></p>
+      <input type="radio" name="choice" value="선택1" checked>선택1
+      <input type="radio" name="choice" value="선택2">선택2
+      <input type="radio" name="choice" value="선택3">선택3
+      <input type="radio" name="choice" value="선택4">선택4
+     </section>
+
+     <section>
+      <h3>체크박스 버튼</h3>
+      <p>여러 개의 값 선택 가능. <strong>name 속성은 반드시 같아야 함.</strong></p>
+      <input type="checkbox" name="decide" value="선택1">선택1
+      <input type="checkbox" name="decide" value="선택2" checked>선택2
+      <input type="checkbox" name="decide" value="선택3">선택3
+      <input type="checkbox" name="decide" value="선택4">선택4
+     </section>
+
+     <section>
+      <h3>드롭다운 형태의 메뉴</h3>
+      <select name="menu">
+        <!-- 반드시 하나의 option은 있어야 함 -->
+        <option value="선택1">선택1</option>
+        <option value="선택2">선택2</option>
+        <!-- selected 선택한 옵션이 화면에 먼저 보임 -->
+        <option value="선택3" selected>선택3</option>
+        <option value="선택4">선택4</option>
+        <option value="선택5">선택5</option>
+      </select>
+     </section>
+
+     <section>
+      <h3>파일 첨부 버튼</h3>
+      <input type="file" name="user_file">
+      <!-- accept 특정 확장자만 첨부 -->
+      <input type="file" name="user_file" accept=".jpg, .png, .pdf">
+      <br>
+      <button type="submit">전송</button>
+      <button type="reset">취소</button>
+     </section>
+
+     <section>
+      <h3>html5에서 새로 정의된 태그들</h3>
+      <p>
+        날짜 <input type="date" name="yymmdd">
+      </p>
+      <p>
+        이메일 <input type="email" name="email">
+      </p>
+      <p>
+        url <input type="url" name="url">
+      </p>
+      <p>
+        검색 <input type="search" name="search">
+      </p>
+      <p>
+        범위 설정 <input type="range" name="range">
+      </p>
+      <p>
+        숫자 <input type="number" name="number">
+      </p>
+     </section>
+
+     <section>
+      <h3>사용 불가(비활성화)</h3>
+      <input type="text" disabled>
+     </section>
+  </form>
+</body>
+</html>

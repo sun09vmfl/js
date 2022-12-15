@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+/*
+
+@import : 다른 문서나 외부 문서를 가져올 때 사용.
+
+@import url('경로')
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Pacifico&family=Sacramento&family=Shrikhand&display=swap');
+@import url('./fonts/web.css');
+
+
+웹폰트 : 사용자의 컴퓨터에 설치되지 않은 글꼴을 서버에 올려 놓은 후 해당 사이트에 접속하는 사용자의 컴퓨터에 그 폰트가 다운로드 되어 보여지게 함.
+
+@font-face {
+    font-family: '사용자 지정 이름';
+    src: local('로컬 서체 이름으로 내가 설정한 이름 x)'
+    로컬 선언을 하는 경우 사용자의 시스템에 서체가 설치되어 있으면 리소스를 요청하지 않음
+    url('경로') format ('파일포맷'); }
+
+
+font-display : swap;
+로딩 상태에 따른 동작 설정
+    auto: 브라우저 기본값
+    block; FOIT 방식. 웹폰트가 로딩되지 않으면 텍스트를 렌더링 하지 않음.
+    로딩 완료 후 글자 보임.
+    swap; FOUT 방식. 로딩되는 동안 기본 서체로 보이고 완료되면 웹폰트 적용.
+    웹폰트 로딩 여부와 관계 없이 항상 글자 보임.
+
+*/
+
+/* Pretendard */
+@font-face {
+	font-family: 'Pretendard'; /* 대부분 원본 이름 그대로 작성 */ 
+	src: local('Pretendard Variable'), /* 로컬에 설치되어 있는 서체 이름, 로컬을 먼저 써야 함*/
+        url('./PretendardVariable.woff2') format('woff-variations');
+        font-weight: 45 920;
+        font-style: normal;
+        font-display: swap;
+}
+
+/* SpoqaHanSansNeo */
+@font-face {
+    font-family: 'SpoqaHanSansNeo';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 700;
+    src: url('../common/fonts/SpoqaHanSansNeo-Bold.woff2') format('woff2'), 
+        url('../common/fonts/SpoqaHanSansNeo-Bold.woff') format('woff')
+}
+
+@font-face {
+    font-family: 'SpoqaHanSansNeo';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 600;
+    src: url('../common/fonts/SpoqaHanSansNeo-Bold.woff2') format('woff2'), 
+        url('../common/fonts/SpoqaHanSansNeo-Bold.woff') format('woff') }
+
+@font-face {
+    font-family: 'SpoqaHanSansNeo'; 
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url('../common/fonts/SpoqaHanSansNeo-Regular.woff2') format('woff2'), 
+        url('../common/fonts/SpoqaHanSansNeo-Regular.woff') format('woff') }
+
+        
+@font-face {
+    font-family: 'SpoqaHanSansNeo'; /**/
+    font-style: normal;
+    font-display: swap;
+    font-weight: ;
+    src: url('../common/fonts/SpoqaHanSansNeo-Light.woff2') format('woff2'), 
+        url('../common/fonts/SpoqaHanSansNeo-Light.woff') format('woff') }
+
+                
+@font-face {
+    font-family: 'SpoqaHanSansNeo'; /**/
+    font-style: normal;
+    font-display: swap;
+    font-weight: 100;
+    src: url('../common/fonts/SpoqaHanSansNeo-Thin.woff2') format('woff2'), 
+        url('../common/fonts/SpoqaHanSansNeo-Thin.woff2') format('woff') }
+

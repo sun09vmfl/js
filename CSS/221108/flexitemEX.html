@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>flexEX.html</title>
+    <style>
+        body {
+            margin: 0;
+            font-weight: bold; font-size: 2em;
+        }
+        .container { height: 100vh; 
+            background-color: #ddd;
+            display: flex;
+            flex-wrap: wrap;
+            /* align-content: flex-start; */
+            
+        }
+        .container header {background-color: green; width: 100%; }
+            /* height: 30vh;} */
+        .container .box1 {background-color: salmon; flex-grow: 2; flex-basis: 0;}
+        .container .box2 {background-color: yellow; flex-grow: 8; flex-basis: 0;}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>header</header>
+        <aside class="box1">aside</aside>
+        <article class="box2">content</article>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aniEx3</title>
+  <style>
+    /* css 변수 전역 선언 */
+    :root {
+      --center: center;
+      --zero: 0;
+    }
+
+    body { margin:var(--zero); text-align:var(--center); }
+    .container { height: 100vh; display: flex; align-items: center; overflow: hidden;}
+    .bicycle_wrapper {/* 앞으로 진행 */
+      animation: move1 5s infinite linear;
+      width: 506px;
+      position: relative;/* wheel의 기준 */
+      /* border:1px solid red; */
+    }
+    .bicycle_wrapper .wheel {
+      position: absolute;
+      bottom:-89px;
+      left:-93px; 
+
+      animation: spin 1s infinite linear;
+    }
+    .bicycle_wrapper .wheel:last-child {
+      right:-94px;
+      left: auto;/* 기존의 left값 무력화 */
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes move1 {
+      0% { opacity: 0; left:-10%; }
+      10% { opacity: 1; left:0; }
+      80% { opacity: 1; }
+      100% { opacity: 0; left:110%; }
+    }
+    @keyframes move2 {
+      0% { opacity: 0; left:0%; }
+      10% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { opacity: 0; left:90%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="bicycle_wrapper">
+      <img src="./images/bicycle.png" alt="bicycle" class="bicycle">
+      <img src="./images/wheel.png" alt="wheel" class="wheel">
+      <img src="./images/wheel.png" alt="wheel" class="wheel">
+    </div>
+  </div>
+</body>
+</html>

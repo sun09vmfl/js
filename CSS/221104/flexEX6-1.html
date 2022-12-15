@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flexEx6</title>
+  <style>
+    body { margin:0; font-weight: bold; font-size: 1.3em; text-transform: capitalize; }
+    .gnb {
+      list-style: none;
+      padding: 0;
+      margin:0;
+      background-color: #2192FF;
+      height: 60px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-around;/* 여백 포함 정렬 */
+    }
+    .gnb li {
+      width:20%;
+    }
+    .gnb a {
+      color:#9CFF2E;
+      text-decoration: none;
+      position: relative;
+      display: block;
+      width:100%; height: 60px;
+      /* display: flex;
+      justify-content: center; align-items: center; */
+      text-align: center; line-height: 60px;
+    }
+    .gnb a:hover {
+      background-color: #FBB454;
+    }
+    .gnb a.active::after {
+      content: "";
+      background-color: rgba(234, 4, 126,.7);
+      position: absolute;
+      left:0; right:0;
+      bottom:-1px;
+      height: 10px;
+    }
+  </style>
+</head>
+<body>
+  <ul class="gnb">
+    <li><a href="#">home</a></li>
+    <li><a href="#" class="active">company</a></li>
+    <li><a href="#">service</a></li>
+    <li><a href="#">product</a></li>
+    <li><a href="#">board</a></li>
+  </ul>
+</body>
+</html>

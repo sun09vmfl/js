@@ -1,0 +1,201 @@
+// 컴파일 되지 않는 주석
+/* 컴파일 되는 주석 */ 
+
+// @import:"./minireset", "./font"; 확장자 생략 가능. 외부, 내부 문서 불러오는 방식.
+
+// 변수선언
+// color 
+$colorBg: #7d1e6a;
+$colorwhite: #fff;
+$colorMain: #e4010b;
+
+//font
+    $font: 'Pretendard', -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
+
+//border
+    $border:$colorMain 1px solid;
+
+//  선언, @mixin, 적용 @include 
+// @mixin fontSpoqa {
+    // font-family: ;
+    // color:;
+    // background: {
+    //     color:;
+    //     image:url();
+    //     repeat:;
+
+
+@mixin primary-font {
+    font : {
+        family:$font;
+        weight: 400;
+        size:18px;
+    }
+    color:#000;
+    line-height: 1.5;
+}
+@mixin fontSpoqa {
+    font {
+        font-family: 'SpoqaHanSansNeo', sans-serif;
+        weight: 300px;
+        size:14px; 
+    }  color:$colorwhite;
+    }
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear:both;
+}
+
+body {
+    @include primary-font;
+    text-transform: capitalize;
+    background: #2e160a url(./images/woodjpg.jpg);
+}
+
+/* container */
+
+.container { 
+    border: solid #eeb0b0 4px;
+    background-color: $colorwhite;
+    width: 940px; // 컨텐츠 영역:940-8(보더)=932
+    margin: 20px auto;
+
+    /* header 중괄호 안에 하위 태그를 넣음 */
+    h1 {
+        background: $colorBg url(./images/Leica_Camera.svg.png) no-repeat 25px 20px / 90px; //130-90=40나누기2 해서 20 20
+        color:$colorwhite;
+        font-family: 'Shrikhand', Georgia, 'Sacramento', 'Covered By Your Grace', sans-serif;
+        font-size: 40px;
+        line-height: 0.9;
+        height: 130px;
+        // text-indent: -9999px; //관념적인 방법(글씨 없애는 법) // 가운데 맞추는 법: 두 줄이라 라인-하이트 안 됨
+        padding: 30px 0 0 130px;
+
+        em {
+            display: block;
+            font-family: 'Covered By Your Grace', 'Sacramento' , sans-serif;
+        }
+    }
+
+    #gnb {
+        /* overflow: hidden;  플롯트 때문에 사진에 얘가 딸려올라가서 부모요소에 오버플로우 히든 줌 */
+        // #gnb::after {}
+        &::after {
+            content:"";
+            display: block;
+            clear:both;
+        }
+
+        background-color: #ffcd38;
+
+        li {
+            float: left;
+
+            a {
+                color:$colorBg;
+                text-decoration: none;
+                font-family:  $font;
+                font-weight: 700;
+                display: block; //제어하기 편하라고
+                padding: 10px 24px;
+            }
+            a:hover {
+                background-color: #7d1e6a;
+                color:$colorwhite;
+            }
+        }
+    }
+    footer {
+        background: $colorBg;
+        @include fontSpoqa;
+
+        height: 34px;
+        line-height: 34px;
+        padding-left: 20px;
+    }
+
+    /*  main  */
+    main { //높이값이 사라져서 안 보임 이렇게 되면 또 클리어픽스 주면 댐
+        overflow: hidden;
+
+        article { 
+            background-color: #f1eee9;
+            float:left;
+            width: 70%; //940(전체) 나누기 컨텐츠(640) 곱하기 100하면 백분율 나옴
+            //작은 요소에 마진을 주는 것보다 큰 영역에 패딩 주는 게 나음
+            //932 * 0,7 = 652px // 컨텐츠 영역 (레프트 라이트 뺴면) - 1px (보더값) = 611px
+            padding: {
+                top:30px; bottom:30px; left: 20px; right: 20px;
+            };
+
+            border-right :$border;
+            
+            figure { 
+                border: $border;
+                background-color: $colorwhite;
+                width: 304px; 
+                padding: 6px;
+                font-size: 16px;
+                text-align: right;
+                color:#999;
+                font-style: italic;
+                float:left;
+
+                margin: 0 20px 40px 0;
+            }
+            .txt_box { // 아티클 컨텐츠 (611) - 304 - 20 (figure의 right 마진) = 287 
+                width: 287px;
+                float:left;
+
+                &-title1 {
+                    font-size: 26px;
+                    font-weight: 700;
+                }
+
+                &-title2 {
+                    color:$colorMain;
+                    font-size: 20px;
+                    font-weight: 600;
+                    margin: 10px 0;
+                }
+            }
+        }
+
+        aside {
+            float:left;
+            width: 30%;
+            font-size: 24px;
+            
+            h2 {
+                font-size: 30px;
+                font-weight: 700;
+                color:$colorMain;
+                margin: 30px 20px;
+            }
+
+            ul {
+                &.recipe a { //종속선택자에 하위로 a 작성 &
+                    display: block;
+                    color:#000;
+                    text-decoration: none;
+                    border-bottom: $border;
+                    padding: 14px 20px 8px; //위쪽에 여백을 많이 주는 편
+
+                    &:hover {
+                        background-color: $colorMain;
+                        color:$colorwhite;
+                    }
+                }
+            }
+
+            address {
+                font-style: normal;
+                margin: 20px;
+                font-size: 20px;
+            }
+        }
+    }
+
+}

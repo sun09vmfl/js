@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>float 4</title>
+    <style>
+       ul {
+        padding:0;
+        list-style:none;
+        font-weight:bold;
+        font-size:20px;
+       } 
+
+       ul li {
+        padding: 20px;
+        margin: 10px 0;
+       }
+
+       ul .bg1 {background-color: darkblue ; color:#fff;}
+       ul .bg2 {background-color:darkcyan ;}
+       ul .bg3 {background-color: darkgoldenrod;}
+       ul .bg4 {background-color: darkgray;}
+
+       /* float : 부유 요소
+       즉, 떠 있는 요소로 기존의 흐름에서 벗어남
+
+       원래의 흐름에서 벗어났기 때문에 float가 적용되지 않은 다른 요소들이 float요소를 제외하고 순차적으로 정렬.
+       
+       float가 적용된 요소는 떠 있기 때문에 부모의 가로값을 물려 받지 못 함. 컨텐츠가 가진 값을 기본으로 받음 
+       
+       상속되지 않음.*/
+
+       #box1 li {
+        float: left;
+        float: right;
+       }
+
+       #box1 .bg4 {
+        float: left;
+       }
+
+       #box2 {
+        clear: both;
+         /*float를 적용 시켰을 때, 그 영향에서 벗어나기 위해 사용.
+        left, right*/
+        float:right;
+       }
+       #box2 li {
+        float:left;
+       }
+
+       #box2 li, #box3 li{
+        float: left;
+       }
+
+       #box3 {
+        clear: both;
+       }
+
+       #box3 .bg2 {
+        position: relative;
+        top:100px; right:50px;
+       } /* float와 position이 함께 적용된 경우 position이 우선 적용*/
+
+    </style>
+</head>
+<body>
+    <ul id="box1">
+        <li class="bg1">box1-1</li>
+        <li class="bg2">box1-2</li>
+        <li class="bg3">box1-3</li>
+        <li class="bg4">box1-4</li>
+    </ul>
+    <ul id="box2">
+        <li class="bg1">box2-1</li>
+        <li class="bg2">box2-2</li>
+        <li class="bg3">box2-3</li>
+        <li class="bg4">box2-4</li>
+    </ul>
+    <ul id="box3">
+        <li class="bg1">box3-1</li>
+        <li class="bg2">box3-2</li>
+    </ul>
+    
+</body>
+</html>

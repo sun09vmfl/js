@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선형 그라디언트 linear-gradient</title>
+  <style>
+    h1 {
+      text-align: center;
+      font-size: 26px;
+    }
+    .wrapper {
+      list-style: none;
+      padding:0;
+      background-color: #ddd;
+      font-size: 20px; font-weight: bold;
+    }
+    .wrapper .box {
+      border:3px solid #000;
+      width:80%; height: 200px;
+      min-width:400px; 
+      margin: 10px auto;
+    }
+    .box.box1 {/* 종속선택자 */
+      background-image: linear-gradient(orange, lightblue);
+    }
+    .box.box2 { 
+      /* 아래쪽으로 진행 */
+      background-image: linear-gradient(to bottom, rgba(0, 171, 179,0.7), #EA047E); 
+      /* 위쪽으로 */
+      background-image: linear-gradient(to top, rgba(0, 171, 179,0.7), #EA047E);
+      /* 왼쪽에서 오른쪽으로 */
+      background-image: linear-gradient(to right, rgba(0, 171, 179,0.7), #EA047E);
+    }
+    .box.box3 { 
+      background-image: linear-gradient(to right bottom, rgba(0, 171, 179,0.7), #EA047E);
+    }
+    .box.box4 { 
+      background-image: linear-gradient(#EA047E,#FF6D28,#FCE700,#00F5FF); 
+    }
+    .box.box5 { 
+      background-image: linear-gradient(-125deg, #EA047E,#FF6D28,#00F5FF);  
+    }
+    .box.box6 { 
+      background-image: linear-gradient(90deg, #FF731D,#FFF7E9 30%,#5F9DF7 80%); 
+    }
+    .box.box7 { 
+      background-image: linear-gradient(transparent, #D58BDD); 
+      background-image: linear-gradient(#38E54D, transparent); 
+      background-image: linear-gradient(-35deg, #38E54D, transparent, #D58BDD); 
+    }
+    .box.box8 { 
+      background-image: repeating-linear-gradient(#FD841F 0, #9C2C77 30px); 
+    }
+    .box.box9 { 
+      background-image: repeating-linear-gradient(#319DA0 0, #319DA0 30px,#FFB200 30px, #FFB200 40px); 
+    }
+    .box.box10 { 
+      background-image: repeating-linear-gradient(#FF1E00 0, #59CE8F 15%); 
+    }
+    .box.box11 { 
+      background-image: repeating-linear-gradient(90deg, #FF1E00 0,#FF1E00 15%, #59CE8F 15%,#59CE8F 30%); 
+    }
+  </style>
+</head>
+<body>
+  <h1>선형 그라디언트 linear-gradient</h1>
+  <ul class="wrapper">
+    <li class="box box1">background-image: linear-gradient(1색상, 2색상)</li>
+    <li class="box box2">background-image: linear-gradient(방향, 1색상, 2색상)</li>
+    <li class="box box3">background-image: linear-gradient(방향, 1색상, 2색상)</li>
+    <li class="box box4">background-image: linear-gradient(1색상, 2색상,3색상, 4색상)</li>
+    <li class="box box5">background-image: linear-gradient(방향, 1색상, 2색상,3색상)</li>
+    <li class="box box6">background-image: linear-gradient(방향, 1색상 위치%, 2색상 위치%,3색상 위치%)</li>
+    <li class="box box7">background-image: linear-gradient(transparent, 1색상)</li>
+    <li class="box box8">background-image: repeating-linear-gradient(방향,색상 위치,색상 위치)</li>
+    <li class="box box9">repeating-linear-gradient(1색상 0,1색상 30px,2색상 30px,2색상 60px)</li>
+    <li class="box box10">background-image: linear-gradient(1색상, 2색상)</li>
+    <li class="box box11">background-image: linear-gradient(1색상, 2색상)</li>
+  </ul>
+</body>
+</html>

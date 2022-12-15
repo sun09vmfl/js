@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>미디어쿼리선언 방식</title>
+<!--외부 선언-->
+<!-- <link rel ="stylesheet" href="mediaQueries_all.css"> -->
+
+<!--외부 선언2 (min-width) 작성시, 즉 모바일 우선 작성시 작은 값을 먼저 연결-->
+<!-- <link rel="stylesheet" href="mediaQueries_m.css">
+<link rel="stylesheet" href="mediaQueries_t.css">
+<link rel="stylesheet" href="mediaQueries_p.css"> -->
+
+<!--외부 선언3 -->
+<link rel="stylesheet" href="mediaQueries_m.css">
+<link rel="stylesheet" media="(min-width:768px)" href="tablet.css">
+
+
+
+<!--   내부 선언
+    <style>
+    /* 기본(모바일) */
+    body { margin: 0; text-align: center; font-size: 1.5em;}
+    h1 {background-color: #00af91; color:#fff; margin: 0; position: fixed; top:0; width: 100%; padding: 20px;}
+    h1 strong {display: block;}
+    h2 {background-color: #fdb827; margin-top: 168px;}
+    .container {width: 100%; margin: 0 auto;}
+    .box {height: 20vh; font-weight: bold; transition: .5s;}
+    .container .box1 {background-color: #f1f1f1;}
+    .container .box2 {background-color: #fdb827;}
+    .container .box3 {background-color: #21209c; color:#fff;}
+
+    /* 태블릿 */
+    @media (min-width:768px) {
+        h1 strong {display: inline;}
+        h2 {background-color: #c0e218; margin-top: 100px;}
+        .container {width:80%;}
+    }
+
+    /* pc 데스크탑 */
+    @media (min-width:1280px) {
+        h1 {padding: 30px; }
+        h2 {display: none;}
+        .container {width: 70%; margin-top: 130px; display: flex;}
+        /* .container .box {flex-grow} */
+        .container .box {width: 33.33333%;}
+        
+    }  --> 
+    </style>
+</head>
+<body>
+    <h1>미디어쿼리<strong>선언방식</strong></h1>
+    <h2>내부선언과<br>외부선언</h2>
+    <div class="container">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+    </div>
+</body>
+</html>

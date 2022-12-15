@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>마우스 이벤트 mouse event</title>
+  <style>
+    ::selection {
+      /* ::selection 드래그 했을 때. 앞에 실제하는 선택자 작성시 그 선택자만 드래그했을 때 적용 */
+      background-color: #F637EC;
+      color: #fff;
+    }
+
+    body {
+      /* 상속 inherit */
+      font-family: 'HS산토끼체', '나눔고딕', '맑은 고딕', 돋움, sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #FF731D;
+    }
+
+    h1 {
+      line-height: 1;
+    }
+
+    /* 
+      :, :: 
+      가상 선택자로 다양한 종류가 있으며 주로 실제하는 요소와 함께 작성
+      :link, :visited, :hover, :focus, :checked ..
+    
+    a:link { 링크 상태일 때(기본)
+      color:#3EC70B;
+      text-decoration: none;
+    }
+    a:visited { 방문한 적이 있을 때
+      color:#FBCB0A;
+    }
+    a:hover { 마우스를 위에 올렸을 때
+      color:#A149FA;
+      text-decoration:line-through;
+    }
+    a:active { 마우스로 클릭했을 때
+      color:#143F6B;
+      text-decoration:underline;
+    }
+    */
+    a {
+      /* a요소 성격이 밑줄과 고유색을 가지고 있기 때문에 직접 적용해야 변경 됨 */
+      color: black;
+      text-decoration: none;
+    }
+
+    a:hover {
+      background-color: #FF731D;
+      color: #fff;
+      /* 레이아웃이 무너질 수 있기 때문에 이런 방식은 잘 사용하지 않음
+      font-size: 30px;
+      font-weight: bold;
+      */
+    }
+  </style>
+</head>
+
+<body>
+  <h1>마우스 이벤트 mouse event</h1>
+  <ul id="url-box">
+    <li><a href="https://naver.com">네이버</a></li>
+    <li><a href="https://daum.net">다음</a></li>
+    <li><a href="https://facebook.com">페이스북</a></li>
+    <li><a href="https://instagram.com">인스타그램</a></li>
+    <li><a href="https://google.com">구글</a></li>
+  </ul>
+</body>
+
+</html>

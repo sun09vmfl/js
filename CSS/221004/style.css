@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* css 주석 처리 방식 */
+
+/* @charset "utf-8"; 필수 작성. 언어가 제대로 보일 수 있게 정의 */
+
+li {/* 타입 선택자selector: html의 요소를 그대로 가져와 사용 */
+  color:blueviolet;
+  /* 특성property: 값value */
+}

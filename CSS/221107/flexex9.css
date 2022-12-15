@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+/* flexEx9Fonts.css */
+@import url(./flexEx9Fonts.css);
+
+body {
+  font-family: 'Pretendard', '맑은 고딕',돋움,sans-serif;
+  text-align: center;
+}
+main {
+  background-color: #ddd;
+  height: 200vh;
+  font-size: 2em;
+  font-weight: 700;
+  padding: 100px;
+}
+
+h1 {
+  text-transform: capitalize;
+  font-family: 'Tenada',sans-serif;
+  font-size: 1.5em;
+  background-color: #277BC0;
+  color:#fff;
+
+  /* 
+  padding: 40px; 
+  line-height: 100px; */
+  height: 100px;
+   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 메뉴 */
+.gnb {
+  background-color: #FFB200;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+
+  position: sticky;
+  top:0;
+}
+.gnb a {
+  text-decoration: none;
+  color:#000;
+}
+
+/* 각 각의 대메뉴 글자 */
+.gnb > li > a {
+  font-weight: 700;
+  font-size: 1.3em;
+  width:140px;
+  display: block;
+  line-height: 40px;
+
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px; */
+}
+.gnb > li > a::after {
+  content: "";
+  border-right: 1px solid #000;
+  height: 40px;
+  /*  
+  display: inline-block;
+  vertical-align: top;
+  */
+  float: left;
+}
+.gnb > li:nth-child(1) > a::after {
+  content: "";
+  border-right:none;
+}
+.gnb > li > a:hover {
+  color:#277BC0;
+}
+
+/* 소메뉴 */
+.gnb > li > ul {
+  display: none;
+}
+/* 각 대메뉴에 마우스를 올리면, 해당 대메뉴의 소메뉴가 나타남 */
+.gnb > li:hover > ul {
+  display: block;
+}
+
+.gnb > li > ul a {
+  display: block;
+  background-color: #FFB200;
+  font-size: 1.1em;
+  border-bottom: 1px solid #000;
+  /* padding: 10px 0; */
+  /*
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  */
+  height: 30px;
+  line-height: 30px;
+}
+.gnb > li > ul li:last-child a {
+  border-bottom:none
+}
+.gnb > li > ul a:hover {
+  background-color: #D61C4E;
+  color:#fff;
+}

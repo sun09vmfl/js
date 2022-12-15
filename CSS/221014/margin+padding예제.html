@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>margin padding ex</title>
+  <style>
+    body {
+      font-family: '나눔고딕','맑은 고딕',돋움,sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
+    h1 {
+      background-color: #277BC0;
+      color:#fff;
+      width:400px;
+      padding: 20px 10px;
+      border-radius: 30px 30px 0 0;
+      border-bottom: #FFB200 10px solid;
+      font-family: 'HS산토끼체','맑은 고딕',돋움,sans-serif;
+      margin:50px auto 30px;
+    }
+    h2 {
+      text-decoration: line-through;
+    }
+    ul li {
+      border:1px solid #000;
+      width:400px;
+      margin:5px auto;
+      text-align: left;
+      padding:5px;
+    }
+    .url {
+      min-width:400px;
+      max-width: 70%;
+
+      margin:1px auto;
+      padding:10px 0;
+
+      background-color: #FF1E00;
+      /* color:#000; */
+    }
+
+    .url a {
+      color:#000;
+      text-decoration: none;
+    }
+    .url:hover {
+      background-color: #EAE509;
+    }
+
+    .wrapper {
+      min-width:400px;
+      max-width: 70%;
+      margin:50px auto;
+    }
+    .wrapper .site {
+      background-color: #81CACF;
+      border-bottom:1px solid #fff;
+
+      /* 
+        "한 줄인 경우" 세로 중앙 정렬 방법
+        height와 line-height의 값을 동일하게 적용.
+        폰트 사이즈의 크기가 큰 경우는 잘 안됨.
+      */
+      height: 40px;
+      line-height: 40px;
+    }
+    .wrapper .site a {
+      color: inherit;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>margin padding 연습</h1>
+  <h2>조건</h2>
+  <ul>
+    <li>마우스 이벤트</li>
+    <li>사이트 새창으로 이동</li>
+    <li>중앙 정렬</li>
+  </ul>
+  <p class="url">
+    <a href="https://naver.com" target="_blank">네이버</a>
+  </p>
+  <p class="url">
+    <a href="https://google.com" target="_blank">구글</a>
+  </p>
+  <p class="url">
+    <a href="https://daum.com" target="_blank">다음</a>
+  </p>
+
+  <div class="wrapper">
+    <div class="site">
+      <a href="https://naver.com" target="_blank">네이버</a>
+    </div>
+    <div class="site">
+      <a href="https://google.com" target="_blank">구글</a>
+    </div>
+    <div class="site">
+      <a href="https://daum.com" target="_blank">다음<br>카카오</a>
+    </div>
+  </div>
+</body>
+</html>

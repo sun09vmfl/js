@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>flex3_ flex-flow</title>
+    <style>
+         body {
+            margin:0; font-size: 2em; font-weight: bold; text-align: center;}
+        .wrapper {border: 6px solid #000; width: 80vw; margin: 2vw auto;}
+
+
+        #container {display: flex;
+       /* flex-direction: row; flex-wrap: nowrap;
+        flex-direction: row; flex-wrap:wrap;
+        flex-direction: column; flex-wrap: wrap;
+         */
+
+         /* 순서 없이 flex-direction, flex-wrap을 함께 쓰고자 할 때 사용 */
+         flex-flow: column wrap;
+         flex-flow: wrap-reverse row;
+         flex-flow: wrap; /* 생략된 값은 기본 값 적용 */
+        }
+
+        #container .box {width: 50%;}
+        #container .item1 {background-color: #1db9c3;}
+        #container .item2 {background-color: #7027a0;}
+        #container .item3 {background-color: #c32bad; width: 100%;}
+    </style>
+</head>
+<body>
+    <h1>flex3_flrx-flow</h1>
+    <div class="wrapper" id="container"> <!--flex container -->
+        <div class="box item1">item1</div> <!--flex item-->
+        <div class="box item2">item2</div> <!--flex item-->
+        <div class="box item3">item3</div> <!--flex item-->
+    </div>
+</body>
+</html>

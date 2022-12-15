@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>포지션 중앙 정렬</title>
+    <style>
+        body { margin: 0; text-align: center; font-size: 1.2em;}
+        .box {width: 60vw; height: 200px; background-color: salmon; margin: 20px auto; position: relative; overflow: hidden;} /* 마진 상쇄 현상 때문에 오버플로우 히든 줌 그러면 됨 */
+        h3 {width: 50%; height: 100px; background-color: maroon; color: #fff; margin: 0; line-height: 100px;}
+
+        /* h3 중앙 정렬 */
+        /* 포지션이 적용되지 않았으며 요소의 값은 정의되었을 때 */
+
+        .box1 h3 {
+        
+        margin: 50px auto; /* .box의 높이 값 - h3의 높이 값 = 100 그러니까 50 */
+        }
+
+        /* 포지션 적용되었을 때  */
+        .box2 h3 {
+            position: absolute;
+        }
+        /* is :  */
+        :is(.box2, .box3, .box4) h3 {
+        /* == .box2 h3, .box3 h3, .box4 h3 
+             :is (선택자1, 선택자2, ...) 여러 선택자 선정 *
+             :div:not(.box1) 인수의 값인 .box1을 제외한 div 요소 */ 
+            
+            position: absolute;}
+
+
+
+
+        .box2 h3 {
+           /* margin: 50px auto;  포지션 들어가면 마진 오토 안 댐 */
+           /* h3의 가로 세로 값이 정의 되었을 때. 요소가 가진 값의 반을 같은 방향의 마진으로 마이너스 값으로 처리 */
+           top:50%; left: 50%;
+           margin-top: -50px; margin-left: -25%; /* 하이트 값의 반, 위드 값의 반 */
+        }
+
+        .box3 h3 {
+            /* h3의 가로 세로 값이 정의 되었을 때. */
+            top:0; right: 0; bottom:0; left:0;
+            margin: auto;
+        }
+
+        .box4 h3 {
+            /* 현재 가장 많이 사용되는 포지션 중앙 정렬 방법 */
+            /* h3의 바로 세로값이 정의되지 않아도 가능 */
+            top:50%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box box1">
+        <h3>중앙정렬1</h3>
+    </div>
+    <div class="box box2">
+        <h3>중앙정렬2</h3>
+    </div>
+    <div class="box box3">
+        <h3>중앙정렬3</h3>
+    </div>
+    <div class="box box4">
+        <h3>중앙정렬4</h3>
+    </div>
+
+</body>
+</html>

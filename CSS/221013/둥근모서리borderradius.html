@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>둥근 모서리 border-radius</title>
+  <style>
+    .box {
+      width:400px;
+      border:10px solid #7FB77E;
+      margin:30px 10px;
+    }
+    #box1 {
+      /* 둥근 모서리 */
+      border-radius: 40px;
+    }
+    #box2 {
+      border-top-left-radius: 100px;
+      border-top-right-radius: 40px;
+      border-bottom-left-radius: 60px;
+      border-bottom-right-radius: 10px;
+    }
+    #box3 {
+      /* top-left top-right bottom-right bottom-left */
+      border-radius: 100px 40px 10px 60px;
+      border-color:blueviolet;
+    }
+    #box4 {
+      /* top-left(bottom-right) top-right(bottom-left) */
+      border-radius: 50px 10px;
+      border-style: double;
+      border-color: #F94892;
+    }
+    #box5 {
+      width:300px; height:300px;
+      border-radius: 150px;
+      border-radius: 50%;
+      background-color: #2192FF;
+      border:none;
+    }
+    #box5:hover {
+      background-color: orange;
+    }
+
+    #box6 {
+      /* 삼각형 */
+      border-top:none;
+      border-left:solid 200px transparent;
+      border-right:solid 200px transparent;
+      border-bottom: solid 200px orangered;
+      width:0; height: 0;
+    }
+    #box7 {
+      width:0; height:0;
+      border-right: none;
+      border-top: solid 70px transparent; 
+      border-bottom: solid 70px transparent; 
+      border-left:solid 100px #FB2576;
+    }
+  </style>
+</head>
+<body>
+  <h1>둥근 모서리 border-radius</h1>
+  <div id="box1" class="box">박스 모델은 실제 콘텐츠 영역, 박스와 콘텐츠 영역 사이의 여백인 패딩(padding), 박스의 테두리(border), 그리고 여러 박스 모델 간의 여백인 마진(margin) 등의 요소로 구성되어 있다.</div>
+  <div id="box2" class="box">박스 모델은 실제 콘텐츠 영역, 박스와 콘텐츠 영역 사이의 여백인 패딩(padding), 박스의 테두리(border), 그리고 여러 박스 모델 간의 여백인 마진(margin) 등의 요소로 구성되어 있다.</div>
+  <div id="box3" class="box">박스 모델은 실제 콘텐츠 영역, 박스와 콘텐츠 영역 사이의 여백인 패딩(padding), 박스의 테두리(border), 그리고 여러 박스 모델 간의 여백인 마진(margin) 등의 요소로 구성되어 있다.</div>
+  <div id="box4" class="box">박스 모델은 실제 콘텐츠 영역, 박스와 콘텐츠 영역 사이의 여백인 패딩(padding), 박스의 테두리(border), 그리고 여러 박스 모델 간의 여백인 마진(margin) 등의 요소로 구성되어 있다.</div>
+  <div id="box5" class="box">박스 모델은 실제 콘텐츠 영역, 박스와 콘텐츠 영역 사이의 여백인 패딩(padding), 박스의 테두리(border), 그리고 여러 박스 모델 간의 여백인 마진(margin) 등의 요소로 구성되어 있다.</div>
+  <div id="box6" class="box"></div>
+  <div id="box7" class="box"></div>
+</body>
+</html>

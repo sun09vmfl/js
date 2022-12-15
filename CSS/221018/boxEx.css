@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+body {
+  font-family: 'Noto Sans KR',-apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  background-color: #efefef;
+}
+
+.container { 
+  max-width: 980px; /*980 + 0 + 10,10 + 4,4 = 1008px */
+  max-width: 952px; /*980 이상 커지지 않음*/
+  min-width: 600px; /*600 이하로 작아지지 않음*/
+
+  box-sizing: border-box;
+
+  margin: 18px auto ;
+
+  border: double 4px #000;
+  background-color: #fff;
+  padding: 30px 10px 60px;
+
+} 
+
+.container h1{
+  /* background-color: orange;
+  text-align: center; */
+  width: 150px;
+  margin: 0 auto;
+}
+
+.container #gnb { 
+  /*
+  text-align: center; 자식으로 있는 li가 인라인 블럭이기 때문에 li가 중앙정렬이 됨*/
+  margin : 20px auto;
+  padding :14px 38px;
+  width: 522px;
+  border-top : solid 2px #000;
+  border-bottom: solid 1px #000;
+}
+
+.container #gnb li { /*여기에 줘야지 네비게이션이 예쁘게 떨어짐 * /
+ /* margin: 10px 20px; 마진이나 패딩이나 상관 x
+ padding : 10px 20px */
+ display: inline-block;
+ width: 100px;
+ text-align: center;
+}
+
+.container #gnb li a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+
+.container #gnb li a:hover, /*li.active <얘는 붙어 있음 종속선택자! 하위에 있는 거 */
+.container #gnb li.active a {
+  color : red;
+}
+
+.container figure {
+  width: 600px;
+  margin: 0 auto; 
+  /* background-color: violet; */
+  text-align: right;
+} 
+
+.container figure figcaption {
+display: inline;
+background-color: #000;
+color:white; 
+line-height: 1px;
+font-size: 15px;
+}
+
+.container p {
+  width:48.9795%;
+  margin: 20px auto;
+  text-align: center;
+  line-height: 1.4;
+  font-size: 17px;
+}
+  

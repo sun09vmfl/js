@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>viewportEX</title>
+    <style>
+        /* 
+         컨텐츠가 없어도 브라우저의 높이값을 인식시키는 방법
+         1. html, body (height:100%) 이하 필요한 하위 요소까지 height:100% 적용
+         2. position : absolute, fixed
+         3. height : 100vh
+         4. flex, grid
+        */
+        html {
+            height: 100%;
+        }
+        body {
+            margin:0; text-align: center;
+            height: 100%; }
+        
+        ul {
+            list-style: none;
+            margin:0; padding: 0;
+            height: 100%;
+            position:absolute;
+            width: 100%; height: 100vh;
+        }
+
+        h1 {
+            background-color: rgba(0,0,0,0.7);
+            color:#fff;
+            padding:16px; margin: 0;
+            position: sticky;
+            top: 0px;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 9999;
+        }
+
+        ul li {
+            background: no-repeat 50% / cover;
+            height: 100%;
+            width: 100%;
+            /*100vw: 뷰포트 가로 값 기준이나 브라우저 스크롤의 값이 존재하지 않는 것으로 해석하기 때문에 요소의 폭이 커짐  */
+
+            text-indent: -9999px;
+            font-size: 0;
+        }
+
+        /* ul li:nth-child(1) {background-image: url();}
+        ul li:nth-child(2) {background-image: url();}
+        ul li:nth-child(3) {background-image: url();}
+        ul li:nth-child(4) {background-image: url();} */
+
+        ul .bg1 {background-image: url(https://placekitten.com/1920/1080); }
+        ul .bg2 {background-image: url(https://placekitten.com/1919/1080); }
+        ul .bg3 {background-image: url(https://placekitten.com/1918/1081); }
+        ul .bg4 {background-image: url(https://placekitten.com/1919/1081); }
+
+
+    </style>
+</head>
+<body>
+    <h1>뷰포트 단위를 이용한 풀페이지</h1>
+    <ul>
+        <li class="bg1"><a href="#">bg1</a></li>
+        <li class="bg2"><a href="#">bg2</a></li>
+        <li class="bg3"><a href="#">bg3</a></li>
+        <li class="bg4"><a href="#">bg4</a></li>
+    </ul>
+</body>
+</html>

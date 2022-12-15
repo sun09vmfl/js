@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>transform:scale() 크기</title>
+    <style>
+        .box {
+            border:6px solid #000;
+            margin: 100px auto;
+            width: 250px; height: 250px;
+        }
+
+        img {
+            width: 100%;
+            border:3px solid red;
+            box-sizing: border-box;
+            transition: .7s;
+        }
+
+        .box1:hover img {
+            transform: translate(50%); }
+
+        .box2:hover img {
+            transform: translateX(200px); }
+
+        .box3:hover img {
+            transform: translateY(-150px); }
+
+        .box4:hover img {
+            transform: translate(50%, 50%); }
+
+            /* 이동 가능한 css 특성 
+                ㄴ margin : 여백을 만들어 이동. 레이아웃에 영향을 줌. 옆에 다른 요소가 있으면 밀림.
+                ㄴ position : 레이아웃 영향x. 독자적인 흐름을 갖는 경우
+                ㄴ transform:translate : 레이아웃 영향 x. 자기 자신을 기준으로 이동.
+                */
+    </style>
+</head>
+<body>
+    <h1>transform:scale() 크기</h1>
+    <div class="box box1"><img src="./images/wednesday.png" alt="수요일"></div>
+    <div class="box box2"><img src="./images/code.png" alt="img2"></div>
+    <div class="box box3"><img src="./images/wednesday.png" alt="수요일"></div>
+    <div class="box box4"><img src="./images/code.png" alt="수요일"></div>
+
+</body>
+</html>

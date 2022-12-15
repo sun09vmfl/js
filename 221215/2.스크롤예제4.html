@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../common/minireset.min.css" />
+    <title>스크롤 예제4</title>
+    <style>
+      nav {
+        position: fixed;
+        top: 0;
+        background-color: hotpink;
+        width: 100%;
+        height: 140px;
+        display: flex;
+        justify-content: space-between;
+      }
+      nav h1 {
+        margin: 20px;
+        background-color: black;
+        color: #fff;
+        padding: 10px;
+      }
+
+      #gnb {
+        display: none;
+      }
+
+      nav #toggle_btn {
+        position: absolute; /*따라다녀서..*/
+        top: 50px;
+        right: 10px;
+        width: 36px;
+        height: 28px;
+        /* background-color: tomato; */
+      }
+
+      h1 a {
+        text-decoration: none;
+        color: #fff;
+      }
+      nav #toggle_btn span {
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        background-color: #fff;
+        left: 0;
+        transition: 0.2s;
+        text-indent: -9999px;
+      }
+      nav #toggle_btn .bar1 {
+        top: 0;
+        transform-origin: top left;
+      }
+      nav #toggle_btn .bar2 {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      nav #toggle_btn .bar3 {
+        bottom: 0;
+        transform-origin: bottom left;
+      }
+
+      /* 마우스를 클릭했을 때 */
+
+      nav.on #toggle_btn .bar1 {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      nav.on #toggle_btn .bar2 {
+        display: none;
+      }
+      nav.on #toggle_btn .bar3 {
+        bottom: 0;
+        transform: rotate(-45deg);
+      }
+
+      header {
+        width: 100%;
+        height: 100vh;
+        background: #ddd;
+      }
+
+      .section1 {
+        width: 100%;
+        height: 100vh;
+        background: palegoldenrod;
+      }
+      .section2 {
+        width: 100%;
+        height: 100vh;
+        background: tomato;
+      }
+      .section3 {
+        width: 100%;
+        height: 100vh;
+        background: palegreen;
+      }
+      .section4 {
+        width: 100%;
+        height: 100vh;
+        background: palevioletred;
+      }
+
+      @media screen and (min-width: 1280px) {
+        nav {
+          background-color: yellowgreen;
+          height: 170px;
+        }
+        #toggle_btn {
+          display: none;
+        }
+
+        #gnb {
+          display: flex;
+          justify-content: end;
+        }
+
+        #gnb li {
+          padding: 30px;
+          margin-top: 40px;
+        }
+
+        #gnb li a {
+          text-decoration: none;
+          font-size: 1.2em;
+          color: #000;
+          font-weight: bold;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+      1. header 스크롤 이벤트
+      2. 로고 클릭 -> 첫 화면으로
+      3. 메뉴를 클릭하면 해당 박스로
+      4. 모바일 버전 메뉴 
+   -->
+
+    <div class="wrapper">
+      <!-- 네비게이션  -->
+      <nav>
+        <div class="logo">
+          <h1 class="logo_box"><a href="#">로고</a></h1>
+          <div class="menu_box"></div>
+        </div>
+        <ul id="gnb">
+          <li><a href="#" class="box1Btn">box1</a></li>
+          <li><a href="#" class="box2Btn">box2</a></li>
+          <li><a href="#" class="box3Btn">box3</a></li>
+          <li><a href="#" class="box4Btn">box4</a></li>
+        </ul>
+        <!-- 작은 메뉴 아이콘 -->
+        <a href="#" id="toggle_btn">
+          <span class="bar1">bar1</span>
+          <span class="bar2">bar2</span>
+          <span class="bar3">bar3</span>
+        </a>
+      </nav>
+      <header>
+        <h1>header</h1>
+      </header>
+      <section class="section1">
+        <h1>box1</h1>
+      </section>
+      <section class="section2">
+        <h1>box2</h1>
+      </section>
+      <section class="section3">
+        <h1>box3</h1>
+      </section>
+      <section class="section4">
+        <h1>box4</h1>
+      </section>
+    </div>
+  </body>
+  <script>
+    const box1Btn = document.querySelector(`.box1Btn`);
+    const box2Btn = document.querySelector(`.box2Btn`);
+    const box3Btn = document.querySelector(`.box3Btn`);
+    const box4Btn = document.querySelector(`.box4Btn`);
+
+    const toggleBtn = document.querySelector(`#toggle_btn`);
+    const nav = document.querySelector(`nav`);
+
+    toggleBtn.addEventListener(`click`, e => {
+      e.preventDefault();
+      nav.classList.toggle(`on`);
+    });
+
+    box1Btn.addEventListener('click', e => {
+      e.preventDefault();
+      let ht = box1Btn.offsetTop; //
+
+      scrollTo(10000, ht); //
+    });
+  </script>
+</html>

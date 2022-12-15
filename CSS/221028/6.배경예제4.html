@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>배경예제4</title>
+    <style>
+        form {
+            border: 3px solid #000;
+            border-radius: 30px;
+            margin: 30px auto;
+            width: 400px;
+            padding: 40px;
+        }
+        form input {
+            outline: none;
+            display: block;
+
+            border: 1px solid #000;
+            border-radius: 30px;
+            width: 280px;
+            font-size: 17px;
+            box-sizing: border-box;
+            /* padding: 10px 20px 10px 50px; */
+            padding:10px;
+            margin: 25px auto;
+            text-indent: 40px; /* 들여쓰기 하는 것*/
+
+            background: #f8c4b4 no-repeat 10px 50% / 36px;;
+        }
+
+        /* 속성선택자 사용하기 */
+        input[type="text"] {
+            background-image: url(./images/person.svg);
+        }
+
+        input[name="userEmail"] {
+            background-image: url(./images/email.svg);
+        }
+
+        input[id=userTel] {
+            background-image: url(./images/smartphone.svg);
+        }
+
+        input:hover, input:focus {
+            background-color: coral;
+        }
+        
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" name="userName" id="userName" placeholder="이름을 입력하세요">
+        <input type="email" name="userEmail" id="userEmail" placeholder="이름을 입력하세요">
+        <input type="tel" name="userTel" id="userTel" placeholder="이름을 입력하세요">
+    </form>
+</body>
+</html>

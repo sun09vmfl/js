@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>floatEx</title>
+  <style>
+    #gnb {
+      list-style: none;
+      padding: 0;
+      margin:0 auto;
+      width:415px;/* 103*3 + 103+3 */
+
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+    #gnb li {
+      float: left;
+    }
+    #gnb li a {/* w100+m0+p0+b3=103 */
+      color:inherit;
+      text-decoration: none;
+      display: block;
+      width:100px;
+      border:3px solid #31087B;
+      border-right: none;
+      height: 34px;
+      line-height: 34px;
+    }
+    #gnb .none a {
+      border-right: 3px solid #31087B;
+    }
+    #gnb li a:hover {
+      background-color: #31087B;
+      color: #fff;
+    }
+    #gnb a.left_round {
+      border-radius: 30px 0 0 30px;
+    }
+    #gnb li.right_round a {
+      border-radius: 0 30px 30px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- display:inline-block 사용금지 -->
+  <ul id="gnb">
+    <li><a href="#" class="left_round">메뉴1</a></li>
+    <li><a href="#">메뉴2</a></li>
+    <li><a href="#">메뉴3</a></li>
+    <li class="none right_round"><a href="#">메뉴4</a></li>
+  </ul>
+</body>
+</html>
+
+<!--1. 옆으로 배치 (플로트 사용하기)
+    2. 리스트 태그 때문에 내려가는 거니까 li 에다가 플로트 레프트 주기
+    3. a에 블럭 넣어 주기
+    4. a에다 보더 값 넣고, 오른쪽 선 없애기
+-->

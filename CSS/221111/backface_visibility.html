@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>backface visibility 요소 뒷면 제어</title>
+    <style>
+        img { width: 400px; vertical-align: top; transition: 1s; transform: perspective(800px) rotateY(0);}
+        .box {border:6px solid #000; margin: 50px auto; width: 400px;}
+
+        .wrapper1 img {backface-visibility: hidden;}
+        .wrapper2 img {backface-visibility: auto;}
+
+        .box:hover img {transform: perspective(800px) rotateY(180deg)}
+</style>
+</head>
+<body>
+    <h1>backface visibility 요소 뒷면 제어</h1>
+    <div class="box wrapper1">
+        <img src="./images/tape.jpg" alt="img">
+    </div>
+    <div class="box wrapper2">
+        <img src="./images/tape.jpg" alt="img">
+    </div>
+</body>
+</html>

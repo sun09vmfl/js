@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>미디어쿼리선언 방식</title>
+    <style>
+                /* PC 기준
+                ::selection  {background-color: orange; }
+        body {background-color: #f0d9e7; font-size: 1.5rem;}
+        h1 {background-color: #5c33f6; color:#fff; border-bottom:6px solid #542e71;} 
+        ul { padding:20px; margin: 20px; border: 3px solid #000;} 
+
+        /* 스크린 가로 크기가 최대 1280px 이하면 적용. 즉, 최대 1280px까지 적용. 피씨면 큰 값부터 먼저 써야 한다 */
+        /* @media (max-width:1280px) {
+            body {background-color: lightskyblue;}
+        } */
+        /* 스크린 가로 크기가 최대 768px까지 적용 */
+        /* @media (max-width:768px) {
+            body {background-color: salmon; margin: 0;}
+        } */ */
+        
+        body {margin: 0 auto; font-size: 1.2em; color:#fff; text-align: center;}
+        h1 { background-color: rgb(58, 98, 231); font-weight: bold; margin: 0;text-align: center;color:#fff; padding: 20px;}
+        h2 { background-color: #f08fe0; color:#000; margin: 0;text-align: center; padding: 20px;}
+        
+        .box {
+            display: block;
+            width: 50vw;
+            margin: 0 auto;
+        }
+        .container .box1 {
+            margin-top: 20px;
+            width: 100vw; height: 20vh;
+           background-color: yellow;
+           text-align: center; font-size: 1.2em; font-weight: bold;
+        }
+
+        .container .box2 {
+            width: 100vw; height: 20vh;
+           background-color: coral;
+           text-align: center; font-size: 1.2em; font-weight: bold;
+        }
+
+        .container .box3 {
+            width: 100vw; height: 20vh;
+           background-color: orange;
+           text-align: center; font-size: 1.2em; font-weight: bold;
+        }
+
+        @media screen and (min-width:768px) {
+            h1 {  background-color: rgb(58, 98, 231); font-weight: bold; margin: 0;text-align: center; color:#fff; padding: 20px;}
+          
+
+        }
+
+    </style>
+</head>
+<body>
+    <h1>미디어쿼리선언<br> 방식</h1>
+    <h2>내부선언과<br>외부선언</h2>
+    <div class="container">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+    </div>
+</body>
+</html>

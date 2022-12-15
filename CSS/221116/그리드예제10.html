@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gridLayoutEx10</title>
+  <style>
+    body { margin:0; font-weight: bold; text-transform: uppercase; text-align: center; }
+    .container {/* grid-container */  
+      width: 94%;
+      margin: 30px auto;
+      /* border:3px solid #000; */
+      display: grid;
+      /* 4행 3열 */
+      grid-template: 40px 1fr 1fr 40px / 40px 1fr 40px;
+    }
+
+    .container .vertical_txt {
+      /* 세로 글자 */
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      letter-spacing: 2px;
+    }
+
+    .container header, .container footer {/* grid-item */ 
+      /* border:3px solid #000; */
+      background-color: #000; color:#fff;
+      /* grid-column: 1/5; */
+      /* grid-column: span 4; */
+      grid-column: 1 / -1;
+
+      /* line-height: 40px; */
+      /* display: flex; justify-content: center; align-items: center; */
+      display: grid; place-items: center;
+    }
+    .container .menu_side1 {/* grid-item */ 
+      background-color: #9A1663; color:#fff;
+      border: 3px solid #000;
+      border-top: none;
+      /* display: grid;
+      place-items: center; */
+      display: flex;
+      justify-content: center; align-items: center;
+    }
+    .container .menu_side1 .menu { margin:10px 0 }
+    
+    .container .menu_side2 {/* grid-item */ 
+      border-right:3px solid #000; 
+      border-left:3px solid #000; 
+      background-color:orange;
+      grid-column: 1 / 2;
+    }
+
+    .container .video_wrapper {
+      position: relative;
+      grid-column: 2/3;
+      grid-row: 2/4;
+      overflow: hidden;
+    }
+    .container .video_wrapper video {
+      object-fit: cover;/* 비율을 유지한 채 여백없이 채움 */
+      position: absolute;
+      top:50%; left:50%;
+      transform: translate(-50%, -50%);
+    }
+    .container .video_wrapper h2 {
+      position: absolute;
+      top:50%; left:50%;
+      transform: translate(-50%, -50%);
+      font-size: 3em; 
+      background-color: #000; color: #fff;
+      padding: 10px 20px;
+    }
+    :is(.container) .txt_side1, .txt_side2 {
+      border-right:3px solid #000; border-left:3px solid #000;
+      background-color: #00ABB3;
+      grid-column: -1 / -2;
+      grid-row: 2 / 3;
+    }
+    .container .txt_side2 {
+      grid-row: 3 / 4;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>header</header>
+    
+    <aside class="menu_side1 vertical_txt">
+      <span class="menu">menu1</span>
+      <span class="menu">menu2</span>
+      <span class="menu">menu3</span>
+    </aside>
+    <aside class="menu_side2"></aside>
+
+    <div class="video_wrapper">
+      <video src="./images/sampleV.mp4" muted autoplay loop></video>
+      <h2>grid</h2>
+    </div>
+
+    <aside class="txt_side1 vertical_txt">item1</aside>
+    <aside class="txt_side2 vertical_txt">item2</aside>
+
+    <footer>footer</footer>
+  </div>
+</body>
+</html>

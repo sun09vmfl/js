@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어쿼리예제4</title>
+    <link rel ="stylesheet" href="./animation.css">
+    <style>
+        body {background-color: #f5f5f7;}
+        .apple_watch {display: flex; flex-direction: column; width: 70%; margin: 0 auto;}
+        .apple_watch img {width: clamp(250px, 50%, 500px);
+        animation: mov1 3s infinite alternate linear;
+
+
+        aspect-ratio: auto 4 / 3;}
+        /* 원래 비율값이 있으면 그 값이 적용되고 없으면 4:3비율 유지
+        min-, max- 특성이 적용된 경우, flex에서도 일부 동장 x
+        컨텐프가 넘치는 경우 동작 x */
+
+        /*
+         clamp(최소값, 기준값, 최대값);
+         clamp(200px, 50%, 500px)
+         최소 200 이하로 작아지지 않음,
+         현재 화면 크기의 50%의 크기로 유지하되 200보다 크고 500보다는 작음
+         최대 500이상으로 커지지 않음.
+         */
+   
+
+         .apple_watch figcaption em {display: block; font-style: normal; margin: 20px 0 10px; text-transform: capitalize; background-color: yellow; width: 98px;}
+
+
+    </style>
+    <link rel="stylesheet" media="(min-width:768px)" href="./mqEx4.css">
+</head>
+<body>
+    <figure class="apple_watch">
+        <img src="./images/202110050910147982_l.jpg" alt="애플와치">
+        <figcaption>
+            <em>apple watch</em>
+            <strong>스타라이트 알루미늄 케이스, 그리고 스포츠 루프</strong>
+            <p>$499,000부터</p>
+            <p>알루미늄 케이스는 가볍고 100% 재활용된 항공우주 등급의 합금으로 만들어집니다</p>
+            <p>앞뒤가 다른 두 개의 나일론 레이어로 파여 부드럽고 통기성이 좋은 스포츠루프, 구조는 후크 엔드 루프 패스너 타입이라 빠르고 간편하게 길이 조절을 할 수 있습니다.</p>
+        </figcaption>
+    </figure>
+</body>
+</html>

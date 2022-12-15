@@ -1,0 +1,7 @@
+@charset "utf-8";
+/* 태블릿 */
+@media (min-width:768px) {
+  h1 strong { display: inline;}
+  h2 { background-color: #C0E218; margin-top:100px;}
+  .container { width: 70%; }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>transform-style 3D 속성 상속</title>
+    <style>
+        img { width: 400px; vertical-align: bottom;}
+        .container {
+            background-color: salmon;
+            width: 412px;
+            padding: 50px;
+
+            perspective: 600px; /* 자식이(컨테이너 이너) 원근값을 가지며 숫자가 적을 수록 원근감이 가까워지기 때문에 심한 왜곡. 숫가자 커시면 원근감이 멀어지기 때문에 왜곡이 심하지 않음. */
+        }
+
+        .container_inner {
+            border:3px solid #000;
+            width: 406px;
+
+            transform: rotateX(-45deg);
+            transform-style: preserve-3d; /* 상속되지 않는 원근값 상속. flat이 기본 값(상속 x) */
+        }
+
+        .box {
+            border: 3px solid red;
+            width: 400px;
+            transition: 1s;
+            transform: rotateY(45deg);
+        }
+
+        .container:hover .box {
+            transform: rotateY(-45deg);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>transform-style 3D 속성 상속</h1>
+    <p>3D 변환 요소의 자식도 3D 값을 사용할지 결정</p>
+    <ul>
+        <li>transform-style: flat; 기본 값</li>
+        <li>transform-style: perserve-3d; 3D 값을 사용</li>
+    </ul>
+
+    <div class="container">
+        <div class="container_inner">
+            <div class="box">
+                <img src="./images/tape.jpg" alt="img">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

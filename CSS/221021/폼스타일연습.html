@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>폼 스타일 연습</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+
+        form {
+            background-color: #ddd;
+            width: 500px;
+            margin: 0 auto;
+            overflow: hidden; 
+           /* 다운데 정렬 padding: 50px 0;*/
+           font-family: 'Gowun Batang', serif;
+
+        }
+        form * {
+            font-family: 'Gowun Batang', '바탕체', serif;
+            color: #1b335f;
+        }
+
+        form fieldset {
+            border: #1b335f 3px solid;
+            border-radius: 20px;
+            background-color: #fff;
+
+            width:300px;
+            margin: 50px auto; 
+            
+            /*이렇게하니까 폼이랑 필드셋 둘다 내려옴
+            
+            마진 상쇄 현상 : 일반적인 흐름에서, 자식의 margin-top과 부모의 margin-top이 만나면 둘 중 큰 값이 부모에게 적용
+
+            마진 상쇄 현상을 해결하기 위해 부모 요소에 overflow:hidden; 적용
+            */
+            padding: 20px 30px;
+            text-align: right;
+        }
+
+        form fieldset legend {
+            background-color: #1b335f;
+            color:#fff;
+            padding: 4px 20px;
+            text-align: left;
+        }
+
+        form fieldset input {
+            /* width: 100% 필드셋 안에서의 100퍼센트임*/
+            width: 220px;
+            outline: none; /*크롬, 엣지, 웨일 등 모던 브라우저에서 생기는 현상으로 포커스 상태일 때의 테두리 없앰*/
+            border: 1px transparent solid;
+            border-bottom-color: #1b335f;
+            padding: 5px;
+            margin-bottom: 10px; /*이름 칸 밑, 이메일 칸 밑 여백*/
+
+        }
+        /*속성 선택자 : 요소[속성=값], 요소[속성] ex) input[type], [속성] ex[required]*/
+        form fieldset input[type=text]:hover {
+            border:1px solid #1b335f;
+        }
+
+        form fieldset input[type=email]:focus {
+            background-color: lavender;
+        }
+
+        form fieldset input[type=text]:focus {
+            background-color: antiquewhite;
+        }
+
+        form fieldset button {
+            background-color: #1b335f;
+            color:#fff;
+            cursor: pointer;
+            padding:2px 14px;
+            border: none;
+        }
+        form fieldset button:hover {
+            background-color: hotpink;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <!--폼 관련 요소들 그룹화-->
+        <fieldset>
+            <legend>회원가입</legend> 
+            <label for="userName">이름:</label><input type="text" id="userName" name="user_name" required><br>
+            <label for="userEmail">이메일:</label><input type="email" id="userEmail" name="user_email" required><br>
+
+            <button type="submit">가입</button>
+            <button type="reset">취소</button>
+        </fieldset>
+    </form>
+    <!--
+        <button>
+            폼과 관련된 값을 서버로 전송할 때.
+            사용자와의 상호작용이 필요할 때.
+            (값을 서버에 전송하고 그 결과를 사용자에게 피드백할 때 사용.)
+
+        <a>
+            다른 페이지로의 이동이 필요할 때.
+            페이지간의 이동. (더보기, 새창 띄우기, 서브페이지 이동 등등)
+    -->
+
+</body>
+</html>

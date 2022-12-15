@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>fontEx2 text-shadow</title>
+  <style>
+    h2 {
+      /* background-color: orange; */
+      font-family:'HY견고딕',"맑은 고딕",돋움,sans-serif;
+      font-size: 30px;
+      text-align: center;
+      text-transform: capitalize;
+    }
+    #title1 {
+      text-shadow: 10px 10px 10px #777;/* x축 y축 번짐 색상 */
+    }
+    #title2 {
+      text-shadow: -10px -10px 5px red;
+    }
+    #title3 {
+      text-shadow:0 10px 5px #777;
+      text-shadow:0 -10px 5px #777;
+    }
+    #title4 {
+      text-shadow: 10px 10px 0 orange;
+      text-shadow: 10px 10px orange;/* x축 y축 (번짐 생략) 색상 */
+    }
+    #title5 {
+      color:blueviolet;
+      text-shadow: 0 10px;/* 번짐 생략. 색상은 생략시 글자의 색을 따라 감 */
+    }
+  </style>
+</head>
+<body>
+  <h2 id="title1">서체그림자 text-shadow1</h2>
+  <h2 id="title2">서체그림자 text-shadow2</h2>
+  <h2 id="title3">서체그림자 text-shadow3</h2>
+  <h2 id="title4">서체그림자 text-shadow4</h2>
+  <h2 id="title5">서체그림자 text-shadow5</h2>
+</body>
+</html>

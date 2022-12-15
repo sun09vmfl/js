@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>position Ex1</title>
+    <style>
+        .wrapper {
+            width: 400px; height: 400px;
+            background-color: darkgreen;
+            margin: 50px auto; /*보기 예쁘라고 50px*/
+            list-style: none;
+            padding: 0;
+
+            position: relative;
+            /*하단의 앱솔루틀 위해서, wrapper가 부모 요소가 되어 기준화하기 위해 포지션을 아래로 주는 것임.
+            얘가 제일 무난함! static은 없는 거나 다름없음*/
+
+            /* 기준 위치 특성(top이나 left)을 쓰지 않는 이상 기존의 흐름을 유지한 채 li 포지션의 기준이 될 수 있기 때문  */
+
+        }
+
+        .wrapper .box {
+            width: 50px; height: 50px;
+            line-height: 50px;
+            background-color: olive;
+
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+
+            position: absolute;
+
+        }
+        /*앱솔루트 : 나와 가까운 부모 요소에 포지션이 적용되어 있으면 그 부모를 기준으로 위치 설정*/
+        .wrapper .box1 {
+            top:0px; left:0px
+        }
+
+        .wrapper .box2 {
+            top:0; right:0;
+             /*오른쪽을 기준으로 오른쪽에서 0 픽셀이라는 의미*/
+            
+        }
+
+        .wrapper .box3 {
+            bottom: 0px; left:0px;
+            
+        }
+
+        .wrapper .box4 {
+            bottom:0px; right:0px;
+        }
+
+        .wrapper .box5 {
+            /* left:50%; top:50%; margin-left:-25px margin-top:-25px */
+            left:175px; top: 175px;
+        }
+
+        /* 포지션이 적용된 경우 중앙 정렬
+        1. relative의 경우 위치속성이 없으면 margin으로 중앙 정렬 가능 
+        2. absolute, fixed 경우, margin으로 중앙 정렬 안 됨.
+            ㄴ 위치 속성 값을 50%, 같은 방향의 margin 값을 -로 반값 부여.
+            top:50% left:50%, margin-top:-1/2px; margin-left -1/2px;
+            ㄴ top:0; right:0; bottom:0; left:0; margin:auto;*/
+    </style>
+</head>
+<body>
+    <ul class="wrapper">
+        <li class="box box1">1</li>
+        <li class="box box2">2</li>
+        <li class="box box3">3</li>
+        <li class="box box4">4</li>
+        <li class="box box5">5</li>
+</body>
+</html>

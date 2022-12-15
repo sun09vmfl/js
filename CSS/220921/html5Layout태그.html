@@ -1,0 +1,99 @@
+html5Layout태그.html
+액세스 권한이 있는 사용자
+m
+시스템 속성
+유형
+HTML
+크기
+2KB
+사용한 용량
+5KB
+위치
+220922-html
+소유자
+miri kim
+수정 날짜
+2022. 9. 22.에 miri kim님이 수정
+열어 본 날짜
+오후 8:31에 내가 열어 봄
+생성 날짜
+2022. 9. 22.
+설명 없음
+뷰어가 다운로드할 수 있음
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>html5 Layout 태그</title>
+</head>
+<body>
+<!-- 예전 방식의 구조
+  <div id="container" class="wrapper">
+    <div id="header">
+      <div id="title">페이지 제목</div>
+      
+      <div id="nav">페이지의 내비게이션 영역
+        <div class="gnb">메뉴</div>
+      </div>
+    </div>
+
+    <div id="contents">메인 컨텐츠 영역
+      <div class="txt_box">내용</div>
+    </div>
+    <div class="side_contents">사이드 내용</div>
+  </div>
+
+  <div id="footer" class="wrapper">하단 바닥글
+    <address>주소 & 연락처</address>
+  </div>
+-->
+
+  <!-- 현재 방식의 구조
+  <div id="container" class="wrapper">
+    div: 단순히 구분을 위해, 블록으로 묶어주기 위해 작성
+    <header>
+      header: 페이지의 머리글. 제목, 로고, 메뉴, 검색 관련, 유틸, 작성자 이름...
+      <h1>h1: 페이지의 제목, 로고</h1>
+      <nav>
+        nav: 페이지의 내비게이션 영역(사이트 내, 외부로 이동). 메뉴, 목차, 색인...
+        <div class="gnb">메뉴</div>
+      </nav>
+    </header>
+    
+    <main>
+      main: 메인 컨텐츠 영역. 문서 내에서 *반드시* 한 번만 사용. 다른 header, footer, nav, article, section, aside 의 하위로 작성할 수 없음.
+      <article>
+        article: 독립된 컨텐츠. 제목 태그와 함께 작성. 게시판, 블로그, 뉴스, 매거진...
+        <section>section: 일반적인 문서 영역. 스타일링을 위해 사용 x. 제목 태그와 함께 작성.</section>
+      </article>
+      <aside>aside: 간접 컨텐츠. 보조 컨텐츠</aside>
+    </main>
+  </div>
+
+  <footer class="wrapper">
+    footer: 하단 바닥글. 회사정보, 저작권, 연락처...
+  </footer>
+   -->
+
+   <main>
+    <article class="article-header">
+      <header>
+        <h1>로고</h1>
+      </header>
+      <nav>내비게이션</nav>
+    </article>
+
+    <article>
+      <header>
+        <h2>주요 내용</h2>
+      </header>
+      <section>
+        <h3>아티클 영역</h3>
+        <p>아티클 영역</p>
+      </section>
+    </article>
+
+    <footer><section><h3>바닥글</h3></section></footer>
+   </main>
+</body>
+</html>

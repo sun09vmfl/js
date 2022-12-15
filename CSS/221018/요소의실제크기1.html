@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>요소의 실제 크기 box size1</title>
+  <style>
+    .box {
+      width:500px; height: 300px;
+      font-weight: bold;
+    }
+    .box1 {
+      border:10px solid #3DB2FF;
+      padding: 10px; margin:20px;
+    }
+    .box2 {
+      outline: 50px solid rgba(112, 39, 160,.5);
+      padding: 10px; margin:20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>요소의 실제 크기 box size1</h1>
+  <h2>width + margin-left + margin-right + padding-left + padding-right + border-left + border-right</h2>
+  <h2>height + margin-top + margin-bottom + padding-top + padding-bottom + border-top + border-bottom</h2>
+
+  <div class="box box1">
+    <h3>width + margin + padding + border</h3>
+    <p>.box1의 실제 가로 크기: w500+m(20+20)+p(10+10)+b(10+10)=580px</p>
+    <p>.box1의 실제 세로 크기: h300+m(20*2)+p(10*2)+b(10*2)=380px</p>
+  </div>
+  <div class="box box2">
+    <h3>width + margin + padding + outline(이 특성은 요소의 실제 크기에 영향을 주지 않음)</h3>
+    <p>.box2의 실제 가로 크기: w500+m(20+20)+p(10+10)=560px</p>
+    <p>.box2의 실제 세로 크기: h300+m(20*2)+p(10*2)=360px</p>
+  </div>
+</body>
+</html>

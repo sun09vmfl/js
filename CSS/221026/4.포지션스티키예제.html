@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>position: sticky1</title>
+    <style>
+        body, h1, h2 {
+            margin: 0;
+            color:#fff;
+            font-weight: bold;
+        }
+
+        header, footer {
+            background-color: teal;
+            height: 100px;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        footer {
+            background-color: blue;
+        }
+
+        main {
+            background-color: orange; }
+
+             /* 아티클과 어사이드는 같은 행이니까 편의상 둘 다 플로터 주기 아니면 클리어 픽스*/ 
+            /* overflow: hidden; } */
+            /* main:after::{} */ 
+
+            .clearFix::after {
+                content: "";
+                display: block;
+                clear: both;
+             }
+
+        main article {
+            background-color: brown;
+            float: left;  
+            height: 3000px;
+            width: 70%;
+            }
+            
+        main aside {
+            background-color: gray;
+            float:left; 
+            height: 200px;
+            width: 30%;
+
+            position: sticky;
+            /*부모 요소들 중 overflow:hidden이 적용되어 있으면 작동하지 않음*/
+            /* height 값이 %인 경우도 작동하지 않음 */
+            top:0px;
+        }
+
+        /*푸터가 쫓아 올라간 경우, 오버플로우 히든을 주거나 하이트 값을 주거나, 부모 요소에도 플로트를 주거나.*/
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>position: sticky1</h1>
+        <h2>header</h2>
+    </header>
+    <main class="clearFix">
+        <article>main contents</article>
+        <aside>sticky sidebar</aside>
+    </main>
+    <footer><h2>footer</h2></footer>
+</body>
+</html>

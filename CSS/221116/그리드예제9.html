@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>그리드 예제9</title>
+    <style>
+        .container {
+            border:1px solid #000;
+            width: 90vw; margin: 20px auto;
+            padding: 2vw;
+            box-sizing: border-box;
+        }
+        .container header {
+            border-bottom: 1px solid #000;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .container header address { /* flex-item */
+            order:3;
+            /* align-self:flex-end ; */
+            margin-top: auto; /* 밑으로 보내는 방법 */
+            margin-bottom: 14px;
+            font-style: normal;
+        }
+        .container header address span {
+            color:orange;
+        }
+
+        .container .grid_container {
+            /* background-color: #fddd; */
+            list-style: none; padding: 0;
+
+            display: grid;
+            gap: 1.5vw;
+            place-items: center;
+            /* place-content: center; */
+            grid-auto-rows: 20vw;
+            grid-template-columns: repeat(3, minmax(20vw, 1fr));
+        }
+
+        .container .grid_container li {
+            font-weight: bold; font-size: 1.6em;
+            border-radius: 50%;
+            width: 20vw; height: 20vw;
+            display: grid;
+            place-items: center;
+        }
+
+        .container .grid_container li:nth-child(odd) {background-color: #f0dd42;}
+        .container .grid_container li:nth-child(even) {background-color: #82cd47;}
+    </style>
+</head>
+<body>
+    <div class="container">
+      <header>
+        <address>경기도 수원시 팔달구 <span>더조은컴퓨터아카데미</span></address>
+
+        <ul>
+            <li>list1-1</li>
+            <li>list1-2</li>
+            <li>list1-3</li>
+            <li>list1-4</li>
+        </ul>
+        <ul>
+            <li>list1-1</li>
+            <li>list1-2</li>
+            <li>list1-3</li>
+            <li>list1-4</li>
+        </ul>
+        </header>
+        <ul class="grid_container">
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+            <li>item5</li>
+            <li>item6</li>
+        </ul>
+    </div>
+</body>
+</html>

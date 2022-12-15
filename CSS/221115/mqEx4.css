@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+/* @media () {} 링크에 미디어 값을 작성했기 때문에 css 문서에서는 불필요 */
+.apple_watch {
+    flex-direction: row;
+    align-items: flex-start;
+
+}
+.apple_watch img {
+    /* flex-shrink: 0; */
+
+}
+.apple_watch figcaption {
+    margin-left: 2vw;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>원형 그라디언트 radial-gradiant()</title>
+    <style>
+            h1 {
+      text-align: center;
+      font-size: 26px;
+    }
+    .wrapper {
+      list-style: none;
+      padding:0;
+      background-color: #ddd;
+      font-size: 20px; font-weight: bold;
+    }
+    .wrapper .box {
+      border:3px solid #000;
+      width:80%; height: 200px;
+      min-width:400px; 
+      margin: 10px auto;
+    }
+
+    .box1 {
+        background-image: radial-gradient(orange, #7a1111);
+    }
+
+    .box2 {
+        background-image: radial-gradient(#f9f2ed,#3ab0ff,#ddb562,#f87474);
+    }
+
+    .box3 {
+        background-image: radial-gradient(#3ab0ff 30%, #38d54d 80%);
+    }
+    /* 영역의 비율과 상관없이 정원의 형태 그라디언트 생성 */
+    .box4 {
+        background-image: radial-gradient(circle, #3ab0ff, #ffb72b);
+    }
+
+    .box5 {
+        background-image: radial-gradient(circle, #3ab0ff 50%, #ffb72b 80%);
+    }
+
+    .box6 {
+        background-image: radial-gradient(circle closest-side at 10% 80%, hotpink, purple);
+    }
+
+    .box7 {
+        background-image: repeating-radial-gradient(circle, skyblue 0, white 30px);
+    }
+
+    .box8 {
+        background-image: repeating-radial-gradient(circle, skyblue 0, skyblue 20%, white 20%, white 40%);
+    }
+
+
+    </style>
+</head>
+<body>
+    <ul class="wrapper">
+        <li class="box box1">background-image: radial-grandiant(1색상, 2색상)></li>
+        <li class="box box2">background-image: radial-grandiant(1색상, 2색상, 3색상, 4색상)></li>
+        <li class="box box3">background-image: radial-grandiant(1색상 위치%, 2색상 위치%)></li>
+        <li class="box box4">background-image: radial-grandiant(circle, 1색상, 2색상) 정원의 그라디언트</li>
+        <li class="box box5">background-image: radial-grandiant(circle, 1색상 위치%, 2색상 위치%)></li>
+        <li class="box box6">background-image: radial-grandiant(circle closest-side at 위치, 1색상, 2색상)></li>
+        <li class="box box7">background-image: repeating-radial-grandiant(1색상 %, 2색상 %)></li>
+        <li class="box box8">background-image: repeating-radial-grandiant(1색상, 2색상)></li>
+    </ul>
+    
+</body>
+</html>

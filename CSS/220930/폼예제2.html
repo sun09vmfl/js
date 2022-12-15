@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>form 연습 2</title>
+</head>
+<body>
+	<h1>form 연습 2</h1>
+	<form action="#" method="post">
+		<!-- row:9 col:4 -->
+		<table border=1>
+			<caption>실습 예제</caption>
+			<tbody>
+				<tr><!-- 1행 -->
+					<th><label for="school_search">학교</label></th>
+					<td colspan="2"><input type="search" name="school_search" id="school_search"></td>
+					<td><button type="submit">학교 찾기</button></td>
+				</tr>
+				<tr><!-- 2행 -->
+					<th>담당학년</th>
+					<td colspan="3">
+						<select name="grade" id="grade">
+							<option>-</option>
+							<option value="1 학년">1</option>
+							<option value="2 학년">2</option>
+							<option value="3 학년">3</option>
+						</select> <label for="grade">학년</label>
+						<select name="class" id="class">
+							<option>-</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</select> <label for="class">반</label>
+					</td>
+				</tr>
+				<tr><!-- 3행 -->
+					<th>학교전화</th>
+					<td>
+						<select name="school_code" id="school_code">
+							<option>지역번호</option>
+							<option value="02">02</option>
+							<option value="031">031</option>
+							<option value="041">041</option>
+						</select>
+					</td>
+					<td> - </td>
+					<td><input type="tel" name="school_tel" id="school_tel"></td>
+				</tr>
+				<tr><!-- 4행 -->
+					<th><label for="school_phone">휴대전화</label></th>
+					<td>010</td>
+					<td> - </td>
+					<td><input type="tel" name="school_phone" id="school_phone"></td>
+				</tr>
+				<tr><!-- 5행 -->
+					<th rowspan="3"><label for="school_file">교사인증</label></th>
+					<td colspan="3"><input type="file" accept=".hwp, .pdf" name="school_file" id="school_file"></td>
+				</tr>
+				<tr><!-- 6행 -->
+					<td colspan="3">* 교사 인증은 교육 행정 정보시스템 로그인 한 다음 화면 캡쳐해서 첨부해 주시면 됩니다.</td>
+				</tr>
+				<tr><!-- 7행 -->
+					<td colspan="3"><a href="#" target="_blank">[{&lt;자세한 방법 보기&gt;}]</a></td>
+				</tr>
+				<tr><!-- 8행 -->
+					<th rowspan="2"><label for="intro">간단한 인사 및 소개</label></th>
+					<td colspan="3">
+						<textarea name="intro" id="intro" placeholder="이곳에 작성하세요"></textarea>
+					</td>
+				</tr>
+				<tr><!-- 9행 -->
+					<td colspan="3">간단한 인사 및 소개를 남겨 주시면 교내 사랑방 게시판에 자동 등록되어 집니다.</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</body>
+</html>

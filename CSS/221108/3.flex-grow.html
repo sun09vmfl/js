@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>flex item : flex - grow</title>
+    <style>
+        ul {
+            list-style: none;
+            font-weight: bold; font-size: 1.3em; text-align: center;
+            list-style: none;
+            background-color: #ddd; margin: 10px; padding:0;
+
+            display:flex; width:800px; height: 60px;
+        }
+
+        ul li:nth-child(1) {background-color: #125b50; color: aliceblue;}
+        ul li:nth-child(2) {background-color: #f8b400;}
+        ul li:nth-child(3) {background-color: #faf5e4;}
+        ul li:nth-child(4) {background-color: #ff6363;}
+
+        /* flex-item 적용 특성
+        order, flex-grow, flex-shrink, flex-basis 등등 .. . . .
+        
+        flex-grow : 0; 숫자가 클 수록 더 큰 영역을 가짐. 가변 값이 아니거나 0인 경우 적용되지 않음.
+        flex-shrink : 1; 숫자가 클수록 더 큰 영역 감소. 가변값이 아니거나 0인 경우 적용되지 않음.
+        flex-basis : auto; 기본 가로 값 설정. auto인 경우 width, height 등의 특성으로 가로 설정이 가능하나 단위값이 주어진 경우 설정 x 
+        
+        flex : 증가비율(flex-grow) 감소비율(flex-shrink) 기준비율(flex-basis)
+            flex:0 1 auto; 기본 값*/
+
+            .box1 ~ ul li { /* 일반 형제 선택자 ~로 표기.기준 선택자 뒤애 나오는 형제 전부를 의미 */
+                width:0;}
+
+            .box1 li {flex-grow: 0;} /* 기본값. 강제로 컨테이너를 채우지 않음. */
+
+            .box2 li {flex-grow: 1;} /* 각 아이템들이 1의 비율로 증가하여 컨테이너를 채움 */
+
+            .box3 li:nth-child(1) {flex-grow: 1;} /* 1/5 == 20% == 160px */
+            .box3 li:nth-child(2) {flex-grow: 1;}
+            .box3 li:nth-child(3) {flex-grow: 1;}
+            .box3 li:nth-child(4) {flex-grow: 2;} /* 2/5 == 40% == 320px*/
+
+            .box4 li:nth-child(1) {flex-grow: 1;} /* 1/8 == 12.5% ==100px */
+            .box4 li:nth-child(2) {flex-grow: 2;} /* 2/8 == 25% == 200px*/
+            .box4 li:nth-child(3) {flex-grow: 2;} 
+            .box4 li:nth-child(4) {flex-grow: 3;} /* 3/8 == 37.5% == 300px */
+
+            /* .box5 width:800px - li width:300px = 500px */
+            .box5 li:nth-child(1) {width: 300px;}  /* 고정값을 뺀 나머지를 계산한 후 비율로 나눔 */
+            .box5 li:nth-child(2) {flex-grow: 1;} /* 1/4 == 25% == 125px */
+            .box5 li:nth-child(3) {flex-grow: 2;} /* 2/4 == 50% == 250px */
+            .box5 li:nth-child(4) {flex-grow: 1;} 
+
+    </style>
+</head>
+<body>
+
+    <h1>flex-grow 증가 비율</h1>
+    <h2>flex-grow: 0; 기본값. 증가하지 않음</h2>
+    <p>플렉스 아이템이 가지고 있는 기본 가로값 그대로 유지</p>
+    <ul class="box1">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+    </ul>
+    <h2>flex-grow: 1; 1:1:1:1  비율 값으로 동일하게 커져 컨테이너를 채움</h2>
+    <ul class="box2">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+    </ul>
+    <h2>flex-grow: 1; / flex-grow:2; 1:1:1:2 </h2>
+    <ul class="box3">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+    </ul>
+    <h2>flex-grow: 1; / flex-grow:2 / flex-grow:3;</h2>
+    <ul class="box4">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+    </ul>
+    <h2>width:300px; / flex-grow:1 / flex-grow:2 / flex-grow:1</h2>
+    <ul class="box5">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+    </ul>
+</body>
+</html>

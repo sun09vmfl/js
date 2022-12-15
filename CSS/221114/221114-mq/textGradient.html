@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>text gradient</title>
+  <style>
+    :root {
+      --bg-size: 400%;
+      --color1: #3330E4;
+      --color2: #F637EC;
+    }
+    body {
+      margin:0;
+      background-color:#000;;
+    }
+    @keyframes move-bg {
+      100% {
+        background-position: var(--bg-size) 0;
+      }
+    }
+    .txt { 
+      text-align: center;
+      font-size: 10em;
+      background: linear-gradient(
+                    90deg,
+                    var(--color1),
+                    var(--color2),
+                    var(--color1)
+                  ) 0 0 / var(--bg-size) 100%;
+      color: transparent;
+      /* 배경 넣는 위치 지정  */
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      animation: move-bg 8s infinite linear;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="txt">Hello!</h1>
+</body>
+</html>

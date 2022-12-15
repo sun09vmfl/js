@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>가로 세로 영역 제어 width, height</title>
+  <style>
+    /* 
+      블록 요소: p, div, h1, header, ul, li, article, form ...
+        ㄴ 가로 값의 경우 부모 요소의 가로 값을 받음
+        ㄴ 일반적인 흐름에서는 블록 요소 옆에 다른 요소가 올 수 없음
+        ㄴ 자식으로 블록, 인라인 요소 올 수 있음
+        ㄴ 세로 값의 경우 자식 요소의 높이 값을 가져 옴
+        ㄴ width, height로 제어 가능
+
+      인라인 요소: span, img, a, em, input, strong ...
+        ㄴ 가로 값의 경우 자식(컨텐츠)의 값을 가져 옴
+        ㄴ 인라인 요소 옆에 다른 인라인 요소가 올 수 있음
+        ㄴ 자식으로 인라인 요소만 올 수 있음
+        ㄴ 세로 값의 경우 자식의 높이를 가져 옴
+        ㄴ width, height로 제어 불가능
+    */
+
+    /* .deco-size { font-size: 30px; } */
+    /* h1 ~ .box_wrapper { font-size: 30px; } 일반 형제 선택자: 기준 요소의 뒤에 오는 모든 .box_wrapper 선택자 */
+    
+    * {/* 전체 선택자: html 문서 안의 각 각의 요소에 직접 적용 */
+      color:blueviolet;
+    }
+    
+    h1 ~ * {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    div.box_wrapper {
+      background-color: orange;
+      /* 고정 너비 */
+      width:500px; height:300px;
+      /* 가변 너비 
+      width:50%; height: 50%;
+      세로의 %는 부모 높이 값이 정의되어 있는 경우에만 적용
+      */
+    }
+    div.box_wrapper > div.block1 {
+      background-color: #9CFF2E;
+
+      /* width:300px; height: 100px; */
+      width:70%; /* 부모를 기준으로 100분의 70 */
+      height: 50%;/* 부모를 기준으로 100분의 50 */
+    }
+    div.box_wrapper > span.inline1 {
+      background-color: #2192FF;
+      color:#fff;
+
+      width:300px; height: 100px;
+    }
+
+    p.block2 {
+      background-color: #8BBCCC;
+      height: 100px;
+    }
+    span.inline2 {
+      background-color: #5C2E7E;
+      height:100px;
+      /* 인라인은 width, height을 줄 수 없으며 자식으로 있는 컨텐츠가 없기 때문에(즉, 높이값 0) 화면에 보이지 않음 */
+    }
+  </style>
+</head>
+<body>
+  <h1>가로 세로 영역 제어 width, height</h1>
+  <!-- html에서 여러 개의 클래스 적용시 띄어쓰기로 구분 -->
+  <div class="box_wrapper deco-size">
+    <div class="block1">블록 요소</div>
+    <span class="inline1">인라인 요소</span>
+  </div>
+
+  <p class="block2 deco-size"></p>
+  <span class="inline2 deco-size"></span>
+</body>
+</html>

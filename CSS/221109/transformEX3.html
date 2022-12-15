@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>transEX3</title>
+    <style>
+        body { margin: 0; font-size: 1.5em; font-weight: bold; text-align: center; text-transform: capitalize;}
+
+        .gnb { 
+            margin: 0 auto; padding: 0; list-style: none; 
+            display: flex; width: 84vw; 
+            /* justify-content: space-evenly; */ /* 여백 때문에 지금 사용할 수 없음 */
+            background-color: #00abb3;
+        }
+        .gnb li { 
+            /* width: 25%; */
+            flex-grow: 1; /* 비어있는 영역 없게 다 채우라는 의미 */
+        }
+        .gnb li a {
+            text-decoration: none;
+            color:inherit;
+            /* height: 60px;  인라인 성격이기 때문에 하이트 값을 못 먹음. li가 먹는 거지 a 는 못 먹음 */
+            /* line-height: 60px; */
+            display: block; /* a에는 자주 블럭을 넣는다 */
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .gnb li a::after {
+            content: "";
+            width: 0; height: 10px;
+            background-color: #f0ff42;
+            position: absolute; /* after 쓸때 자주 씀. 그리고 위에 a에다가는 relative를 줌*/
+            bottom:0; left: 0;
+
+            transition: .3s;
+        }
+
+        .gnb li a:hover::after {
+            width: 100%;
+            opacity: 1;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!--해당 메뉴 위에 마우스를 올리면 왼쪽에서 오른쪽으로 바 진행 -->
+    <ul class="gnb">
+        <li><a href="#">MENU1</a></li>
+        <li><a href="#">MENU2</a></li>
+        <li><a href="#">MENU3</a></li>
+        <li><a href="#">MENU4</a></li>
+    </ul>
+</body>
+</html>

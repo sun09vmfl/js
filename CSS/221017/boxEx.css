@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+body {
+  margin:0;
+  font-family: '나눔고딕','맑은 고딕',돋움,sans-serif;
+  font-size: 18px;
+  text-align: center;
+}
+.container {
+  background-color: #ddd;
+  width: 640px;
+  /* 
+    height: 1004px; 
+    일반적으로 height 값을 고정으로 주지 않음.
+    컨텐츠가 늘어나면 자동으로 높이 값이 조절되어야 레이아웃이 무너지지 않기 때문.
+  */
+  margin:14px auto;
+}
+
+.container h1 {
+  margin:0;
+  background-color: orange;
+  /* height: 445px; */
+}
+.container h1 img {
+  /* 이미지의 경우 인라인 요소의 특성으로 행간을 가지기 때문에 baseline값을 다른 것으로 변경 */
+  vertical-align: top;
+}
+.container h2 {
+  background-color: #000;
+  color:#fff;
+  text-align: left;
+  margin:0;
+  font-size: 20px;
+  padding:8px;
+  letter-spacing: 2px;
+}
+.container .box {
+  /* border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000; */
+  border:1px solid #000;
+  border-top: none;
+
+  /* background-color: orange; */
+  /* overflow: hidden; 마진상쇄현상을 해결하기 위해 부모 요소에 적용 */
+
+  padding: 25px;
+}
+.container .box h3 {
+  margin:0;
+  /* 
+    마진상쇄 현상으로 부모와 자식의 margin-top 값 중 큰 값이 적용되어 여백이 생김.
+    일반적인 흐름에서만 해당.
+  */
+  color: #800000;
+}
+.container .box strong {
+  color:red;
+  font-size: 25px;
+}
+.container .box address {
+  color:teal;
+  font-style: normal;
+  font-weight: bold;
+  margin-top: 14px;
+  font-size: 24px;
+}

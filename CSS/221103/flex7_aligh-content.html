@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>flex7_align-content</title>
+    <style>
+        body {margin:0; font-size: 2em; font-weight: bold; text-align: center;}
+        .wrapper {border: 6px solid #000; 
+            width: 80vw; height: 70vh;
+            margin: 2vw auto;
+            display: flex; 
+            flex-direction: row;
+            flex-wrap: nowrap;}
+
+        .container {
+            /* 주축: 가로, 아이템 줄바꿈 가능, 아이템 중앙 정렬 */
+            flex-direction: row; /* 주축 가로 */
+            flex-wrap: wrap; /* 아이템 줄바꿈 */
+            align-items: center; /* 개별적인 하나하나를 제어하는 것 */
+            /* justify-content: center; */
+            /* 교차축 기준으로 여러 아이템을 하나의 덩어리로 보고 정렬 */
+            align-content: stretch ; /* 기본값. 현재 높이 값이 지정되어 있어 확장 정렬 */
+            align-content: flex-start;
+            align-content: flex-end;
+            align-content: space-around; /* 여백까지 포함해서 똑같은 간격으로 배치 */
+            align-content: space-between;
+            align-content: center;
+        }
+        .container .box {width: 50%;}
+        .container .item1 {background-color: #5fc31d; height: 150px;}
+        .container .item2 {background-color: #cf9e34; height: 100px;}
+        .container .item3 {background-color: #c32;height: 180px;}
+        .container .item4 {background-color: #1db9c3; height: 110px;}
+        .container .item5 {background-color: #7027a0;height: 200px;}
+    </style>
+</head>
+<body>
+    <h1>flex7_align-content</h1>
+    <div class="wrapper container">
+        <div class="box item1">item1</div>
+        <div class="box item2">item2</div>
+        <div class="box item3">item3</div>
+        <div class="box item4">item4</div>
+        <div class="box item5">item5</div>
+    </div>
+</body>
+</html>

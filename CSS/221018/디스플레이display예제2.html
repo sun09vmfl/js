@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>displayEx2</title>
+  <style>
+    body {
+      margin:0;
+    }
+    #gnb {
+      background-color: #3DB2FF;
+      padding-left: 0;
+      margin:0;
+    }
+    #gnb li {
+      display: inline-block;
+    }
+    #gnb li a {
+      color:#FFB830;
+      text-decoration: none;
+      display: block;
+      /* padding: 10px 20px; */
+      width:130px;
+      text-align: center;
+      height:40px;
+      line-height: 40px;
+      /* 블록요소안의 인라인을 세로 중앙정렬하기 위해선 height와 line-height의 값을 동일하게 적용. 단, 한 줄일 때만 가능 */
+    }
+    #gnb li a:hover {
+      background-color: #FF2442;
+      color: #FFEDDA;
+    }
+  </style>
+</head>
+<body>
+  <ul id="gnb">
+    <li><a href="#">애완견 종류</a></li>
+    <li><a href="#">입양하기</a></li>
+    <li><a href="#">건강돌보기</a></li>
+    <li><a href="#">더불어 살기</a></li>
+  </ul>
+</body>
+</html>

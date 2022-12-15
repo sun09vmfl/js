@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>미디어쿼리 예제2</title>
+    <style>
+    
+        body {margin: 0; text-align: center; font-weight: bold; font-size: 2em;}
+        /* 기본(모바일) float 적용시 
+
+        .box {height: 20vh; float: left; }
+        .box1 {background-color: #21209c; width: 100%; height: 60vh;}
+        .box2 {background-color: hotpink; width: 100%;}
+        .box3 {background-color: orange; width: 100%;}
+
+        @media (min-width:768px) {
+            .box1 {height: 60vh; width: 30%; }
+            .box2 {height: 30vh; width: 70%;}
+            .box3 {height: 30vh; width: 70%;}
+        }
+
+        @media (min-width:1280px) {
+            .container {width: 90%; margin: 0 auto; }
+        } */
+
+
+        /* 기본(모바일) flex 적용시 */
+        .left_item {background-color: #2ec1ac; height: 40vh;}
+        .right_item_inner:nth-child(1) {background-color: #3e978b; height: 20vh;}
+        .right_item_inner:nth-child(2) {background-color: #d2e603; height: 20vh;}
+
+        @media (min-width:768px) {
+            .container {display: flex;}
+            .left_item {height: 60vh;flex-grow: 3;}
+            .right_item_inner {flex-grow: 7;}      
+            .right_item .right_item_inner {height: 30vh;}      
+        }
+
+        @media (min-width:1280px) {
+            .container {width: 90%; max-width: 1600px; margin: 0 auto;}
+        }
+    </style>
+
+</head>
+<body>
+ <!-- float 
+    <div class="container">
+        <div class="box box1">left_box</div>
+        <div class="box box2">right_box1</div>
+        <div class="box box3">right_box2</div>
+    </div> -->
+
+    <div class="container">
+        <div class="left_item">left_item</div>
+        <div class="right_item">
+            <div class="right_item_inner">right_item1</div>
+            <div class="right_item_inner">right_item2</div>
+        </div>
+    </div>
+</body>
+</html>

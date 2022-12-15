@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>transformEX2</title>
+    <style>
+        .menu {
+            background-color: tomato; width: 100px; height: 100px;
+        }
+        .menu .close {
+            cursor: pointer;
+            height: 100%;
+            transition: .7s;
+            text-indent: -9999px;
+            position: relative;
+        }
+
+        .menu .close::before, .menu .close::after {
+            content: "";
+            background-color: yellow;
+            position: absolute;
+            width: 10%; height: 80%;
+            top:50%; left: 50% /* 포지션 줬을 때 중앙 정렬 방법 */;
+            /* margin-left: -5%; margin-top: -40%;  다 반만큼만... */
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .menu .close::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        .menu .close:hover {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <!--마우스를 위에 올리면 x 아이콘 돌아감-->
+    <div class="menu">
+        <div class="close">닫기</div>
+    </div>
+</body>
+</html>

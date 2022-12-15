@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+html {
+  font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
+}
+nav .gnb {
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+nav .gnb li {
+  max-width:200px;
+}
+ /* 
+  width:max(10%, 200px); 브라우저기준 10%의 값이 200보다 크면 10%값 적용. 200px이 더 크면 200 적용
+  width:min(10%, 200px); 브라우저기준 10%의 값이 200보다 크면 200 적용. 200px이 더 크면 10%값 적용
+  */
+nav a {
+   border-bottom: none;
+   text-indent:0;
+   justify-content: center;
+   border-right:1px solid #fff;
+}
+nav .gnb li:nth-child(1) a {
+  border-left:1px solid #fff;
+}
+nav .gnb li:hover a {
+  background-color: rgba(255,255,255,.7);
+  color:rgba(49, 198, 212,1);
+}

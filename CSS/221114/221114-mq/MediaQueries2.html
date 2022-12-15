@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Queries2</title>
+  <style>
+    /* PC 기준 */
+    ::selection { background-color: orange; }
+    body { background-color: #F0D9E7; font-size: 1.5rem; }
+    h1 { background-color: #5C33F6; color:#fff; border-bottom:6px solid #542E71; }
+    ul { padding:20px; margin:20px; border:3px solid #000; }
+
+    /* 스크린 가로 크기가 최대 1280px이하면 적용. 즉 최대 1280px까지 적용 */
+    @media (max-width:1280px) {
+      body { background-color: lightskyblue;}
+    }
+    /* 스크린 가로 크기가 최대 768px까지 적용 */
+    @media (max-width:768px) {
+      body { background-color: salmon; margin:0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>미디어 쿼리 Media Queries란?</h1>
+  <h2>화면 해상도, 기기 방향 등의 조건으로 HTML에 적용하는 스타일을 전환할 수 있는 CSS3의 속성 중의 하나이다.</h2>
+  <ul>
+    <li>@media screen { }</li>
+    <li>@media () { }</li>
+    <li>@media all and (min-) and (max-) { }</li>
+  </ul>
+  <p>**** min을 사용할 땐 반드시 크기가 작은 순서대로 작성해야 하고 max를 사용할 때는 반드시 크기가 큰 순서대로 작성해야 한다.</p>
+</body>
+</html>

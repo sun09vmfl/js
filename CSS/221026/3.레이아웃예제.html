@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>layoutEx3</title>
+  <style>
+    body {
+      margin:0;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin:0;
+    }
+    ul li {
+      float: left;
+    }
+    .box {
+      margin:30px auto;
+      width:940px;
+      height: 60px; line-height: 60px;
+    }
+
+    nav {
+      background-color: #5463FF;
+    }
+    nav #gnb {
+      /* background-color: #ddd; */
+      width:600px;
+      margin:0 auto;
+    }
+    /* .clearFix */
+    nav #gnb::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    nav #gnb a {
+      display: block;
+      color:#fff;
+      width:120px;
+    }
+
+
+    
+    nav #gnb a:hover {
+      background-color: #00AFC1;
+    }
+
+    article.box {
+      background-color: #FFC300;
+      height:100px; line-height: 100px;
+    }
+    article h2 {
+      margin:0;
+    }
+    #wrapper {
+      overflow: hidden;
+      width:940px;
+      margin:0 auto;
+    }
+    #wrapper li {
+      background-color: #FF1818;
+      width:300px;
+      padding:20px 0;
+    }
+    #wrapper li:nth-child(2) {
+      margin:0 20px;
+    }
+    footer {
+      background-color: #008E89;
+    }
+    
+  </style>
+</head>
+<body>
+  <h1>로고</h1>
+  <nav class="box">
+    <ul id="gnb">
+      <li><a href="#">홈</a></li>
+      <li><a href="#">상품</a></li>
+      <li><a href="#">소개</a></li>
+      <li><a href="#">서비스</a></li>
+      <li><a href="#">연락처</a></li>
+    </ul>
+  </nav>
+  <article class="box">
+    <h2>컨텐츠</h2>
+  </article>
+  <ul id="wrapper">
+    <li>1번째 열</li>
+    <li>2번째 열</li>
+    <li>3번째 열</li>
+  </ul>
+  <footer class="box">&copy;copyright 2022</footer>
+</body>
+</html>

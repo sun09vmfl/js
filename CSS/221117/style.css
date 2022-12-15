@@ -1,0 +1,187 @@
+@charset "utf-8";
+/* 모바일 */
+html {
+  font-family: 'Pretendard',-apple-system,BlinkMacSystemFont,"Helvetica Neue","Apple SD Gothic Neo",Arial,sans-serif;
+  font-size: 14px;
+  color:#fff;
+  text-transform: capitalize;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {/* grid-container */
+  display: grid;
+}
+
+/************ header ************/
+.container header {/* grid-item */
+  order: 2;
+  background-color: var(--bg-color);
+
+  position: sticky;
+  top:0;
+  padding: 4%;
+
+  display: flex; /* 토글바 정렬 */
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+.container header #logo a {
+  background: url(./images/logo2.png) var(--bg-contain);
+  display: block;
+  width: 52px; height: 56px; /* 포토샵으로 잰 거임 */
+  text-indent: var(--txt-indent);
+}
+.container header #gnb {
+  background-color: rgba(0,0,0,.8);
+  width:100%;
+  position: absolute;
+  left:0; top:100%; /* 헤더 바로 밑에 자리를 잡게 됨 100퍼룰 주면.. 부모인 헤더가 기준 */
+  font-size: 1.5em;
+  font-weight: 600;
+  display: none;
+}
+.container header #gnb.active {
+  display: block;
+}
+.container header #gnb a {
+  display: block;
+  border-bottom: 1px solid #fff;
+  padding: 2.2vw 4vw;
+}
+.container header #gnb a span { /* 아이콘과 글씨가 엇갈려 있던 것을 맞춰줌 */
+  vertical-align: top;
+  margin-right:10px;
+}
+.container header #toggle_btn {
+  display: block;
+  background: url(./images/navBtn.svg) var(--bg-contain);
+  text-indent: var(--txt-indent);
+  width:20px; height: 30px;
+}
+.container header #info, .container header #sns {
+  display: none;
+}
+
+/************ register ************/
+.container #register {/* grid-item / flex-container */
+  order: 1;
+  background-color: var(--bg-color);
+  border-bottom: 1px solid #fff;
+  text-transform: uppercase;
+  /* height: 30px; */
+
+  display: flex;
+  justify-content: space-around;
+}
+.container #register li {/* flex-item */
+  width:100%;
+}
+.container #register a {
+  display: block;
+  /*
+  height: 100%;
+  display: grid;
+  place-items: center;
+  */
+  height: 30px; line-height: 30px; 
+  text-align: center;
+}
+
+/************ main ************/
+.container main {/* grid-item / grid-container */
+  order: 3;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 50vw;
+  color: #000;
+}
+.container main section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* .bg 공통 */
+.container main .bg {
+  background: var(--bg-cover);
+}
+/* 모바일에서 숨긴 박스: box3, box4, box7, box10 */
+.container main .box1 {
+  background: url(./images/pic1.png) var(--bg-cover);
+
+  grid-column: span 2;
+  grid-row: 1 / 3;
+}
+.container main .box1 h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700; font-style: italic;
+  font-size: 8em;
+  color:#fff;
+  white-space: nowrap;
+  position: absolute;
+  right: 0; bottom:0;
+  line-height: .7;
+}
+
+.container main .box3 { display: none;}
+.container main .box4 { display: none; background-image: url(./images/pic2.jpg);}
+.container main .box5 { background-image: url(./images/pic3.jpg);}
+.container main .box7 { display: none; background-image: url(./images/pic4.jpg);}
+.container main .box9 { background-image: url(./images/pic5.jpg);}
+.container main .box10 { display: none; background-image: url(./images/pic6.jpg);}
+.container main .box12 { background-image: url(./images/pic7.png);}
+
+/* .txt 공통 */
+.container main .txt {
+  padding: 6vw;
+}
+.container main .txt span, .container main .bg h3 {
+  color:rgba(0,0,0,.7);
+  position: absolute;
+  display: none;
+}
+.container main h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: 3vw;
+}
+.container main p {
+  line-height: 1.5;
+}
+.container main .box2 {
+  background-color: var(--bg-color);
+  color:#fff;
+  grid-column: 1 / 3;
+}
+.container main .box2 h3 {
+  font-size: 2.2em;
+}
+
+.container main .box2 span {
+  display: block;
+  color:rgba(255,255,255,.7);
+  font-size: 40vw;
+  font-weight: bold;
+  right: 0; bottom:0;
+}
+/* 움직이는 화살표 */
+.container main .box2 .iconGroup {
+  position: absolute;
+  right:0; bottom:20px;
+}
+.container main .box2 .iconGroup span:nth-child(1) { animation: mov linear 1.6s infinite ;}
+.container main .box2 .iconGroup span:nth-child(2) { animation: mov linear 1.6s infinite .5s;}
+.container main .box2 .iconGroup span:nth-child(3) { animation: mov linear 1.6s infinite 1s;}
+
+/************ footer ************/
+.container footer {/* grid-item */
+  order: 4;
+  text-align: center;
+  height: 40px; line-height: 40px;
+  background-color: var(--bg-color);
+}

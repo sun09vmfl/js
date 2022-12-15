@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>transition basic ex1</title>
+    <style>
+
+        .circle {width: 100px; height: 100px; background-color: salmon; text-align: center; margin: 100px auto;
+
+/* 움직임 속성 */
+transition-property: width, height, border-radius; /*  all 이라고 써도 됨 */ 
+
+/* 움직임 진행 시간 */
+transition-duration: 1s, 3s, 1.5s;
+}
+
+.circle:hover {
+    width: 500px; height: 500px; border-radius: 50%;
+}
+
+.circle:active {
+    background-color: blue;
+}
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+</body>
+</html>

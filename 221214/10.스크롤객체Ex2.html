@@ -4,73 +4,93 @@
     <meta charset="UTF-8" />
     <title>스크롤 예제2</title>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
-
       body {
-        height: 200vh;
-        width: 100vw;
-        background-color: #ddd;
-        position: absolute;
-      }
-
-      nav {
-        background-color: rgb(240, 115, 42);
-        color: #fff;
-        width: 100%;
-        height: 100px;
-        line-height: 100px;
-        font-size: 2em;
+        margin: 0;
         text-align: center;
-        position: fixed;
+        font-weight: bold;
+        font-size: 1.4em;
+      }
+      nav {
+        background-color: orange;
+        padding: 20px;
       }
 
       h1 {
-        width: 100vw;
-        height: 100px;
-        position: absolute;
-        top: 100px;
-        background-color: hotpink;
-        text-align: center;
-        line-height: 100px;
+        background-color: lightskyblue;
+        margin: 0;
+        padding: 40px;
+        position: sticky;
+        top: 0;
       }
 
       main {
-        margin-top: 400px;
-        text-align: center;
-        font-size: 2em;
-        text-align: center;
-      }
-
-      #banner {
-        width: 300px;
-        height: 120px;
-        font-size: 1.5em;
-        text-align: center;
-        background-color: rgb(136, 235, 141);
-        position: absolute;
-        right: 0;
-        bottom: 150px;
+        background-color: #ddd;
+        height: 400vh;
       }
 
       footer {
-        width: 100vw;
-        height: 200px;
-        position: absolute;
-        bottom: 0;
-        background-color: black;
+        background-color: #000;
+        color: #fff;
+        padding: 50px;
+      }
+
+      #banner {
+        background-color: maroon;
+        color: #fff;
+        width: 300px;
+        height: 100px;
+        padding: 20px;
+        position: fixed;
+        bottom: 100px;
+        transition: 0.3s;
+        /* transform: translateX(0); */
+        right: -340px;
+      }
+
+      #banner.on {
+        /* transform: translateX(-340px); */
+        right: 0;
       }
     </style>
   </head>
   <body>
+    <!-- 스크롤을 내리면 푸터와 배너가 나오도록 -->
     <nav>네비게이션</nav>
     <h1>scroll Ex2</h1>
     <main>원하는 위치에서 실행</main>
     <footer>푸터</footer>
 
     <div id="banner">배너입니다.</div>
-    <script></script>
+    <script>
+      const banner = document.querySelector(`#banner`);
+      const footer = document.querySelector(`footer`);
+      // .offsetTop; 부모 요소의 포지션을 기준으로 위에서부터 떨어져 있는 것
+      // 부모에 포지션이 없는 경우 body(문서) 기준.
+      // 부모 요소에 포지션이 들어가 있으면 거기를 기준으로 알려줌
+      //이번에는 형제 요소라서 ㄱㅊ음.
+
+      let footerOffsetTop = footer.offsetTop;
+      let clientHt = document.documentElement.clientHeight;
+
+      console.log(footerOffsetTop); // 4017
+      console.log(clientHt); // 952 현재 보여지는 화면의 길이
+      console.log(footer.clientHeight); // footer의 길이 129
+
+      console.log(footer.offsetTop); // 위치 : 4017
+
+      let result = footerOffsetTop - clientHt - footer.clientHeight;
+
+      addEventListener(`scroll`, () => {
+        // console.log(scrollY); 최대로 내려갈 수 있는 숫자 3194
+        if (scrollY >= result) {
+          //배너가 보일 식
+          banner.classList.add(`on`);
+        } else if (scrollY < result) {
+          // 배너가 숨겨지는 식
+          banner.classList.remove(`on`);
+        }
+        3;
+      });
+    </script>
   </body>
 </html>

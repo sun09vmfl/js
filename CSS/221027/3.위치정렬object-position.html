@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>object-position</title>
+    <style>
+        p:first-of-type ~ p {
+            border: 10px solid #00abb3;
+            width: 400px; height: 300px;
+            margin: 0 10px 50px;
+        }
+
+        img {
+            width: 100%; height: 100%;
+            object-fit: contain;
+        }
+
+        .pos1 {object-position: center center ; /*기본값 == 50% 50%*/ }
+        .pos2 {object-position: 100px 50px; /* x축 y축*/ }
+        .pos3 {object-position: 100% 50%; /* == right center*/ }
+        .pos4 {object-position: 20% 10px; /* 20% 50% */}
+
+    </style>
+</head>
+<body>
+    <h1>object-position</h1>
+    <p>이미지나 비디오의 원래 크기를 조정해 부모 요소를 기준으로 위치 정렬</p>
+    <p><img src="./images/magnolia-medium.jpg" alt="flower" class="pos1"></p>
+    <p><img src="./images/magnolia-medium.jpg" alt="flower" class="pos2"></p>
+    <p><img src="./images/magnolia-medium.jpg" alt="flower" class="pos3"></p>
+    <p><img src="./images/magnolia-medium.jpg" alt="flower" class="pos4"></p>
+</body>
+</html>

@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+body {
+    background-color: #eee;
+    font-family: 'DM Serif Display', serif;
+}
+.profile_box {
+    min-width: 400px;
+    max-width: 500px;
+    background-color: #fff;
+    margin: 50px auto;
+    box-shadow:
+    2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
+
+    position: relative;
+
+    overflow: hidden;
+}
+.profile_box .txt_box {
+    width: 45%;
+    padding: 20px;
+}
+.profile_box .txt_box h2 {
+    border-bottom: 1px solid #000 ;
+}
+.profile_box .txt_box p {
+    font-family: 'Noto Sans KR', sans-serif ;
+}
+
+.profile_box .txt_box .sns {
+    list-style: none; margin: 0; padding: 0; display: flex;
+}
+
+.profile_box .txt_box .sns a {
+    color:black; /* 서체라서 ㅇㅇ */
+    margin-right: 16px;
+}
+
+.profile_box .txt_box .sns .sns_icon {
+    font-size: 2em;
+}
+
+/* .profile_box .txt_box .sns li:last-child .sns_icon {
+    font-size: 1.6em;
+} */
+
+.profile_box .txt_box .sns a:hover {
+    color:skyblue;
+}
+
+.profile_box .sub_title {
+    background-color: #000;
+    color:#fff;
+    font-size: .9em;
+    font-style: italic;
+    padding: 10px 20px;
+    margin: 0;
+}
+
+.profile_box .round-img {
+    border:3px solid #fff; /* 나란히 옆에 있으면 플렉스 하지만 위에 올라가 있는 형태면 포지션 */
+    border-radius: 50%;
+
+    position: absolute;
+    top:50%; right: -30%;
+    transform: translateY(-50%);
+
+    transition: .4s;
+}
+
+.profile_box:hover .round-img {
+    right: -32%;
+}

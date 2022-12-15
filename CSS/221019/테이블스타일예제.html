@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>table style ex1</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+            text-align: center;
+            margin: 0 auto;
+            border: blueviolet 3px solid;
+            border-top: none;
+        }
+
+        table caption {
+            background-color: hotpink;
+            color: white;
+            font-weight: bold;
+            height: 28px;
+            line-height: 28px; /*한줄이고, 높이값이 부여되어 있으면 라인 하이트 값을 똑같이 주면 중앙정렬 됨*/
+            border-radius: 20px 20px 0 0;
+            border: 3px solid blueviolet;
+            border-bottom: none;
+        }
+        td, th {
+            border: 1px solid #000;
+            width: 100px;
+        }
+
+        table th {
+            background-color: lavender;
+        }
+    </style>
+</head>
+<body>
+    <h1>table style 연습1</h1>
+    <table>
+        <caption>시간표</caption>
+        <thead>
+
+            <tr>
+            <th class="subhead">구분</th>
+            <th>월요일</th>
+            <th>화요일</th>
+            <th>수요일</th>
+            <th>목요일</th>
+            <th>금요일</th>
+            </tr>
+        </thead>
+            <tbody>
+                <tr>
+                    <th class="subhead">1교시</th>
+                    <td rowspan="2">기초드로잉</td>
+                    <td rowspan="2">색채학</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th class="subhead">2교시</th>
+                    <td rowspan="3">html</td>
+                    <td></td>
+                    <td rowspan="2">포트폴리오제작</td>
+                </tr>
+                <tr>
+                    <th class="subhead">3교시</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th class="subhead">4교시</th>
+                    <td rowspan="2">포토그래픽</td>
+                    <td></td>
+                    <td rowspan="2">구성요소제작</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th >5교시</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+
+    </table>
+</body>
+</html>

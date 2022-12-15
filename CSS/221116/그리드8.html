@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>그리드8</title>
+    <style>
+        .box { /* grid-container */
+        width: 90%; 
+        margin: 50px auto; border:6px solid #379237;
+        display: grid; gap: .5vw;
+        grid-template: 60px 60px / 1fr 1fr; 
+        grid-auto-rows: 60px;
+    }       
+        .box .item { background-color: #82cd47; font-weight: bold; font-size: 1.3em;}
+
+        .box1 {  /* grid-container */
+            /* col 기분 정렬. 개별적으로 정렬. */
+            align-items: start; 
+            align-items: end; /* 아이템은 나눈 셀 안에서 움직이고 컨텐츠는 전체에서 셀로 각각 움직임 */
+            align-items: center;
+            align-items: stretch; /* 기본값 좍좍 채움 */
+        }
+
+        .box2 {
+            /* row 기준 정렬. 셀 안에서 개별적으로 정렬 */
+            justify-items: start;
+            justify-items: end;
+            justify-items: center;
+            justify-items: stretch;
+        }
+
+        .box3 {
+            /* align-items: center;
+            justify-items: center; */
+
+            place-items: center;
+            place-items: start center; /* align-items, justify-items 순서 */
+        }
+    </style>
+</head>
+<body>
+    <h1>grid 기본8</h1>
+    <h2>그리드 아이템 정렬: justify-items, align-items</h2>
+    <div class="box box1">
+        <div class="item">item</div>
+    </div>
+    <div class="box box2">
+        <div class="item">item</div>
+    </div>
+    <div class="box box3">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item5</div>
+        <div class="item">item6</div>
+        <div class="item">item7</div>
+    </div>
+</body>
+</html>

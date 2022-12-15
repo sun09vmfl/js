@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>배경이미지 사이즈 background-size</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            font-weight: bold;
+            font-size: 28px;
+           /* width: 400px; 
+            margin: 0 auto; */
+        }
+
+        ul li {
+            border: 10px solid maroon;
+            margin: 50px auto;
+            width: 400px;height: 200px;
+
+            background-image: url(./images/magnolia-medium.jpg);
+            background-repeat: no-repeat;
+        }
+
+        .box1 {
+            /* 가로 사이즈 기준으로 세로사이즈 비율 자동 조절 */
+            background-size: 400px; 
+            background-position: 50%;
+        }
+
+        .box2 {
+            background-size: 400px 200px;
+        }
+
+        .box3 {
+            /* 가로 사이즈에 맞춰 조절되며 이미지의 비율도 유지. 화면에서 잘리는 부분 존재 */
+            background-size: 100%;
+        }
+
+        .box4 {
+            /* 요소의 가로 세로 크기에 맞춰 조절되기 때문에 이미지의 비율이 맞지 않을 수 있음 */
+            background-size: 100% 100%;
+        }
+
+        .box5 {
+            /* 영역에 맞춰 이미지 전부 보임. 공백이 생길 수 있으나 비율은 유지 됨 */
+            background-size: contain;
+        }
+
+        .box6 {
+            /* 영역에 맞춰 전체 채움. 전체를 채우기 때문에 공백은 생기지 않으나 보이지 않는 이미지 부분이 생길 수 있음. */
+            background-size: cover;
+        }
+
+        .box7 {
+            width: 70%;
+            background-size: contain;
+            background-size: cover;
+            background-position: 50% 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>배경이미지 사이즈 background-size</h1>
+    <ul>
+        <li class="box1">01:400px</li>
+        <li class="box2">02:400px 200px</li>
+        <li class="box3">03:100%</li>
+        <li class="box4">04:100% 100%</li>
+        <li class="box5">05:contain</li>
+        <li class="box6">06:cover</li>
+        <li class="box7">07:%</li>
+    </ul>
+</body>
+</html>

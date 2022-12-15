@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>boxEx</title>
+  <!-- 
+      reset.css
+        ㄴ 초기화 css
+        ㄴ 태그 성격을 모두 0으로 초기화
+
+      normalize.css
+        ㄴ 평준화 css
+        ㄴ 태그 성격을 모든 브라우저에서 동일하게
+   -->
+
+  <!-- 초기화 문서이므로 반드시! 모든 css 문서들 중에 제일 먼저 연결! -->
+  <link rel="stylesheet" href="../common/reset.css">
+
+  <!-- 웹폰트 CDN(Content Delivery Network) 분산 서버를 통해 사용자의 가장 가까운 곳에서 데이터를 전송 받아 사용 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet">
+
+  <!-- 내가 적용하는 스타일이기 때문에 우선 순위가 제일 높아야 함. 그래서 모든 css 문서들 중에 제일 마지막에 작성 -->
+  <link rel="stylesheet" href="./boxEx.css">
+</head>
+<body>
+  <!-- 
+    1. 내비게이션의 마우스 이벤트
+    2. 980px 이상 커지지 않고 600px 이하로 작아지지 않음 
+   -->
+
+   <!-- 이중선 / 중앙정렬 -->
+   <div class="container">
+    <!-- 로고 -->
+    <h1><img src="./images/logo.gif" alt="피아노 수리점 로고"></h1>
+
+    <!-- 내비게이션 -->
+    <ul id="gnb">
+      <li class="active"><a href="#">홈</a></li>
+      <li><a href="#">판매제품</a></li>
+      <li><a href="#">수리</a></li>
+      <li><a href="#">연락처</a></li>
+      <li><a href="#">소개</a></li>
+    </ul>
+
+    <!-- 컨텐츠 -->
+    <figure>
+      <img src="./images/keys.jpg" alt="피아노 광고 배너">
+      <figcaption><span>피아노 광고 배너</span></figcaption>
+    </figure>
+    <p>클래식 키보드, 특히 fender rhodes, wurlitzer ep200, hohner clavinet의 판매와 수리를 전문으로 합니다.</p>
+   </div>
+</body>
+</html>

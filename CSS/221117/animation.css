@@ -1,0 +1,14 @@
+animation.css
+@charset "utf-8";
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes mov {
+  100% {
+    right: 100px; transform: scale(1.3); opacity: 0;
+  }
+}

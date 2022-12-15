@@ -1,7 +1,7 @@
-const toggleBtn = document.querySelector(`#toggle_btn`);
-const nav = document.querySelector(`nav`);
+const toggleBtn = document.querySelector('#toggle_btn');
+const nav = document.querySelector('nav');
 
-toggleBtn.addEventListener(`click`, e => {
+toggleBtn.addEventListener('click', e => {
   e.preventDefault();
-  nav.classList.toggle(`on`);
+  nav.classList.toggle('on');
 });

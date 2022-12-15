@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>flex6_align-self</title>
+    <style>
+        body { margin:0; font-size: 2em; font-weight: bold; text-align: center;}
+        .wrapper { border: 6px solid #000; 
+            width: 80vw; height: 40vh;
+            margin: 2vw auto;
+            display: flex; 
+            flex-direction: row;
+            flex-wrap: nowrap;}
+
+        .container1 {
+            /* 주축 기준 양끝 여백없이 동일 간격 배치 */
+            /* 교차축 기준 양끝 중앙 정렬 */
+
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .container1 .item1 {background-color: #010202; 
+        /* 자식인 플렉스 아이템에 적용. align-item 특성의 개별 배치 */
+        align-self: flex-start; }
+        .container1 .item2 {background-color: #7027a0;
+        align-self: flex-end;}
+        .container1 .item3 {background-color: #c32bad;
+        align-self: center;
+        width: 20vw; height: 15vw; }
+        .container1 .item4 {background-color: #c32b;
+        align-items: baseline;}
+
+    </style>
+</head>
+<body>
+    <h1>flex6_align-self</h1>
+    <div class="wrapper container1">
+        <div class="box item1">item1</div>
+        <div class="box item2">item2</div>
+        <div class="box item3">item3</div>
+        <div class="box item4">item4</div>
+    </div>
+</body>
+</html>

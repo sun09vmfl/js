@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>backgroundex</title>
+    <style>
+        div {
+            line-height: 1.5;
+            border: 2px solid #000;
+            padding: 20px;
+            margin: 50px auto;
+            min-width: 500px; /*500이하로 작아지지 않음*/
+            max-width: 70%; /* 70% 이상 커지지 않음*/
+
+            background-image: url(./images/bgEx2.jpg);
+            background-repeat: no-repeat; }
+
+            .wrapper {
+                background-position: 50%;
+            }
+
+            .wrapper2 {
+                background-position: 40px 20px;
+                /* height: 500px; 요소 안 쪽 컨텐츠의 기본 정렬은 왼쪽 상단 */
+                padding-top: 220px;
+            }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>초콜릿 chocolate</h1>
+        <p>초콜릿은 카카오 콩을 재료로 가공한 식품이다. 숙성한 카카오콩을 볶은 뒤 이를 갈아서 만든 카카오 매스와 지방 성분만으로 만들어진 코코아 버터를 혼합하여 만드는데, 설탕 등의 다른 재료를 더 넣어 만들기도 한다. 카카오 매스의 함량에 따라 다크 초콜릿, 밀크 초콜릿, 화이트 초콜릿으로 구분된다.</p>
+    </div>
+    <div class="wrapper2">
+        <h1>초콜릿 chocolate</h1>
+        <p>초콜릿은 카카오 콩을 재료로 가공한 식품이다. 숙성한 카카오콩을 볶은 뒤 이를 갈아서 만든 카카오 매스와 지방 성분만으로 만들어진 코코아 버터를 혼합하여 만드는데, 설탕 등의 다른 재료를 더 넣어 만들기도 한다. 카카오 매스의 함량에 따라 다크 초콜릿, 밀크 초콜릿, 화이트 초콜릿으로 구분된다.</p>
+    </div>
+</body>
+</html>
