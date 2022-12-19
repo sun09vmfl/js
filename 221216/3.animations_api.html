@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Web Animations API</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: lightskyblue;
+      }
+    </style>
+    <!-- web Animations API 미지원 브라우저 대응을 위한 polyfill -->
+    <script src="https://cdn.jsdelivr.net/npm/web-animations-js@2.3.2/web-animations.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Web Animations API</h1>
+    <h2>
+      <a href="https://runebook.dev/ko/docs/dom/web_animations_api/using_the_web_animations_api">Runebook.dev </a>
+    </h2>
+
+    <div class="container">
+      <div class="box"></div>
+    </div>
+
+    <script>
+      const box = document.querySelector(`.box`);
+
+      /*
+        .animate(A, B);
+        A매개 변수: 시작과 종료 값을 포함하는 객체
+        B매개 변수 : 애니메이션 속성을 포함하는 객체
+
+      */
+
+      box.animate(
+        {
+          // 키 : 값
+          transform: [
+            `translateX(0) rotate(0)`, //시작값
+            `translateX(80vw) rotate(360deg)`, //종료값
+          ],
+        },
+        {
+          // 키 : 값
+          duration: 2000, //시간 3초
+          iterations: Infinity, //반복 횟수
+          direction: `reverse`, // 방향
+          easing: `ease`, // 움직임 형태
+          fill: `forwards`, // 움직임이 끝난 그대로
+        }
+      );
+    </script>
+  </body>
+</html>

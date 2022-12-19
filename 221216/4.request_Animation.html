@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>request Animation</title>
+    <style>
+      body {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .emoji {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        font-size: 5em;
+
+        will-change: transform; /* transform을 사용할 테니 브라우저는 준비하고 있어라... 이런 의미 */
+        /* 
+          will-change 일어날 동작을 미리 브라우저에게 알려줌
+          웹킷 계열 브라우저의 경우 css transform이나 animation 속성 사용시 깜빡이는 현상이 있을 수 있어 방지하기 위해 사용
+
+          auto : 기본 값
+          scroll-positio; 스크롤 위치 바꿈
+          content; 컨텐츠 바꿈
+          그 외 css 속성(opacity, top, left...) 사용 가능
+        */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="emoji">🐧</div>
+    <script>
+      /*
+      window.requestAnimationFrame(콜백함수);
+      화면에 프레임이 실행되기 전 함수 호출
+      시간 경과에 따른 지속적인 변화 가능
+      한 번만 호출되므로 연속 호출 필요
+
+      https://developer.mozilla.org/ko/docs/Web/API/Window/requestAnimationFrame
+    */
+
+      const emoji = document.querySelector(`.emoji`);
+      l;
+      //마우스 좌표
+      e.clientX = 0;
+      e.clientY = 0;
+      //커서를 따라다니는 이모지 좌표
+      let emojiX = 0;
+      let emojiY = 0;
+
+      addEventListener(`mousemove`, e => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      function ani() {
+        requestAnimationFrame(ani); // 연속호출이 필요
+
+        emojiX += (mouseX - emojiX) * 0.1;
+        emojiY += (mouseY - emojiY) * 0.1;
+
+        emoji.style.transform = `translate(${emojiX}px, ${emojiY}`;
+      }
+
+      ani();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>progress bar</title>
+    <style>
+      body {
+        margin: 0;
+        height: 400vh;
+        font-size: 2em;
+      }
+
+      .progressBar_wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        background-color: #1a120b;
+      }
+
+      .progressBar {
+        width: 0%;
+        height: 100%;
+        background-color: #dc0000;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="progressBar_wrapper">
+      <div class="progressBar"></div>
+    </div>
+
+    <h1>progress bar</h1>
+
+    <script>
+      const progressBar = document.querySelector(`.progressBar`);
+
+      /*
+      <div onclick="">
+      .on(`scroll`, fn(), {})
+      onscroll = fn() {};
+      */
+
+      addEventListener(`scroll`, progress);
+
+      function progress() {
+        let winScrollTop = document.documentElement.scrollTop;
+        console.log(`스크롤한 거리: `, winScrollTop);
+
+        const scrollHt = document.documentElement.scrollHeight;
+        const clientHt = document.documentElement.clientHeight;
+
+        console.log(scrollHt, clientHt);
+
+        //보이지 않는 전체 화면에서 내가 이동한 거리를 %로 계산
+        let height = (winScrollTop / (scrollHt - clientHt)) * 100;
+        console.log(height);
+
+        progressBar.style.width = height + `%`;
+      }
+    </script>
+  </body>
+</html>

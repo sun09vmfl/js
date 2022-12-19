@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>auto type</title>
+    <style>
+      body {
+        font-weight: bold;
+        font-size: 2em;
+      }
+      .btn {
+        cursor: pointer;
+        text-align: center;
+        border: 3px solid #000;
+        padding: 5px 10px;
+        width: 100px;
+      }
+
+      .btn:hover {
+        background-color: #000;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="btn">start</div>
+    <h2></h2>
+    <script>
+      const btn = document.querySelector(`.btn`);
+      const h2 = document.querySelector(`h2`);
+      const text = `KT 소닉붐 제발 봄농구 가 주면 안 될까. 제발`;
+      let i = 0;
+      /* 버튼을 누를 때마다 나오는 경우
+      btn.addEventListener(`click`, () => {
+        if (i < text.length) {
+          // .charAt(); 해당 인덱스 번호의 문자열 반환. 없으면 빈 문자열 반환
+          h2.textContent += text[i]; // 없으면 undefinend
+          i++;
+        }
+      });
+      */
+      (function autoType() {
+        if (i < text.length) {
+          h2.textContent += text[i];
+          i++;
+        } else {
+          h2.textContent = '';
+          i = 0;
+        }
+        setTimeout(autoType, 300);
+      })();
+    </script>
+  </body>
+</html>

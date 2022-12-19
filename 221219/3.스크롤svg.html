@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>scrollEx2_svg</title>
+    <style>
+      body {
+        height: 400vh;
+      }
+
+      .icon {
+        /* border: 1px solid #000; */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -80%);
+        height: 210px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <svg class="icon">
+      <path fill="none" stroke="#FF597B" stroke-width="4" d="M150 0 L75 200 L225 200 Z" />
+    </svg>
+
+    <script>
+      /*
+      https://www.w3schools.com/graphics/svg_intro.asp
+      https://developer.mozilla.org/ko/docs/Web/SVG
+
+      https://developer.mozilla.org/en-US/docs/Web/API/SVGGeometryElement/getTotalLength
+      SVGGeometryElement.getTotalLength();
+        svg path 총길이를 값으로 반환
+
+      css:
+        stroke-dasharray: 점선
+        stroke-dashoffset: 시작 위치
+      js:
+        .strokeDasharray; 점선
+        .strokeDashoffset; 시작 위치 
+    */
+
+      const iconPath = document.querySelector('.icon > path');
+      const path = iconPath.getTotalLength();
+      console.log(iconPath);
+
+      iconPath.style.strokeDasharray = path;
+      iconPath.style.strokeDashoffset = path;
+
+      function scrolled() {
+        const winScrollTop = document.documentElement.scrollTop;
+        const scrollHt = document.documentElement.scrollHeight;
+        const clientHt = document.documentElement.clientHeight;
+        let height = winScrollTop / (scrollHt - clientHt);
+
+        const mov = path * height;
+        iconPath.style.strokeDashoffset = path - mov;
+      }
+      addEventListener('scroll', scrolled);
+    </script>
+  </body>
+</html>
