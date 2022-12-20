@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>swiper</title>
+    <!-- reset 파일 -->
+    <link rel="stylesheet" href="../common/minireset.min.css" />
+    <!-- swiper css -->
+    <link rel="stylesheet" href="../common/swiper-bundle.min.css" />
+    <!-- 내가 작업한 css가 제일 마지막! -->
+    <style>
+      /* :root { css 변수 } <- 전역 변수  */
+      .main_swiper {
+        background-color: #ddd;
+        height: 80vh;
+        overflow: hidden;
+
+        /* 지역변수 선언 */
+        --swiper-theme-color: #fff;
+      }
+      .main_swiper img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .swiper-pagination-bullet {
+        opacity: 0.6;
+      }
+    </style>
+    <!-- swiper js 연결 (위치는 그닥 중요하지 않음.) -->
+    <script src="../common/swiper-bundle.min.js"></script>
+  </head>
+  <body>
+    <!-- #mainSwiper: swiper main container로 이미지, 패이지네이션, 크롤, 버튼 등 모두 이 안에 작성 -->
+    <div id="mainSwiper" class="main_swiper">
+      <!-- 이미지 영역. 클래스명 수정 x -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img src="https://via.placeholder.com/1000x500/ADA2FF/000?text=pic1" /></div>
+        <div class="swiper-slide"><img src="https://via.placeholder.com/1000x500/FF597B/000?text=pic2" /></div>
+        <div class="swiper-slide"><img src="https://via.placeholder.com/1000x500/ADA2FF/000?text=pic3" /></div>
+        <div class="swiper-slide"><img src="https://via.placeholder.com/1000x500/FF597B/000?text=pic4" /></div>
+      </div>
+      <!-- 추가 옵션: 하단 pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- 추가 옵션: 좌우 버튼 -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+    </div>
+
+    <script>
+      // const 내가 정하는 이름 = new Swiper(`대상`, {옵션 객체})
+      const swiper1 = new Swiper(`#mainSwiper`, {
+        //  direction: 'vertical',
+        loop: true, //무한 반복
+        //하단 페이지네이션
+        pagination: {
+          el: '.swiper-pagination',
+        },
+
+        // 좌우 클릭 버튼
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      }); //내가 스와이프 적용시킬 객체를 클래스나 아이디나 씀
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+swiper2.html
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>swiper2</title>
+    <!-- reset -->
+    <link rel="stylesheet" href="../common/minireset.min.css" />
+    <!-- swiper css -->
+    <link rel="stylesheet" href="../common/swiper-bundle.min.css" />
+    <!-- 내가 작업한 css -->
+    <link rel="stylesheet" href="./swiper2.css" />
+
+    <!-- swiper js -->
+    <script src="../common/swiper-bundle.min.js"></script>
+    <!-- 내가 작업한 js -->
+    <script defer src="./swiper2.js"></script>
+  </head>
+
+  <body>
+    <!-- swiper main container -->
+    <div class="swiper" id="mainSwiper">
+      <div class="parallax-bg" data-swiper-parallax="-23%"></div>
+      <!-- 이미지 영역 -->
+      <ul class="swiper-wrapper">
+        <!-- 이미지 -->
+        <li class="swiper-slide" id="bg1">
+          <!-- data-swiper-parallax='시간' -->
+          <section class="text_wrapper">
+            <h2 class="title" data-swiper-parallax="-500">title1</h2>
+            <h3 data-swiper-parallax="-200">subtitle1</h3>
+            <div class="text" data-swiper-parallax="-100">
+              <p>피어나듯이 이름자를 하늘에는 보고, 잔디가 너무나 별들을 이름과, 있습니다. 많은 지나가는 헤는 까닭입니다. 아이들의 남은 경, 나는 노새, 거외다.</p>
+            </div>
+          </section>
+        </li>
+        <li class="swiper-slide" id="bg2">
+          <section class="text_wrapper">
+            <h2 class="title" data-swiper-parallax="-500">title2</h2>
+            <h3 data-swiper-parallax="-200">subtitle2</h3>
+          </section>
+        </li>
+        <li class="swiper-slide" id="bg3">
+          <section class="text_wrapper">
+            <h2 class="title" data-swiper-parallax="-500">title3</h2>
+          </section>
+        </li>
+        <li class="swiper-slide" id="bg4">
+          <section class="text_wrapper">
+            <h2 class="title" data-swiper-parallax="-500">title4</h2>
+            <h3 data-swiper-parallax="-200">subtitle4</h3>
+          </section>
+        </li>
+      </ul>
+      <!-- 추가 옵션 -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination my_pagination"></div>
+    </div>
+  </body>
+</html>
