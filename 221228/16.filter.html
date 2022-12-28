@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>filter()</title>
+  </head>
+  <body>
+    <script>
+      /*
+        .filter(); : 배열로 반환
+        .find(); : 하나의 값만 반환
+      */
+
+      let arr = [10, 20, 30, 40, 50];
+      let data = [
+        { id: 1, name: `html5` },
+        { id: 2, name: `css3` },
+        { id: 3, name: `ES6+` },
+        { id: 4, name: `react` },
+      ];
+
+      // 조건에 맞는 값 전부 배열로 반환
+      const result1 = arr.filter(item => {
+        return item > 30;
+      });
+      console.log(result1);
+
+      const result2 = arr.filter(item => item > 20);
+      console.log(result2);
+
+      const result3 = arr.filter(item => item !== 30);
+      console.log(result3);
+
+      const result4 = data.filter(item => item.id !== 1);
+      console.log(result4);
+    </script>
+  </body>
+</html>

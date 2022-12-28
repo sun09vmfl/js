@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>try-catch 문</title>
+  </head>
+  <body>
+    <h1>try catch 문</h1>
+    <h2>10보다 작은 숫자를 입력하세요</h2>
+    <form id="form">
+      <input type="text" id="userNumber" />
+      <button type="submit">입력</button>
+    </form>
+    <h3 id="result"></h3>
+
+    <script>
+      const userNumber = document.querySelector(`#userNumber`);
+      const result = document.querySelector(`#result`);
+      const btn = document.querySelector(`button`);
+
+      btn.addEventListener(`click`, evt => {
+        evt.preventDefault();
+
+        let n = userNumber.value;
+        console.log(n);
+
+        try {
+          //실행 구문
+          if (n === '' || isNaN(n)) {
+            throw `숫자만 입력하세요`; //예외유형처리
+          } else if (n <= 10) {
+            result.textContent = `${n}을(를) 입력하셨습니다.`;
+          } else if (n > 10) {
+            throw `10보다 작은 수를 입력하세요`;
+          }
+        } catch (err) {
+          // 에러 발생시. throw 값을 매개변수로 받음
+          // alert(err);
+          console.error(err);
+        } finally {
+          // 관계 없이 항상 실행 (일반적으로는 생략 가능)
+          userNumber.value = ``;
+        }
+      });
+    </script>
+  </body>
+</html>

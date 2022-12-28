@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>promise 1</title>
+  </head>
+  <body>
+    <script>
+      let boo = false;
+
+      //promise 객체 생성
+      //new Promise(resolve, reject)
+      const coffee = new Promise((res, rej) => {
+        boo ? res(`커피 주문`) : rej(`주문 실패`);
+      });
+
+      //promise 객체 사용
+      // coffee.then(good => console.log(good)).catch(bad => console.log(bad));
+
+      coffee.then(
+        // 이행 fulfilled
+        order => console.log(order),
+        // 거부 reject
+        cancel => console.log(cancel)
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>async 함수, await 키워드3</title>
+  </head>
+  <body>
+    <div id="result"></div>
+    <script>
+      const result = document.querySelector(`#result`);
+      const URL = `https://jsonplaceholder.typicode.com/photos`;
+
+      // photos 데이터 중 랜덤으로 title과 url 출력
+      // title명의 글자 출력 수
+
+      /*
+      fetch(URL)
+        .then(res => res.json())
+        .then(pics => {
+          const random = Math.trunc(Math.random() * 100); // 0~99까지의 숫자
+          console.log(pics[random]);
+          result.innerHTML = `
+          <h3>${pics[random].title.substring(0, 11)}</h3>
+          <img src=${pics[random].url} alt=${pics[random].title}>`;
+        })
+        .catch(err => console.log(err));
+
+      */
+
+      (async () => {
+        const res = await fetch(URL);
+        const pics = await res.json();
+
+        userPics(pics);
+      })();
+
+      function userPics(pics) {
+        const random = Math.trunc(Math.random() * 100);
+        result.innerHTML = `
+          <h3>${pics[random].title.substring(0, 11)}</h3>
+          <img src=${pics[random].url} alt=${pics[random].title}>`;
+      }
+    </script>
+  </body>
+</html>

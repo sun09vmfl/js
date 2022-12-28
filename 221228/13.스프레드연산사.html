@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>spread 연산자</title>
+  </head>
+  <body>
+    <script>
+      let data = [
+        { id: 1, name: `html5` },
+        { id: 2, name: `css3` },
+        { id: 3, name: `ES6+` },
+        { id: 4, name: `react` },
+      ];
+
+      let data1 = data.concat();
+      let data2 = [...data];
+      let data3 = data.concat({ id: 6, name: `vue` });
+      let data4 = [...data, { id: 6, name: `vue` }];
+
+      console.log(data1);
+      console.log(data2);
+      console.log(data3);
+      console.log(data4);
+
+      let data5 = data.map(item => {
+        if (item.id === 3) {
+          return {
+            ...item,
+            name: `js`,
+          };
+        } else {
+          return item;
+        }
+      });
+      console.log(data5);
+
+      let data6 = data.map(item => (item.id === 2 ? { ...item, name: `scss` } : item));
+      console.log(`data6`, data6);
+    </script>
+  </body>
+</html>

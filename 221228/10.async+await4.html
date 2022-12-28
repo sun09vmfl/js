@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>async, await</title>
+    <style>
+      ul {
+        margin: 0;
+        padding: 10px;
+        width: 50vw;
+        list-style: none;
+      }
+
+      ul li {
+        margin: 50px auto;
+        border: 1px solid #000;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>카카오 책 검색</h1>
+    <ul id="result"></ul>
+
+    <script>
+      const result = document.querySelector(`#result`);
+      const getBooks = async () => {
+        const res = await fetch('https://dapi.kakao.com/v3/search/book?query=한강', {
+          method: 'GET',
+          headers: {
+            Host: 'dapi.kakao.com',
+            Authorization: 'KakaoAK 09757a1d4a1ccffb505d73369566bd52',
+          },
+        });
+        const json = await res.json();
+        console.log(json.documents);
+
+        books(json.documents);
+      };
+      function books(items) {
+        let output = ``;
+        items.forEach(item => {
+          output += `
+          <li>
+            <h3>${item.title}</h3>
+            <p><img src=${item.thumbnail} alt=${item.title}></p>
+            <h3>${item.authors}</h3>
+            <h3>${item.contents}</h3>
+
+            <h3>${item.price}</h3>
+            <h3>${item.status}</h3>
+          </li>`;
+        });
+
+        result.innerHTML = output;
+      }
+      getBooks();
+    </script>
+  </body>
+</html>

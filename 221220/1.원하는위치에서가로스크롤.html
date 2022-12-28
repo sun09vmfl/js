@@ -1,4 +1,3 @@
-원하는위치에서가로스크롤.html
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -6,118 +5,109 @@
     <title>원하는 위치에서 가로스크롤</title>
     <style>
       * {
+        /* 실제로 이렇게 작성 X */
         box-sizing: border-box;
         margin: 0;
         padding: 0;
         list-style: none;
       }
-
       body {
         overflow-x: hidden;
         font-size: 2em;
         font-weight: bold;
       }
-
       .box {
         height: 100vh;
         background-color: #ddd;
       }
-
       .box:last-of-type {
         background-color: #edd;
       }
-
       .container {
         width: 100%;
         position: relative;
       }
-
       .sticky_box {
         position: sticky;
         top: 0;
         height: 100vh;
       }
-
       .horizontal {
         position: absolute;
         display: flex;
         width: 300%;
       }
-
       .horizontal li {
         width: 100%;
         height: 100vh;
-        color: #fff6c3;
       }
-
       .horizontal .row1 {
-        background-color: #dc0000;
+        background-color: rgb(243, 181, 181);
       }
-
       .horizontal .row2 {
-        background-color: #850000;
+        background-color: rgb(241, 127, 127);
       }
-
       .horizontal .row3 {
-        background-color: #ffdb89;
-        color: #000;
+        background-color: rgb(243, 90, 90);
       }
     </style>
   </head>
-
   <body>
     <article class="box">
       <h2>box1</h2>
     </article>
 
-    <!-- 가로 스크롤 영역 -->
+    <!-- 가로스크롤 영역 -->
     <div class="container">
+      <!-- pos: sticky -->
       <div class="sticky_box">
-        <!-- pos:sticky -->
+        <!-- 실제 가로로 움직이는 영역 -->
         <ul class="horizontal">
-          <!-- 실제 가로로 움직이는 영역 -->
           <li class="row1">row_box1</li>
           <li class="row2">row_box2</li>
           <li class="row3">row_box3</li>
         </ul>
       </div>
     </div>
-
     <article class="box">
       <h2>box3</h2>
     </article>
     <article class="box">
       <h2>box4</h2>
     </article>
-
     <script>
       const container = document.querySelector('.container');
       const stickyBox = document.querySelector('.sticky_box');
       const horizontal = document.querySelector('.horizontal');
 
-      // const height = horizontal.scrollWidth - document.documentElement.clientWidth + document.documentElement.clientHeight;
+      /* 
+        const height =
+        horizontal.scrollWidth -
+        document.documentElement.clientWidth +
+        document.documentElement.clientHeight;
+      */
 
       function calcHt(ht) {
         return ht.scrollWidth - document.documentElement.clientWidth + document.documentElement.clientHeight;
       }
 
-      // 매개변수로 요소 노드를 넘기고 값으로 반환 반환
+      // 매개변수로 요소 노드를 넘기고 값으로 반환
       container.style.height = `${calcHt(horizontal)}px`;
 
       addEventListener('scroll', scrolled);
 
       function scrolled() {
-        // 포지션이 적용된 가장 가까운 부모는 container
+        // 포지션이 적용된 가장 가까운 부모는 .container
         console.log('stickyBox.offsetTop:', stickyBox.offsetTop);
-        horizontal.style.transform = `translateX(-${stickyBox.offsetTop}px)`;
+        horizontal.style.transform = `translate(-${stickyBox.offsetTop}px)`;
       }
       /*
-      offsetTop; 
-        offsetParent를 기준으로 거리를 알려줌
-        offsetParent는 offset의 가장 가까운 포지션 값
-        그래서 offsetTop은 포지션이 적용된 가장 가까운 부모요소를 기준으로 거리값 반환
-        부모 요소에 포지션이 없는 경우는 body 기준
-    */
+        offsetTop;
+          offsetParent를 기준으로 거리를 알려줌
+          offsetParent는 offset의 가장 가까운 포지션 값
+          그래서 offsetTop은 포지션이 적용된 가장 가까운 부모요소를 기준으로 거리값 반환
+          부모 요소에 포지션이 없는 경우는 body 기준
+      */
     </script>
   </body>
 </html>

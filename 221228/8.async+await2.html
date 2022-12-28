@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>async 함수, await 키워드</title>
+    <style>
+      ul {
+        border-bottom: 3px solid #000;
+        padding: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="result"></div>
+    <script>
+      const result = document.querySelector(`#result`);
+      const URL = `https://jsonplaceholder.typicode.com/users`;
+
+      fetch(URL)
+        .then(res => res.json())
+        .then(users => console.log(users));
+
+      /*
+      async function data() {
+        // 서버의 자료를 다 가져오면 결과값을 res에 저장
+        const res = await fetch(URL);
+        // res.json 실행이 끝나면 users에 저장
+        const users = await res.json();
+        console.log(users);
+      }
+      */
+
+      async function data() {
+        const res = await fetch(URL);
+        const users = await res.json();
+
+        usersList(users);
+      }
+
+      function usersList(users) {
+        let output = ``;
+        users.forEach(user => {
+          output += `
+          <h3>${user.id} : ${user.username}</h3>
+          <ul>
+            <li>email: ${user.email}</li>
+            <li>phone: ${user.phone}</li>
+            <li>address: ${user.address}</li>
+          </ul>`;
+        });
+        result.innerHTML = output;
+      }
+
+      data();
+    </script>
+  </body>
+</html>

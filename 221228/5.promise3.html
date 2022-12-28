@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>promise3</title>
+  </head>
+  <body>
+    <ol>
+      <li>커피 주문</li>
+      <li>이행하면(fulfilled), 주문 접수</li>
+      <li>이행하면(fulfilled), 주문 준비</li>
+      <li>이행하면(fulfilled), 커피 제조</li>
+      <li>이행하면(fulfilled), 주문한 커피가 나왔습니다</li>
+    </ol>
+    <script>
+      // 1. promise 객체 생성
+      const coffee = () => {
+        return new Promise(res => {
+          res(`커피 주문`);
+        });
+      };
+
+      const step1 = txt => {
+        console.log(txt);
+        return new Promise(res => {
+          setTimeout(() => {
+            res(`주문 접수`);
+          }, 2000);
+        });
+      };
+
+      const step2 = txt => {
+        console.log(txt);
+        return new Promise(res => {
+          setTimeout(() => {
+            res(`주문한 메뉴가 약 5분 이내 준비될 예정입니다`);
+          }, 3000);
+        });
+      };
+
+      const step3 = txt => {
+        console.log(txt);
+        return new Promise(res => {
+          setTimeout(() => {
+            res(`제조 중..`);
+          }, 4000);
+        });
+      };
+
+      // 2. promise 객체 사용. 알아보기 좋음..
+      /*
+      coffee()
+        .then(result => step1(result))
+        .then(result => step2(result))
+        .then(result => step3(result))
+        .then(result => console.log(result))
+        .then(() => {
+          setTimeout(() => {
+            console.log(`주문한 커피가 나왔습니다`);
+          }, 3000);
+        });
+        */
+
+      //result라는 매개변수를 생략 가능
+      coffee()
+        .then(step1)
+        .then(step2)
+        .then(step3)
+        .then(console.log)
+        .then(() => {
+          console.log(`주문한 커피가 나왔습니다.`);
+        }, 3000);
+    </script>
+  </body>
+</html>

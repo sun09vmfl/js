@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>promise2</title>
+  </head>
+  <body>
+    <ol id="result"></ol>
+    <script>
+      const result = document.querySelector(`#result`);
+
+      const order = new Promise((res, rej) => {
+        const coffee = prompt(`커피 주문`, `아메리카노`);
+        if (coffee != null && coffee != '') {
+          //아무것도 누르지 않은 것
+          result.innerHTML = `<li>${coffee} 접수 되었습니다</li>`;
+          setTimeout(() => {
+            res(coffee);
+          }, 3000);
+        } else {
+          rej(`커피 주문 취소되었습니다`);
+        }
+      });
+
+      function showOrder(output) {
+        result.innerHTML += `<li>${output}가 나왔습니다.`;
+      }
+
+      function showErr() {
+        alert(err);
+      }
+      //promise 객체 사용
+      order.then(showOrder).catch(showErr);
+    </script>
+  </body>
+</html>

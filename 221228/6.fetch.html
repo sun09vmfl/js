@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>fetch</title>
+    <style>
+      ul {
+        border-bottom: 2px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="result"></div>
+    <script>
+      const result = document.querySelector(`#result`);
+
+      /* 자바 스크립트의 객체 작성 방식
+        {
+          limit: 30,
+          skip: 0
+          total: 100,
+          users: Array(30)
+        }
+        */
+
+      //json 파일 읽음
+      fetch(`https://dummyjson.com/users`)
+        // json 파일을 객체로 변환
+        .then(res => res.json())
+        // 출력
+        // .then(json => console.log(json))
+        // .then(json => console.log(json.users[0])) 등록된 한 사람만 원할 때는 []이렇게
+        .then(json => {
+          let output = ``;
+          json.users.forEach((user, idx) => {
+            console.log(user);
+            if (idx < 10) {
+              output += `
+              <h2>${user.firstName}</h2>
+              <ul>
+                <li><img src =${user.image} alt = ${user.lastName}</li>
+                <li>이메일: ${user.email}</li>
+                <li>이메일: ${user.age}</li>
+              </ul>`;
+            }
+          });
+
+          result.innerHTML = output;
+        })
+        .catch(err => console.log(err));
+    </script>
+  </body>
+</html>
