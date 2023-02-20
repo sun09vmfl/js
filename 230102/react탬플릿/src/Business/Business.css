@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+}
+
+.kyungdong h1 {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.kyungdong .txt {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+}
+
+ul li {
+  margin: 0;
+  width: 300px;
+  list-style: none;
+}
+
+div ul li h4 {
+  font-size: 18px;
+  padding: 5px;
+}
+li p {
+  padding: 15px 0;
+}
+
+.btn {
+  margin: 30px auto;
+  width: 150px;
+  padding: 15px;
+  border: 2px solid #000;
+  border-radius: 20px;
+}

@@ -1,0 +1,63 @@
+// scss 변수
+$orange: orange;
+$salmon: salmon;
+$lightsb: lightskyblue;
+$maroon: maroon;
+$teal: teal;
+
+// 선언 @mixin,  사용 @include
+@mixin boxStyle($item) {
+  // 선언
+  $width: 100px;
+
+  // 조건식을 통해 변수 설정
+  @if $item % 2 == 0 {
+    $width: $width + 30;
+  } @else if $item % 3 == 0 {
+    $width: $width - 30;
+  } @else {
+    $width: $width;
+  }
+
+  width: $width;
+  height: 50px * 2;
+  font-size: 10px * $item;
+  transition: 0.4s;
+  overflow: hidden;
+  &:hover {
+    transform: scale(1.2) rotate(45deg);
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px auto;
+  .box {
+    border: 1px solid #000;
+    text-align: center;
+    cursor: pointer;
+
+    &.orange {
+      background-color: $orange;
+      @include boxStyle(1);
+    }
+    &.salmon {
+      background-color: $salmon;
+      @include boxStyle(2);
+    }
+    &.lightskyblue {
+      background-color: $lightsb;
+      @include boxStyle(3);
+    }
+    &.maroon {
+      background-color: $maroon;
+    }
+    &.teal {
+      background-color: $teal;
+    }
+    &:hover {
+      color: #fff;
+    }
+  }
+}

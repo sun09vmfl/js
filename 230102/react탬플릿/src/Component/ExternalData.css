@@ -1,0 +1,20 @@
+.cafe {
+  border-collapse: collapse;
+}
+.cafe th,
+.cafe td {
+  border: 1px solid #999;
+  padding: 4px 10px;
+  width: 100px;
+}
+.cafe caption {
+  background-color: tomato;
+  color: #fff;
+  padding: 4px;
+}
+.cafe thead th {
+  background-color: #efefef;
+}
+.cafe tbody tr:nth-child(even) {
+  background-color: lightsalmon;
+}

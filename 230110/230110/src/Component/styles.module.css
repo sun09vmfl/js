@@ -1,0 +1,9 @@
+:root {
+  --swiper-theme-color: #fff;
+}
+
+img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

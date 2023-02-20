@@ -1,0 +1,48 @@
+.globalNav {
+  width: 100%;
+  height: 80px;
+  background-color: tomato;
+  .menu {
+    color: aliceblue;
+    position: absolute;
+    left: 30px;
+    top: 10px;
+    cursor: pointer;
+    padding: 10px;
+  }
+  nav {
+    position: fixed;
+    background-color: tomato;
+    top: 0;
+    left: -150px;
+    width: 150px;
+    height: 100%;
+    transition: 0.4s;
+    &.on {
+      left: 0;
+    }
+    ul {
+      text-align: center;
+      line-height: 1.6;
+      padding: 50px 10px;
+      a {
+        font-size: 1.4em;
+        font-weight: bold;
+        color: aliceblue;
+      }
+    }
+    .closeBtn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 30px;
+      height: 30px;
+
+      background-color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+  }
+}
